@@ -210,6 +210,7 @@ void Decode(void){
         frame_ready_flag = 0;
         init_clear_buffer();
         curr_state = RST;       //if frameID and hardID don't match IGNORE the frame
+        //check
     }
     
 }
