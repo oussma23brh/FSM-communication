@@ -44,7 +44,7 @@ void Destination_Check(void);
 void Parse(void);
 void Decode(void);
 void Execute(void);
-void send_string(const char *message);
+
 int get_ID(void);
 int parse_frame_ID(void);
 

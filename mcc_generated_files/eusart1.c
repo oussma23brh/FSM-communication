@@ -1,15 +1,11 @@
 /**
   EUSART1 Generated Driver File
-
   @Company
     Microchip Technology Inc.
-
   @File Name
     eusart1.c
-
   @Summary
     This is the generated driver implementation file for the EUSART1 driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
-
   @Description
     This source file provides APIs for EUSART1.
     Generation Information :
@@ -48,6 +44,7 @@
   Section: Included Files
 */
 #include "eusart1.h"
+#include "pin_manager.h"
 
 /**
   Section: Macro Declarations
@@ -97,7 +94,7 @@ void EUSART1_Initialize(void)
     TXSTA1 = 0x24;
 
     // 
-    SPBRG1 = 0x67;
+    SPBRG1 = 0xCF;
 
     // 
     SPBRGH1 = 0x00;
@@ -240,6 +237,17 @@ void EUSART1_SetErrorHandler(void (* interruptHandler)(void)){
 
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void)){
     EUSART1_RxDefaultInterruptHandler = interruptHandler;
+}
+
+/*send a string through UART*/
+void send_string(const char *message){
+    CTRL_SetHigh();
+    uint16_t i;
+    for(i=0;i<strlen(message);i++){
+        while(!EUSART1_is_tx_ready());
+        EUSART1_Write(message[i]);
+    }
+    CTRL_SetLow();
 }
 /**
   End of File

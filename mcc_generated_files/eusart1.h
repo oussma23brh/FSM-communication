@@ -55,6 +55,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -115,6 +116,8 @@ extern void (*EUSART1_RxDefaultInterruptHandler)(void);
     
 */
 void EUSART1_Initialize(void);
+
+void send_string(const char *message);
 
 /**
   @Summary

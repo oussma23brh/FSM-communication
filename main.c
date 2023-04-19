@@ -270,16 +270,6 @@ exitToIDLe:
     curr_state = IDLE;      //back to initial state
 }
 
-/*send a string through UART*/
-void send_string(const char *message){
-    CTRL_SetHigh();
-    uint16_t i;
-    for(i=0;i<strlen(message);i++){
-        while(!EUSART1_is_tx_ready());
-        EUSART1_Write(message[i]);
-    }
-    CTRL_SetLow();
-}
 
 //get the address of the device from dip switches
 int get_ID(void){
