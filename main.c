@@ -231,7 +231,7 @@ void Execute(void){
     /*Execute frame CMD */
     /*READ CMD*/
     if(read_flag){
-        //read data from adc and store it
+        //Call ADC_read
         if(destination == BROADCAST)    goto exitToIDLe;     //exit and don't respond to 'BROADCAT frame'
         /*acknowledge the read command*/
         acknowledge_frame[i++] = 'o';
@@ -262,6 +262,7 @@ void Execute(void){
         acknowledge_frame[i] = '*';//add END_CHAR to acknowledgment frame
         broadcast_test_flag = 0; //clear flag at the end of operation
     }
+    /*add checksum for acknowlegement frama*/
     send_string("I am the final frame: \n");
     send_string(acknowledge_frame); send_string("\n");
     frame_ready_flag = 0;   //clear frame flag when done with executing
