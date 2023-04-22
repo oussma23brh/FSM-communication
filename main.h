@@ -49,6 +49,12 @@ void Decode(void);
 void Execute(void);
 int get_ID(void);
 int parse_frame_ID(void);
+void ChecksumCalc(char* dataString);
+void TrimFrame(char* receivedFrame);
+void TrimAckFrame(char* AckFrame);
+void GetChecksumValue(char *receivedFrame);
+void PrintString(char* String);
+
 
 
 
@@ -60,9 +66,9 @@ UART_state frame_state;
 typedef enum {BROADCAST , UNICAST, MULTICAST} comm_mode;
 comm_mode destination, prev_destination = UNICAST;
 //
-typedef enum { RST , DEST_CHK , PARSE , DECODE , EXECUTE } State_Type ;
+typedef enum { RST , ERROR_CHECK, DEST_CHK , PARSE , DECODE , EXECUTE } State_Type ;
 //table containing a function for each state
-void (*function_table [])() = { Idle , Destination_Check , Parse , Decode , Execute };
+void (*function_table [])() = { Idle , ReceivedFrameChecksum, Destination_Check , Parse , Decode , Execute };
 //the currently running state
 State_Type curr_state ; 
 
@@ -87,6 +93,11 @@ char frame_buffer[20];
 //index for the frame buffer
 int frame_index;
 //store ADC conversion result
+char fullAckFrame[20];// Acknowledgement frame to be sent as handshake
+char TrimmedFrame[10]; // received frame trimmed of start and end characters and CRC
+char TrimmedAckFrame[20];//Trimmed Acknowledge frame
+char FrameCheckSum[2]; //Checksum value received from the frame
+char CRCresult[2];// CRC result calculated from received frame
 
 
 
