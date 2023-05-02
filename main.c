@@ -50,6 +50,7 @@ void main(void)
 {
     
     SYSTEM_Initialize();
+    i2c_driver_init();  //initialize I2C serial communication
     EUSART1_SetRxInterruptHandler(my_RX_ISR);
     // Enable the Global Interrupts
     INTERRUPT_GlobalInterruptEnable();
@@ -60,6 +61,11 @@ void main(void)
     //
     Initialize();
     send_string("Hello!\n");
+    ADC_reset();        //reset the adc
+    send_string("Reset DONE! \n");
+    __delay_ms(1000);       //wait for the adc to reset
+    ADC_init();        //initialize the adc
+    send_string("ADC ready!\n");    
     while (1)
     {
         if(frame_ready_flag){
@@ -266,7 +272,7 @@ void Execute(void){
     /*Execute frame CMD */
     /*READ CMD*/
     if(read_flag){
-        //Call ADC_read
+        ADC_read(); //Call ADC_read
         if(destination == BROADCAST){ 
             frame_ready_flag = 0;
             read_flag = 0; //clear read flag at the end of operation
@@ -288,9 +294,8 @@ void Execute(void){
         }
        
         /*ADC conversion result*/
-        uint16_t data = 0x1111;
         char data_buffer[20];
-        sprintf(data_buffer,"%x",data);
+        sprintf(data_buffer,"%0.4x",ADC_result0);  data_buffer[4] = '\0';
         uint8_t j=0;
         /*fill acknowledgment frame with ADC data*/
         for(j=0;j<strlen(data_buffer);j++){
