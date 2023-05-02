@@ -39,10 +39,11 @@ extern "C" {
 
 /*prototypes*/
 void my_RX_ISR(void);
-void init_clear_buffer(void);
+void clear_buffer(char* buffer);
 void fill_buffer(char received_char);
 void Initialize(void);
 void Idle(void);
+void ReceivedFrameChecksum(void);
 void Destination_Check(void);
 void Parse(void);
 void Decode(void);
@@ -53,6 +54,7 @@ void ChecksumCalc(char* dataString);
 void TrimFrame(char* receivedFrame);
 void TrimAckFrame(char* AckFrame);
 void GetChecksumValue(char *receivedFrame);
+void ACKframeChecksum(char* acknowledge_frame);
 void PrintString(char* String);
 
 
@@ -96,7 +98,7 @@ int frame_index;
 char fullAckFrame[20];// Acknowledgement frame to be sent as handshake
 char TrimmedFrame[10]; // received frame trimmed of start and end characters and CRC
 char TrimmedAckFrame[20];//Trimmed Acknowledge frame
-char FrameCheckSum[2]; //Checksum value received from the frame
+char FrameCheckSum[3]; //Checksum value received from the frame
 char CRCresult[2];// CRC result calculated from received frame
 
 

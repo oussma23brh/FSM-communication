@@ -79,7 +79,8 @@ void my_RX_ISR(void){
         switch(frame_state){
             //setup for next frame
             case SETUP:
-                init_clear_buffer();
+                frame_index = 0;
+                clear_buffer(frame_buffer);
                 frame_state = IDLE; 
             //wait for starting char
             //no break statement here in order not to miss a starting character
@@ -92,10 +93,10 @@ void my_RX_ISR(void){
             //fill buffer until receiving end char    
             case PARSING:
                 fill_buffer(frame_char);
-
                 if(frame_char == END_CHAR){
                     frame_ready_flag = 1; 
-                    fill_buffer('*');
+                    //fill_buffer('*');//not sure about line since we fill any received char 2 line above
+                    fill_buffer('\0');
                     curr_state = ERROR_CHECK;
                     frame_state = SETUP; //back to SETUP state 
                 }
@@ -106,11 +107,10 @@ void my_RX_ISR(void){
 }
 
 //clear and setup the buffer for the frame
-void init_clear_buffer(void){
-    frame_index = 0;
+void clear_buffer(char* buffer){
     uint8_t i;
-    for(int i=0;i<20;i++){
-        frame_buffer[i] = NULL;
+    for(int i=0;i<strlen(buffer);i++){
+        buffer[i] = NULL;
     }
 }
 
@@ -122,6 +122,7 @@ void fill_buffer(char received_char){
 /*initialize FSM*/
 void Initialize(void){
     curr_state = RST;
+    frame_state = SETUP;
 }
 
 /*wait for the start of the frame*/
@@ -132,15 +133,20 @@ void Idle(void){
 
 void ReceivedFrameChecksum(void){
     //clear TrimmedFrame 
+    send_string("Received frame: "); send_string(frame_buffer); send_string("\n");
+    clear_buffer(TrimmedFrame);
+    clear_buffer(CRCresult);
+    clear_buffer(FrameCheckSum);
     TrimFrame(frame_buffer); //Trim the received frame
-    send_string("The trimmed frame is: ");  puts(TrimmedFrame);
+    send_string("The trimmed frame is: ");  send_string(TrimmedFrame); send_string("\n");
     
     GetChecksumValue(frame_buffer);//obtain the checksum value sent with the frame
-    send_string("The checksum value received from frame is :"); puts(FrameCheckSum);
+    //FrameCheckSum[0] = FrameCheckSum[0];FrameCheckSum[1] = FrameCheckSum[1]; FrameCheckSum[2] = '\0';
+    send_string("The checksum value received from frame is :"); send_string(FrameCheckSum); send_string("\n");
     int hexFrameCheckSum = (int)strtol(FrameCheckSum, NULL, 16);
     
     ChecksumCalc(TrimmedFrame); //Calculate the checksum for the trimmed frame
-    send_string("Result of XOR checksum: ");    puts(CRCresult);
+    send_string("Result of XOR checksum: ");    send_string(CRCresult); send_string("\n");
     int hexCRCresult = (int)strtol(CRCresult, NULL, 16);
     //check whether there was an error on transmission or not
     if(hexCRCresult == hexFrameCheckSum){       
@@ -169,6 +175,8 @@ void Destination_Check(void){
             break;
         default:             
             send_string("Destination character error\n");
+            frame_ready_flag = 0;
+            curr_state = RST;   //return to IDLE
             break;
     }
     curr_state = PARSE;
@@ -206,8 +214,8 @@ void Decode(void){
     sprintf(frameAddress,"%d",frameID);
     send_string(frameAddress); send_string("\n");
     send_string("address from hardware is:");
-    sprintf(realAdress,"%d",hardID); send_string("\n");
-    send_string(realAdress);
+    sprintf(realAdress,"%d",hardID); 
+    send_string(realAdress);  send_string("\n");
     
 
     //respond to command on broadcast or if address matches  
@@ -218,22 +226,25 @@ void Decode(void){
                 send_string("I am in reading command\n");
                 break;
             case GET_CMD:
-                if(destination == UNICAST){
                 get_flag = 1;//set sending flag
                 send_string("I am in sending command\n");
-                }
                 break;
             case BCAST_TEST:
                 broadcast_test_flag = 1;
+                send_string("I am in broadcast test\n");
+                break;
             default:
                 send_string("Command character error\n");
+                frame_ready_flag = 0;
+                curr_state = RST;   //return to IDLE
                 break;
         }
         curr_state = EXECUTE;
     }
     else{
         frame_ready_flag = 0;
-        init_clear_buffer();
+        frame_index = 0;
+        clear_buffer(frame_buffer);
         curr_state = RST;       //if frameID and hardID don't match IGNORE the frame
         //check
     }
@@ -257,7 +268,12 @@ void Execute(void){
     /*READ CMD*/
     if(read_flag){
         //Call ADC_read
-        if(destination == BROADCAST)    goto exitToIDLe;     //exit and don't respond to 'BROADCAT frame'
+        if(destination == BROADCAST){ 
+            frame_ready_flag = 0;
+            read_flag = 0; //clear read flag at the end of operation
+            prev_destination = destination;     //update the previous destination state
+            goto exitToIDLe;    //exit and don't respond to 'BROADCAT frame'
+        }     
         /*acknowledge the read command*/
         acknowledge_frame[i++] = 'o';
         acknowledge_frame[i++] = 'k';
@@ -265,11 +281,17 @@ void Execute(void){
         read_flag = 0; //clear read flag at the end of operation
     /*GET CMD*/
     }else if(get_flag){
-        if(destination == BROADCAST)    goto exitToIDLe;    //exit immediately on "BROADCAST get frame"
+        if(destination == BROADCAST){   
+            frame_ready_flag = 0;
+            get_flag = 0; //clear get flag at the end of operation
+            prev_destination = destination;     //update the previous destination state
+            goto exitToIDLe;    //exit immediately on "BROADCAST get frame"
+        }
+       
         /*ADC conversion result*/
-        uint16_t data = 1111;
+        uint16_t data = 0x1111;
         char data_buffer[20];
-        sprintf(data_buffer,"%d",data);
+        sprintf(data_buffer,"%x",data);
         uint8_t j=0;
         /*fill acknowledgment frame with ADC data*/
         for(j=0;j<strlen(data_buffer);j++){
@@ -287,14 +309,14 @@ void Execute(void){
         acknowledge_frame[i] = '*';//add END_CHAR to acknowledgment frame
         broadcast_test_flag = 0; //clear flag at the end of operation
     }
-    /*add checksum for acknowledgement frame*/
+    /*add checksum for acknowledgment frame*/
     ACKframeChecksum(acknowledge_frame);
     send_string("I am the final frame: \n");
     send_string(fullAckFrame); send_string("\n");
     frame_ready_flag = 0;   //clear frame flag when done with executing
     prev_destination = destination;     //update the previous destination state
 exitToIDLe:
-    curr_state = IDLE;      //back to initial state
+    curr_state = RST;      //back to initial state
 }
 
 
@@ -320,26 +342,31 @@ void ChecksumCalc(char* dataString){
 
 /*  Function that removes the START_CHAR($) CHECKSUM_VAL and END_CHAR(*)  */
 void TrimFrame(char* receivedFrame){
-    int index = 0;
-    for(int i = 1; i < strlen(receivedFrame)-3; i++){
+    uint8_t index = 0;
+    uint8_t i;
+    for(i = 1; i < strlen(receivedFrame)-3; i++){
         TrimmedFrame[index] = receivedFrame[i];
         index++;
     }
+    TrimmedFrame[index] = '\0';
 }
 
 /*  Function that removes the START_CHAR($) and END_CHAR(*)  */
 void TrimAckFrame(char* AckFrame){
-    int index = 0;
-    for(int i = 1; i < strlen(AckFrame)-1; i++){
+    uint8_t index = 0;
+    uint8_t i;
+    for(i = 1; i < strlen(AckFrame)-1; i++){
         TrimmedAckFrame[index] = AckFrame[i];
         index++;
     }
+    TrimmedAckFrame[index] = '\0';
 }
 
 /*  Function that removes the END_CHAR(*)  */
 void RemoveEndChar(char* AckFrame){
-    int index = 0;
-    for(int i = 0; i < strlen(AckFrame)-1; i++){
+    uint8_t index = 0;
+    uint8_t i;
+    for(i = 0; i < strlen(AckFrame)-1; i++){
         fullAckFrame[index] = AckFrame[i];
         index++;
     }
@@ -347,25 +374,38 @@ void RemoveEndChar(char* AckFrame){
 
 /*Function that puts the checksum value in an array*/
 void GetChecksumValue(char *receivedFrame){
-    int index = 0;
-    for(int i = strlen(receivedFrame)-3; i < strlen(receivedFrame)-1; i++){
+    uint8_t index = 0;
+    uint8_t i=0; 
+    //char inx[1], di[1];
+    send_string("received frame:"); send_string(receivedFrame); send_string("\n");
+    send_string("CRC result before getting:"); send_string(FrameCheckSum); send_string("\n");
+    for(i = strlen(receivedFrame)-3; i < strlen(receivedFrame)-1; i++){
         FrameCheckSum[index] = receivedFrame[i];
         index++;
     }
+    FrameCheckSum[index]='\0';
+    //send_string("Obtain CRC result:"); send_string(FrameCheckSum); send_string("\n");
 }
 
-void ACKframeChecksum(char* acknowledge_frame){
+void ACKframeChecksum(char* frame){
     //clear TrimmedAckFrame & fullAckFrame
-    TrimAckFrame(acknowledge_frame); //Trim the received frame
-    send_string("The trimmed frame is: ");  puts(TrimmedAckFrame);
+    send_string("Acknowlegment frame from execute: ");  send_string(frame);  send_string("\n");
+    clear_buffer(TrimmedAckFrame);
+    send_string("Trimmed ACK frame after clearing: ");    send_string(TrimmedAckFrame);  send_string("\n");
+    clear_buffer(fullAckFrame); 
+    send_string("fullACK after clearing: ");    send_string(fullAckFrame);  send_string("\n");
+    TrimAckFrame(frame); //Trim the ACK frame
+    send_string("The trimmed ACK frame is: ");  send_string(TrimmedAckFrame);   send_string("\n");
 
     ChecksumCalc(TrimmedAckFrame); //Calculate the checksum for ACK frame
-    send_string("Result of XOR checksum: ");    puts(CRCresult);
+    send_string("Result of XOR checksum: ");    send_string(CRCresult);    send_string("\n");
 
     //Add Checksum value to the end of the ACK frame
-    RemoveEndChar(acknowledge_frame); //
-    sprintf(fullAckFrame + strlen(fullAckFrame), "%c%c*\0",CRCresult[0],CRCresult[1]);
-    send_string("Acknowledgement frame to be sent: ");  puts(fullAckFrame);
+    //send_string("Ack frame before remove function"); send_string(frame);
+    //RemoveEndChar(frame); //
+    //send_string("fullACK after removing *: ");    send_string(fullAckFrame);  send_string("\n");
+    sprintf(fullAckFrame, "%c%s%c%c%c\0",START_CHAR,TrimmedAckFrame,CRCresult[0],CRCresult[1],END_CHAR);
+    send_string("Acknowledgment frame to be sent: ");  send_string(fullAckFrame);  send_string("\n");
 }
 
 /**
