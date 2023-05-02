@@ -235,20 +235,19 @@ void Decode(void){
                 break;
             default:
                 send_string("Command character error\n");
-                frame_ready_flag = 0;
-                curr_state = RST;   //return to IDLE
+                goto exitToRST;
                 break;
         }
         curr_state = EXECUTE;
     }
     else{
+exitToRST:
         frame_ready_flag = 0;
         frame_index = 0;
         clear_buffer(frame_buffer);
         curr_state = RST;       //if frameID and hardID don't match IGNORE the frame
         //check
-    }
-    
+    }   
 }
 
 void Execute(void){  
