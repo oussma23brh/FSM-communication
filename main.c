@@ -294,14 +294,17 @@ void Execute(void){
         }
        
         /*ADC conversion result*/
-        char data_buffer[20];
-        sprintf(data_buffer,"%0.4x",ADC_result0);  data_buffer[4] = '\0';
-        uint8_t j=0;
+        char data_ch1[10],data_ch2[10],data_ch3[10],data_ch4[10];
+        sprintf(data_ch1,"%0.4x",ADC_result[0]);  data_ch1[4] = '\0';
+        sprintf(data_ch2,"%0.4x",ADC_result[1]);  data_ch2[4] = '\0';
+        sprintf(data_ch3,"%0.4x",ADC_result[2]);  data_ch3[4] = '\0';
+        sprintf(data_ch4,"%0.4x",ADC_result[3]);  data_ch4[4] = '\0';
         /*fill acknowledgment frame with ADC data*/
-        for(j=0;j<strlen(data_buffer);j++){
-            acknowledge_frame[i+j] = data_buffer[j];
-        }
-        acknowledge_frame[i+j] = '*';//add END_CHAR to acknowledgment frame
+        memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch1, strlen(data_ch1));
+        memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch2, strlen(data_ch2));
+        memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch3, strlen(data_ch3));
+        memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch4, strlen(data_ch4));
+        sprintf(acknowledge_frame + strlen(acknowledge_frame), "*\0");//add END_CHAR to acknowledgment frame
         get_flag = 0; //clear get flag at the end of operation
     /*BCAST TEST CMD*/    
     }else if(broadcast_test_flag){
