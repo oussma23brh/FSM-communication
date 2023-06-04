@@ -2,14 +2,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "110 mcc_generated_files/interrupt_manager.h
 [; ;mcc_generated_files/interrupt_manager.h: 110: void INTERRUPT_Initialize (void);
 [v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
-"182 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 182: void PIN_MANAGER_Initialize (void);
+"210 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 210: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "84 mcc_generated_files/mcc.h
 [; ;mcc_generated_files/mcc.h: 84: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"117 mcc_generated_files/eusart1.h
-[; ;mcc_generated_files/eusart1.h: 117: void EUSART1_Initialize(void);
+"118 mcc_generated_files/eusart1.h
+[; ;mcc_generated_files/eusart1.h: 118: void EUSART1_Initialize(void);
 [v _EUSART1_Initialize `(v ~T0 @X0 0 ef ]
 "16046 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 16046: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
@@ -801,7 +801,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _EUSART1_Initialize ..  ]
 "57
 [; ;mcc_generated_files/mcc.c: 57: }
-[e :UE 858 ]
+[e :UE 859 ]
 }
 "59
 [; ;mcc_generated_files/mcc.c: 59: void OSCILLATOR_Initialize(void)
@@ -812,8 +812,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _OSCILLATOR_Initialize ]
 [f ]
 "62
-[; ;mcc_generated_files/mcc.c: 62:     OSCCON = 0x60;
-[e = _OSCCON -> -> 96 `i `uc ]
+[; ;mcc_generated_files/mcc.c: 62:     OSCCON = 0x70;
+[e = _OSCCON -> -> 112 `i `uc ]
 "64
 [; ;mcc_generated_files/mcc.c: 64:     OSCCON2 = 0x04;
 [e = _OSCCON2 -> -> 4 `i `uc ]
@@ -822,5 +822,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _OSCTUNE -> -> 0 `i `uc ]
 "67
 [; ;mcc_generated_files/mcc.c: 67: }
-[e :UE 859 ]
+[e :UE 860 ]
 }

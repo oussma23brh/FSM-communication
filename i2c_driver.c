@@ -106,30 +106,24 @@ void i2c_driver_read_twobytes(uint8_t devaddr, uint8_t reg, uint16_t * data)
 {
   while (true)
   {
-      send_string("inside while\n");
     I2C1_MasterStart();
     I2C1_MasterSendTxData(devaddr);
     if (I2C1_MasterIsNack())
       continue;
-        send_string("after 1st nack\n");
     I2C1_MasterSendTxData(reg);
     if (I2C1_MasterIsNack())
       continue;
-    send_string("after 2st nack\n");
     I2C1_MasterEnableRestart();
 
     I2C1_MasterSendTxData(devaddr | 0x1);
     if (I2C1_MasterIsNack())
       continue;
-    send_string("after 3st nack\n");
     *data = (I2C1_MasterGetRxData(false) << 8);
     *data += I2C1_MasterGetRxData(true);
 
     break;
   }
-  send_string("before stop\n");
   I2C1_MasterStop();
-  send_string("after stop\n");
 }
 
 static inline void I2C1_WaitIdle(void)

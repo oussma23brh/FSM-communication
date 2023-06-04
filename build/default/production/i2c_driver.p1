@@ -1,94 +1,172 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"15834 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15834:     struct {
-[s S753 :1 `uc 1 ]
-[n S753 . NOT_BOR ]
-"15837
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15837:     struct {
-[s S754 :1 `uc 1 :1 `uc 1 ]
-[n S754 . . NOT_POR ]
-"15841
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15841:     struct {
-[s S755 :2 `uc 1 :1 `uc 1 ]
-[n S755 . . NOT_PD ]
-"15845
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15845:     struct {
-[s S756 :3 `uc 1 :1 `uc 1 ]
-[n S756 . . NOT_TO ]
-"15849
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15849:     struct {
-[s S757 :4 `uc 1 :1 `uc 1 ]
-[n S757 . . NOT_RI ]
-"15853
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15853:     struct {
-[s S758 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S758 . nBOR nPOR nPD nTO nRI . SBOREN IPEN ]
-"15863
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15863:     struct {
-[s S759 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S759 . BOR POR PD TO RI ]
-"15833
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15833: typedef union {
-[u S752 `S753 1 `S754 1 `S755 1 `S756 1 `S757 1 `S758 1 `S759 1 ]
-[n S752 . . . . . . . . ]
-"15871
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15871: extern volatile RCONbits_t RCONbits __attribute__((address(0xFD0)));
-[v _RCONbits `VS752 ~T0 @X0 0 e@4048 ]
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"16932
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 16932:     struct {
-[s S826 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S826 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"16942
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 16942:     struct {
-[s S827 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S827 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"16952
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 16952:     struct {
-[s S828 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S828 . . GIEL GIEH ]
-"16931
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 16931: typedef union {
-[u S825 `S826 1 `S827 1 `S828 1 ]
-[n S825 . . . . ]
-"16958
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 16958: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS825 ~T0 @X0 0 e@4082 ]
-"9420
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9420:     struct {
-[s S438 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S438 . TMR1IE TMR2IE CCP1IE SSP1IE TX1IE RC1IE ADIE ]
-"9429
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9429:     struct {
-[s S439 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S439 . . SSPIE TXIE RCIE ]
-"9419
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9419: typedef union {
-[u S437 `S438 1 `S439 1 ]
-[n S437 . . . ]
-"9436
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9436: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
-[v _PIE1bits `VS437 ~T0 @X0 0 e@3997 ]
-"9497
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9497:     struct {
-[s S441 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S441 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF ]
-"9506
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9506:     struct {
-[s S442 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S442 . . SSPIF TXIF RCIF ]
-"9496
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9496: typedef union {
-[u S440 `S441 1 `S442 1 ]
-[n S440 . . . ]
-"9513
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9513: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
-[v _PIR1bits `VS440 ~T0 @X0 0 e@3998 ]
-[v F6505 `(v ~T0 @X0 0 tf ]
-"96 mcc_generated_files/eusart1.h
-[; ;mcc_generated_files/eusart1.h: 96: extern void (*EUSART1_RxDefaultInterruptHandler)(void);
-[v _EUSART1_RxDefaultInterruptHandler `*F6505 ~T0 @X0 0 e ]
+"14375 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14375: extern volatile unsigned char SSP1STAT __attribute__((address(0xFC7)));
+[v _SSP1STAT `Vuc ~T0 @X0 0 e@4039 ]
+"14137
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14137: extern volatile unsigned char SSP1CON1 __attribute__((address(0xFC6)));
+[v _SSP1CON1 `Vuc ~T0 @X0 0 e@4038 ]
+"13783
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 13783: extern volatile unsigned char SSP1CON2 __attribute__((address(0xFC5)));
+[v _SSP1CON2 `Vuc ~T0 @X0 0 e@4037 ]
+"15005
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15005: extern volatile unsigned char SSP1ADD __attribute__((address(0xFC8)));
+[v _SSP1ADD `Vuc ~T0 @X0 0 e@4040 ]
+"14148
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14148:     struct {
+[s S671 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S671 . SSPM CKP SSPEN SSPOV WCOL ]
+"14155
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14155:     struct {
+[s S672 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S672 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"14161
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14161:     struct {
+[s S673 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S673 . SSPM01 SSPM11 SSPM21 SSPM31 CKP1 SSPEN1 SSPOV1 WCOL1 ]
+"14147
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14147: typedef union {
+[u S670 `S671 1 `S672 1 `S673 1 ]
+[n S670 . . . . ]
+"14172
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14172: extern volatile SSP1CON1bits_t SSP1CON1bits __attribute__((address(0xFC6)));
+[v _SSP1CON1bits `VS670 ~T0 @X0 0 e@4038 ]
+[v F6556 `(v ~T0 @X0 1 tf ]
+"10 i2c_driver.c
+[; ;i2c_driver.c: 10: static __attribute__((inline)) void I2C1_MasterStart(void);
+[v _I2C1_MasterStart `TF6556 ~T0 @X0 0 s ]
+[v F6562 `(v ~T0 @X0 1 tf1`uc ]
+"13
+[; ;i2c_driver.c: 13: static __attribute__((inline)) void I2C1_MasterSendTxData(uint8_t data);
+[v _I2C1_MasterSendTxData `TF6562 ~T0 @X0 0 s ]
+[v F6572 `(a ~T0 @X0 1 tf ]
+"17
+[; ;i2c_driver.c: 17: static __attribute__((inline)) _Bool I2C1_MasterIsNack(void);
+[v _I2C1_MasterIsNack `TF6572 ~T0 @X0 0 s ]
+[v F6560 `(v ~T0 @X0 1 tf ]
+"12
+[; ;i2c_driver.c: 12: static __attribute__((inline)) void I2C1_MasterStop(void);
+[v _I2C1_MasterStop `TF6560 ~T0 @X0 0 s ]
+[v F6558 `(v ~T0 @X0 1 tf ]
+"11
+[; ;i2c_driver.c: 11: static __attribute__((inline)) void I2C1_MasterEnableRestart(void);
+[v _I2C1_MasterEnableRestart `TF6558 ~T0 @X0 0 s ]
+[v F6565 `(uc ~T0 @X0 1 tf1`uc ]
+"14
+[; ;i2c_driver.c: 14: static __attribute__((inline)) uint8_t I2C1_MasterGetRxData(uint8_t ack);
+[v _I2C1_MasterGetRxData `TF6565 ~T0 @X0 0 s ]
+"14386 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14386:     struct {
+[s S679 :2 `uc 1 :1 `uc 1 ]
+[n S679 . . R_NOT_W ]
+"14390
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14390:     struct {
+[s S680 :5 `uc 1 :1 `uc 1 ]
+[n S680 . . D_NOT_A ]
+"14394
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14394:     struct {
+[s S681 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S681 . BF UA R_nW S P D_nA CKE SMP ]
+"14404
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14404:     struct {
+[s S682 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S682 . . R . D ]
+"14410
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14410:     struct {
+[s S683 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S683 . . W . A ]
+"14416
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14416:     struct {
+[s S684 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S684 . . nW . nA ]
+"14422
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14422:     struct {
+[s S685 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S685 . . R_W . D_A ]
+"14428
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14428:     struct {
+[s S686 :2 `uc 1 :1 `uc 1 ]
+[n S686 . . NOT_WRITE ]
+"14432
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14432:     struct {
+[s S687 :5 `uc 1 :1 `uc 1 ]
+[n S687 . . NOT_ADDRESS ]
+"14436
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14436:     struct {
+[s S688 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S688 . . nWRITE . nADDRESS ]
+"14442
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14442:     struct {
+[s S689 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S689 . BF1 UA1 I2C_READ I2C_START I2C_STOP DA CKE1 SMP1 ]
+"14452
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14452:     struct {
+[s S690 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S690 . . READ_WRITE START STOP DA1 ]
+"14459
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14459:     struct {
+[s S691 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S691 . . RW START1 STOP1 DATA_ADDRESS ]
+"14466
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14466:     struct {
+[s S692 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S692 . . RW1 . I2C_DAT ]
+"14472
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14472:     struct {
+[s S693 :2 `uc 1 :1 `uc 1 ]
+[n S693 . . NOT_W ]
+"14476
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14476:     struct {
+[s S694 :5 `uc 1 :1 `uc 1 ]
+[n S694 . . NOT_A ]
+"14385
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14385: typedef union {
+[u S678 `S679 1 `S680 1 `S681 1 `S682 1 `S683 1 `S684 1 `S685 1 `S686 1 `S687 1 `S688 1 `S689 1 `S690 1 `S691 1 `S692 1 `S693 1 `S694 1 ]
+[n S678 . . . . . . . . . . . . . . . . . ]
+"14481
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 14481: extern volatile SSP1STATbits_t SSP1STATbits __attribute__((address(0xFC7)));
+[v _SSP1STATbits `VS678 ~T0 @X0 0 e@4039 ]
+"13794
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 13794:     struct {
+[s S661 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S661 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
+"13804
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 13804:     struct {
+[s S662 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S662 . SEN1 ADMSK1 ADMSK2 ADMSK3 ACKEN1 ACKDT1 ACKSTAT1 GCEN1 ]
+"13814
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 13814:     struct {
+[s S663 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S663 . . ADMSK11 ADMSK21 ADMSK31 ADMSK4 ADMSK5 ]
+"13822
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 13822:     struct {
+[s S664 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S664 . . RSEN1 PEN1 RCEN1 ADMSK41 ADMSK51 ]
+"13793
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 13793: typedef union {
+[u S660 `S661 1 `S662 1 `S663 1 `S664 1 ]
+[n S660 . . . . . ]
+"13831
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 13831: extern volatile SSP1CON2bits_t SSP1CON2bits __attribute__((address(0xFC5)));
+[v _SSP1CON2bits `VS660 ~T0 @X0 0 e@4037 ]
+"15259
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15259: extern volatile unsigned char SSP1BUF __attribute__((address(0xFC9)));
+[v _SSP1BUF `Vuc ~T0 @X0 0 e@4041 ]
+[v F6568 `(v ~T0 @X0 1 tf ]
+"15 i2c_driver.c
+[; ;i2c_driver.c: 15: static __attribute__((inline)) void I2C1_MasterStartRx(void);
+[v _I2C1_MasterStartRx `TF6568 ~T0 @X0 0 s ]
+[v F6577 `(a ~T0 @X0 1 tf ]
+"19
+[; ;i2c_driver.c: 19: static __attribute__((inline)) _Bool I2C1_MasterIsRxBufFull(void);
+[v _I2C1_MasterIsRxBufFull `TF6577 ~T0 @X0 0 s ]
+[v F6570 `(v ~T0 @X0 1 tf ]
+"16
+[; ;i2c_driver.c: 16: static __attribute__((inline)) void I2C1_MasterStopRx(void);
+[v _I2C1_MasterStopRx `TF6570 ~T0 @X0 0 s ]
+[v F6574 `(v ~T0 @X0 1 tf1`uc ]
+"18
+[; ;i2c_driver.c: 18: static __attribute__((inline)) void I2C1_MasterSendNack(uint8_t ack);
+[v _I2C1_MasterSendNack `TF6574 ~T0 @X0 0 s ]
 "54 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -848,74 +926,587 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17406
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 17406: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"52 mcc_generated_files/interrupt_manager.c
-[; ;mcc_generated_files/interrupt_manager.c: 52: void INTERRUPT_Initialize (void)
-[v _INTERRUPT_Initialize `(v ~T0 @X0 1 ef ]
-"53
-[; ;mcc_generated_files/interrupt_manager.c: 53: {
+"22 i2c_driver.c
+[; ;i2c_driver.c: 22: void i2c_driver_init(void)
+[v _i2c_driver_init `(v ~T0 @X0 1 ef ]
+"23
+[; ;i2c_driver.c: 23: {
 {
-[e :U _INTERRUPT_Initialize ]
+[e :U _i2c_driver_init ]
 [f ]
-"55
-[; ;mcc_generated_files/interrupt_manager.c: 55:     RCONbits.IPEN = 0;
-[e = . . _RCONbits 5 7 -> -> 0 `i `uc ]
-"56
-[; ;mcc_generated_files/interrupt_manager.c: 56: }
+"24
+[; ;i2c_driver.c: 24:     SSP1STAT = 0x00;
+[e = _SSP1STAT -> -> 0 `i `uc ]
+"25
+[; ;i2c_driver.c: 25:     SSP1CON1 = 0x08;
+[e = _SSP1CON1 -> -> 8 `i `uc ]
+"26
+[; ;i2c_driver.c: 26:     SSP1CON2 = 0x00;
+[e = _SSP1CON2 -> -> 0 `i `uc ]
+"27
+[; ;i2c_driver.c: 27:     SSP1ADD = 0x27;
+[e = _SSP1ADD -> -> 39 `i `uc ]
+"28
+[; ;i2c_driver.c: 28:     SSP1CON1bits.SSPEN = 1;
+[e = . . _SSP1CON1bits 0 2 -> -> 1 `i `uc ]
+"29
+[; ;i2c_driver.c: 29: }
 [e :UE 859 ]
 }
-[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
-"58
-[; ;mcc_generated_files/interrupt_manager.c: 58: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
-[v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
-"59
-[; ;mcc_generated_files/interrupt_manager.c: 59: {
+"31
+[; ;i2c_driver.c: 31: void i2c_driver_write_byte(uint8_t devaddr, uint8_t reg, uint8_t data)
+[v _i2c_driver_write_byte `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+"32
+[; ;i2c_driver.c: 32: {
 {
-[e :U _INTERRUPT_InterruptManager ]
+[e :U _i2c_driver_write_byte ]
+"31
+[; ;i2c_driver.c: 31: void i2c_driver_write_byte(uint8_t devaddr, uint8_t reg, uint8_t data)
+[v _devaddr `uc ~T0 @X0 1 r1 ]
+[v _reg `uc ~T0 @X0 1 r2 ]
+[v _data `uc ~T0 @X0 1 r3 ]
+"32
+[; ;i2c_driver.c: 32: {
 [f ]
-"61
-[; ;mcc_generated_files/interrupt_manager.c: 61:     if(INTCONbits.PEIE == 1)
-[e $ ! == -> . . _INTCONbits 1 6 `i -> 1 `i 861  ]
-"62
-[; ;mcc_generated_files/interrupt_manager.c: 62:     {
-{
-"63
-[; ;mcc_generated_files/interrupt_manager.c: 63:         if(PIE1bits.RC1IE == 1 && PIR1bits.RC1IF == 1)
-[e $ ! && == -> . . _PIE1bits 0 5 `i -> 1 `i == -> . . _PIR1bits 0 5 `i -> 1 `i 862  ]
-"64
-[; ;mcc_generated_files/interrupt_manager.c: 64:         {
-{
-"65
-[; ;mcc_generated_files/interrupt_manager.c: 65:             EUSART1_RxDefaultInterruptHandler();
-[e ( *U _EUSART1_RxDefaultInterruptHandler ..  ]
-"66
-[; ;mcc_generated_files/interrupt_manager.c: 66:         }
-}
-[e $U 863  ]
-"67
-[; ;mcc_generated_files/interrupt_manager.c: 67:         else
+"33
+[; ;i2c_driver.c: 33:   while (1)
 [e :U 862 ]
-"68
-[; ;mcc_generated_files/interrupt_manager.c: 68:         {
+"34
+[; ;i2c_driver.c: 34:   {
 {
-"70
-[; ;mcc_generated_files/interrupt_manager.c: 70:         }
-}
-[e :U 863 ]
-"71
-[; ;mcc_generated_files/interrupt_manager.c: 71:     }
-}
-[e $U 864  ]
-"72
-[; ;mcc_generated_files/interrupt_manager.c: 72:     else
-[e :U 861 ]
-"73
-[; ;mcc_generated_files/interrupt_manager.c: 73:     {
-{
-"75
-[; ;mcc_generated_files/interrupt_manager.c: 75:     }
-}
+"35
+[; ;i2c_driver.c: 35:     I2C1_MasterStart();
+[e ( _I2C1_MasterStart ..  ]
+"36
+[; ;i2c_driver.c: 36:     I2C1_MasterSendTxData(devaddr);
+[e ( _I2C1_MasterSendTxData (1 _devaddr ]
+"37
+[; ;i2c_driver.c: 37:     if (I2C1_MasterIsNack())
+[e $ ! != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 864  ]
+"38
+[; ;i2c_driver.c: 38:       continue;
+[e $U 861  ]
 [e :U 864 ]
-"76
-[; ;mcc_generated_files/interrupt_manager.c: 76: }
+"40
+[; ;i2c_driver.c: 40:     I2C1_MasterSendTxData(reg);
+[e ( _I2C1_MasterSendTxData (1 _reg ]
+"41
+[; ;i2c_driver.c: 41:     if (I2C1_MasterIsNack())
+[e $ ! != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 865  ]
+"42
+[; ;i2c_driver.c: 42:       continue;
+[e $U 861  ]
+[e :U 865 ]
+"44
+[; ;i2c_driver.c: 44:     I2C1_MasterSendTxData(data);
+[e ( _I2C1_MasterSendTxData (1 _data ]
+"45
+[; ;i2c_driver.c: 45:     if (I2C1_MasterIsNack())
+[e $ ! != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 866  ]
+"46
+[; ;i2c_driver.c: 46:       continue;
+[e $U 861  ]
+[e :U 866 ]
+"48
+[; ;i2c_driver.c: 48:     break;
+[e $U 863  ]
+"49
+[; ;i2c_driver.c: 49:   }
+}
+[e :U 861 ]
+[e $U 862  ]
+[e :U 863 ]
+"50
+[; ;i2c_driver.c: 50:   I2C1_MasterStop();
+[e ( _I2C1_MasterStop ..  ]
+"51
+[; ;i2c_driver.c: 51: }
 [e :UE 860 ]
+}
+"53
+[; ;i2c_driver.c: 53: void i2c_driver_write_twobytes(uint8_t devaddr, uint8_t reg, uint16_t data)
+[v _i2c_driver_write_twobytes `(v ~T0 @X0 1 ef3`uc`uc`us ]
+"54
+[; ;i2c_driver.c: 54: {
+{
+[e :U _i2c_driver_write_twobytes ]
+"53
+[; ;i2c_driver.c: 53: void i2c_driver_write_twobytes(uint8_t devaddr, uint8_t reg, uint16_t data)
+[v _devaddr `uc ~T0 @X0 1 r1 ]
+[v _reg `uc ~T0 @X0 1 r2 ]
+[v _data `us ~T0 @X0 1 r3 ]
+"54
+[; ;i2c_driver.c: 54: {
+[f ]
+"55
+[; ;i2c_driver.c: 55:   while (1)
+[e :U 869 ]
+"56
+[; ;i2c_driver.c: 56:   {
+{
+"57
+[; ;i2c_driver.c: 57:     I2C1_MasterStart();
+[e ( _I2C1_MasterStart ..  ]
+"58
+[; ;i2c_driver.c: 58:     I2C1_MasterSendTxData(devaddr);
+[e ( _I2C1_MasterSendTxData (1 _devaddr ]
+"59
+[; ;i2c_driver.c: 59:     if (I2C1_MasterIsNack())
+[e $ ! != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 871  ]
+"60
+[; ;i2c_driver.c: 60:       continue;
+[e $U 868  ]
+[e :U 871 ]
+"62
+[; ;i2c_driver.c: 62:     I2C1_MasterSendTxData(reg);
+[e ( _I2C1_MasterSendTxData (1 _reg ]
+"63
+[; ;i2c_driver.c: 63:     if (I2C1_MasterIsNack())
+[e $ ! != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 872  ]
+"64
+[; ;i2c_driver.c: 64:       continue;
+[e $U 868  ]
+[e :U 872 ]
+"66
+[; ;i2c_driver.c: 66:     I2C1_MasterSendTxData((data >> 8) & 0x00FF);
+[e ( _I2C1_MasterSendTxData (1 -> & >> -> _data `ui -> 8 `i -> -> 255 `i `ui `uc ]
+"67
+[; ;i2c_driver.c: 67:     if (I2C1_MasterIsNack())
+[e $ ! != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 873  ]
+"68
+[; ;i2c_driver.c: 68:       continue;
+[e $U 868  ]
+[e :U 873 ]
+"70
+[; ;i2c_driver.c: 70:     I2C1_MasterSendTxData(data & 0x00FF);
+[e ( _I2C1_MasterSendTxData (1 -> & -> _data `ui -> -> 255 `i `ui `uc ]
+"71
+[; ;i2c_driver.c: 71:     if (I2C1_MasterIsNack())
+[e $ ! != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 874  ]
+"72
+[; ;i2c_driver.c: 72:       continue;
+[e $U 868  ]
+[e :U 874 ]
+"74
+[; ;i2c_driver.c: 74:     break;
+[e $U 870  ]
+"75
+[; ;i2c_driver.c: 75:   }
+}
+[e :U 868 ]
+[e $U 869  ]
+[e :U 870 ]
+"76
+[; ;i2c_driver.c: 76:   I2C1_MasterStop();
+[e ( _I2C1_MasterStop ..  ]
+"77
+[; ;i2c_driver.c: 77: }
+[e :UE 867 ]
+}
+"79
+[; ;i2c_driver.c: 79: void i2c_driver_read_byte(uint8_t devaddr, uint8_t reg, uint8_t * data)
+[v _i2c_driver_read_byte `(v ~T0 @X0 1 ef3`uc`uc`*uc ]
+"80
+[; ;i2c_driver.c: 80: {
+{
+[e :U _i2c_driver_read_byte ]
+"79
+[; ;i2c_driver.c: 79: void i2c_driver_read_byte(uint8_t devaddr, uint8_t reg, uint8_t * data)
+[v _devaddr `uc ~T0 @X0 1 r1 ]
+[v _reg `uc ~T0 @X0 1 r2 ]
+[v _data `*uc ~T0 @X0 1 r3 ]
+"80
+[; ;i2c_driver.c: 80: {
+[f ]
+"81
+[; ;i2c_driver.c: 81:   while (1)
+[e :U 877 ]
+"82
+[; ;i2c_driver.c: 82:   {
+{
+"83
+[; ;i2c_driver.c: 83:     I2C1_MasterStart();
+[e ( _I2C1_MasterStart ..  ]
+"84
+[; ;i2c_driver.c: 84:     I2C1_MasterSendTxData(devaddr);
+[e ( _I2C1_MasterSendTxData (1 _devaddr ]
+"85
+[; ;i2c_driver.c: 85:     if (I2C1_MasterIsNack())
+[e $ ! != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 879  ]
+"86
+[; ;i2c_driver.c: 86:       continue;
+[e $U 876  ]
+[e :U 879 ]
+"88
+[; ;i2c_driver.c: 88:     I2C1_MasterSendTxData(reg);
+[e ( _I2C1_MasterSendTxData (1 _reg ]
+"89
+[; ;i2c_driver.c: 89:     if (I2C1_MasterIsNack())
+[e $ ! != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 880  ]
+"90
+[; ;i2c_driver.c: 90:       continue;
+[e $U 876  ]
+[e :U 880 ]
+"92
+[; ;i2c_driver.c: 92:     I2C1_MasterEnableRestart();
+[e ( _I2C1_MasterEnableRestart ..  ]
+"94
+[; ;i2c_driver.c: 94:     I2C1_MasterSendTxData(devaddr | 0x1);
+[e ( _I2C1_MasterSendTxData (1 -> | -> _devaddr `i -> 1 `i `uc ]
+"95
+[; ;i2c_driver.c: 95:     if (I2C1_MasterIsNack())
+[e $ ! != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 881  ]
+"96
+[; ;i2c_driver.c: 96:       continue;
+[e $U 876  ]
+[e :U 881 ]
+"98
+[; ;i2c_driver.c: 98:     *data = I2C1_MasterGetRxData(1);
+[e = *U _data ( _I2C1_MasterGetRxData (1 -> -> 1 `i `uc ]
+"100
+[; ;i2c_driver.c: 100:     break;
+[e $U 878  ]
+"101
+[; ;i2c_driver.c: 101:   }
+}
+[e :U 876 ]
+[e $U 877  ]
+[e :U 878 ]
+"102
+[; ;i2c_driver.c: 102:   I2C1_MasterStop();
+[e ( _I2C1_MasterStop ..  ]
+"103
+[; ;i2c_driver.c: 103: }
+[e :UE 875 ]
+}
+"105
+[; ;i2c_driver.c: 105: void i2c_driver_read_twobytes(uint8_t devaddr, uint8_t reg, uint16_t * data)
+[v _i2c_driver_read_twobytes `(v ~T0 @X0 1 ef3`uc`uc`*us ]
+"106
+[; ;i2c_driver.c: 106: {
+{
+[e :U _i2c_driver_read_twobytes ]
+"105
+[; ;i2c_driver.c: 105: void i2c_driver_read_twobytes(uint8_t devaddr, uint8_t reg, uint16_t * data)
+[v _devaddr `uc ~T0 @X0 1 r1 ]
+[v _reg `uc ~T0 @X0 1 r2 ]
+[v _data `*us ~T0 @X0 1 r3 ]
+"106
+[; ;i2c_driver.c: 106: {
+[f ]
+"107
+[; ;i2c_driver.c: 107:   while (1)
+[e :U 884 ]
+"108
+[; ;i2c_driver.c: 108:   {
+{
+"109
+[; ;i2c_driver.c: 109:     I2C1_MasterStart();
+[e ( _I2C1_MasterStart ..  ]
+"110
+[; ;i2c_driver.c: 110:     I2C1_MasterSendTxData(devaddr);
+[e ( _I2C1_MasterSendTxData (1 _devaddr ]
+"111
+[; ;i2c_driver.c: 111:     if (I2C1_MasterIsNack())
+[e $ ! != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 886  ]
+"112
+[; ;i2c_driver.c: 112:       continue;
+[e $U 883  ]
+[e :U 886 ]
+"113
+[; ;i2c_driver.c: 113:     I2C1_MasterSendTxData(reg);
+[e ( _I2C1_MasterSendTxData (1 _reg ]
+"114
+[; ;i2c_driver.c: 114:     if (I2C1_MasterIsNack())
+[e $ ! != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 887  ]
+"115
+[; ;i2c_driver.c: 115:       continue;
+[e $U 883  ]
+[e :U 887 ]
+"116
+[; ;i2c_driver.c: 116:     I2C1_MasterEnableRestart();
+[e ( _I2C1_MasterEnableRestart ..  ]
+"118
+[; ;i2c_driver.c: 118:     I2C1_MasterSendTxData(devaddr | 0x1);
+[e ( _I2C1_MasterSendTxData (1 -> | -> _devaddr `i -> 1 `i `uc ]
+"119
+[; ;i2c_driver.c: 119:     if (I2C1_MasterIsNack())
+[e $ ! != -> ( _I2C1_MasterIsNack ..  `i -> 0 `i 888  ]
+"120
+[; ;i2c_driver.c: 120:       continue;
+[e $U 883  ]
+[e :U 888 ]
+"121
+[; ;i2c_driver.c: 121:     *data = (I2C1_MasterGetRxData(0) << 8);
+[e = *U _data -> << -> ( _I2C1_MasterGetRxData (1 -> -> 0 `i `uc `i -> 8 `i `us ]
+"122
+[; ;i2c_driver.c: 122:     *data += I2C1_MasterGetRxData(1);
+[e =+ *U _data -> ( _I2C1_MasterGetRxData (1 -> -> 1 `i `uc `us ]
+"124
+[; ;i2c_driver.c: 124:     break;
+[e $U 885  ]
+"125
+[; ;i2c_driver.c: 125:   }
+}
+[e :U 883 ]
+[e $U 884  ]
+[e :U 885 ]
+"126
+[; ;i2c_driver.c: 126:   I2C1_MasterStop();
+[e ( _I2C1_MasterStop ..  ]
+"127
+[; ;i2c_driver.c: 127: }
+[e :UE 882 ]
+}
+[v F6596 `(v ~T0 @X0 1 tf ]
+"129
+[; ;i2c_driver.c: 129: static __attribute__((inline)) void I2C1_WaitIdle(void)
+[v _I2C1_WaitIdle `TF6596 ~T0 @X0 1 s ]
+"130
+[; ;i2c_driver.c: 130: {
+{
+[e :U _I2C1_WaitIdle ]
+[f ]
+"132
+[; ;i2c_driver.c: 132:   while ((SSP1STATbits.RW) || (SSP1CON2bits.SEN) ||
+[e $U 890  ]
+[e :U 891 ]
+"134
+[; ;i2c_driver.c: 134:          (SSP1CON2bits.RCEN) || (SSP1CON2bits.ACKEN) != 0) {}
+{
+}
+[e :U 890 ]
+"132
+[; ;i2c_driver.c: 132:   while ((SSP1STATbits.RW) || (SSP1CON2bits.SEN) ||
+[e $ || || || || || != -> . . _SSP1STATbits 12 1 `i -> 0 `i != -> . . _SSP1CON2bits 0 0 `i -> 0 `i != -> . . _SSP1CON2bits 0 1 `i -> 0 `i != -> . . _SSP1CON2bits 0 2 `i -> 0 `i != -> . . _SSP1CON2bits 0 3 `i -> 0 `i != -> . . _SSP1CON2bits 0 4 `i -> 0 `i 891  ]
+[e :U 892 ]
+"136
+[; ;i2c_driver.c: 136: }
+[e :UE 889 ]
+}
+[v F6598 `(v ~T0 @X0 1 tf ]
+"138
+[; ;i2c_driver.c: 138: static __attribute__((inline)) void I2C1_MasterStart(void)
+[v _I2C1_MasterStart `TF6598 ~T0 @X0 1 s ]
+"139
+[; ;i2c_driver.c: 139: {
+{
+[e :U _I2C1_MasterStart ]
+[f ]
+"140
+[; ;i2c_driver.c: 140:     I2C1_WaitIdle();
+[e ( _I2C1_WaitIdle ..  ]
+"141
+[; ;i2c_driver.c: 141:     SSP1CON2bits.SEN = 1;
+[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
+"142
+[; ;i2c_driver.c: 142: }
+[e :UE 893 ]
+}
+[v F6600 `(v ~T0 @X0 1 tf ]
+"144
+[; ;i2c_driver.c: 144: static __attribute__((inline)) void I2C1_MasterEnableRestart(void)
+[v _I2C1_MasterEnableRestart `TF6600 ~T0 @X0 1 s ]
+"145
+[; ;i2c_driver.c: 145: {
+{
+[e :U _I2C1_MasterEnableRestart ]
+[f ]
+"146
+[; ;i2c_driver.c: 146:     I2C1_WaitIdle();
+[e ( _I2C1_WaitIdle ..  ]
+"147
+[; ;i2c_driver.c: 147:     SSP1CON2bits.RSEN = 1;
+[e = . . _SSP1CON2bits 0 1 -> -> 1 `i `uc ]
+"148
+[; ;i2c_driver.c: 148: }
+[e :UE 894 ]
+}
+[v F6602 `(v ~T0 @X0 1 tf ]
+"150
+[; ;i2c_driver.c: 150: static __attribute__((inline)) void I2C1_MasterStop(void)
+[v _I2C1_MasterStop `TF6602 ~T0 @X0 1 s ]
+"151
+[; ;i2c_driver.c: 151: {
+{
+[e :U _I2C1_MasterStop ]
+[f ]
+"152
+[; ;i2c_driver.c: 152:     I2C1_WaitIdle();
+[e ( _I2C1_WaitIdle ..  ]
+"153
+[; ;i2c_driver.c: 153:     SSP1CON2bits.PEN = 1;
+[e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
+"154
+[; ;i2c_driver.c: 154: }
+[e :UE 895 ]
+}
+[v F6604 `(v ~T0 @X0 1 tf1`uc ]
+"156
+[; ;i2c_driver.c: 156: static __attribute__((inline)) void I2C1_MasterSendTxData(uint8_t data)
+[v _I2C1_MasterSendTxData `TF6604 ~T0 @X0 1 s ]
+"157
+[; ;i2c_driver.c: 157: {
+{
+[e :U _I2C1_MasterSendTxData ]
+"156
+[; ;i2c_driver.c: 156: static __attribute__((inline)) void I2C1_MasterSendTxData(uint8_t data)
+[v _data `uc ~T0 @X0 1 r1 ]
+"157
+[; ;i2c_driver.c: 157: {
+[f ]
+"158
+[; ;i2c_driver.c: 158:     I2C1_WaitIdle();
+[e ( _I2C1_WaitIdle ..  ]
+"159
+[; ;i2c_driver.c: 159:     SSP1BUF = data;
+[e = _SSP1BUF _data ]
+"160
+[; ;i2c_driver.c: 160: }
+[e :UE 896 ]
+}
+[v F6607 `(uc ~T0 @X0 1 tf1`uc ]
+"161
+[; ;i2c_driver.c: 161: static __attribute__((inline)) uint8_t I2C1_MasterGetRxData(uint8_t ack)
+[v _I2C1_MasterGetRxData `TF6607 ~T0 @X0 1 s ]
+"162
+[; ;i2c_driver.c: 162: {
+{
+[e :U _I2C1_MasterGetRxData ]
+"161
+[; ;i2c_driver.c: 161: static __attribute__((inline)) uint8_t I2C1_MasterGetRxData(uint8_t ack)
+[v _ack `uc ~T0 @X0 1 r1 ]
+"162
+[; ;i2c_driver.c: 162: {
+[f ]
+"163
+[; ;i2c_driver.c: 163:     uint8_t b;
+[v _b `uc ~T0 @X0 1 a ]
+"165
+[; ;i2c_driver.c: 165:     I2C1_WaitIdle();
+[e ( _I2C1_WaitIdle ..  ]
+"166
+[; ;i2c_driver.c: 166:     I2C1_MasterStartRx();
+[e ( _I2C1_MasterStartRx ..  ]
+"167
+[; ;i2c_driver.c: 167:     while (!I2C1_MasterIsRxBufFull()) {}
+[e $U 898  ]
+[e :U 899 ]
+{
+}
+[e :U 898 ]
+[e $ ! != -> ( _I2C1_MasterIsRxBufFull ..  `i -> 0 `i 899  ]
+[e :U 900 ]
+"169
+[; ;i2c_driver.c: 169:     b = SSP1BUF;
+[e = _b _SSP1BUF ]
+"170
+[; ;i2c_driver.c: 170:     I2C1_MasterStopRx();
+[e ( _I2C1_MasterStopRx ..  ]
+"171
+[; ;i2c_driver.c: 171:     I2C1_MasterSendNack(ack);
+[e ( _I2C1_MasterSendNack (1 _ack ]
+"172
+[; ;i2c_driver.c: 172:     return b;
+[e ) _b ]
+[e $UE 897  ]
+"173
+[; ;i2c_driver.c: 173: }
+[e :UE 897 ]
+}
+[v F6611 `(v ~T0 @X0 1 tf ]
+"190
+[; ;i2c_driver.c: 190: static __attribute__((inline)) void I2C1_MasterStartRx(void)
+[v _I2C1_MasterStartRx `TF6611 ~T0 @X0 1 s ]
+"191
+[; ;i2c_driver.c: 191: {
+{
+[e :U _I2C1_MasterStartRx ]
+[f ]
+"192
+[; ;i2c_driver.c: 192:     SSP1CON2bits.RCEN = 1;
+[e = . . _SSP1CON2bits 0 3 -> -> 1 `i `uc ]
+"193
+[; ;i2c_driver.c: 193: }
+[e :UE 901 ]
+}
+[v F6613 `(v ~T0 @X0 1 tf ]
+"195
+[; ;i2c_driver.c: 195: static __attribute__((inline)) void I2C1_MasterStopRx(void)
+[v _I2C1_MasterStopRx `TF6613 ~T0 @X0 1 s ]
+"196
+[; ;i2c_driver.c: 196: {
+{
+[e :U _I2C1_MasterStopRx ]
+[f ]
+"197
+[; ;i2c_driver.c: 197:     SSP1CON2bits.RCEN = 0;
+[e = . . _SSP1CON2bits 0 3 -> -> 0 `i `uc ]
+"198
+[; ;i2c_driver.c: 198: }
+[e :UE 902 ]
+}
+[v F6615 `(a ~T0 @X0 1 tf ]
+"201
+[; ;i2c_driver.c: 201: static __attribute__((inline)) _Bool I2C1_MasterIsNack(void)
+[v _I2C1_MasterIsNack `TF6615 ~T0 @X0 1 s ]
+"202
+[; ;i2c_driver.c: 202: {
+{
+[e :U _I2C1_MasterIsNack ]
+[f ]
+"203
+[; ;i2c_driver.c: 203:   I2C1_WaitIdle();
+[e ( _I2C1_WaitIdle ..  ]
+"204
+[; ;i2c_driver.c: 204:   return SSP1CON2bits.ACKSTAT;
+[e ) -> . . _SSP1CON2bits 0 6 `a ]
+[e $UE 903  ]
+"205
+[; ;i2c_driver.c: 205: }
+[e :UE 903 ]
+}
+[v F6617 `(v ~T0 @X0 1 tf1`uc ]
+"207
+[; ;i2c_driver.c: 207: static __attribute__((inline)) void I2C1_MasterSendNack(uint8_t ack)
+[v _I2C1_MasterSendNack `TF6617 ~T0 @X0 1 s ]
+"208
+[; ;i2c_driver.c: 208: {
+{
+[e :U _I2C1_MasterSendNack ]
+"207
+[; ;i2c_driver.c: 207: static __attribute__((inline)) void I2C1_MasterSendNack(uint8_t ack)
+[v _ack `uc ~T0 @X0 1 r1 ]
+"208
+[; ;i2c_driver.c: 208: {
+[f ]
+"209
+[; ;i2c_driver.c: 209:     SSP1CON2bits.ACKDT = ack;
+[e = . . _SSP1CON2bits 0 5 _ack ]
+"210
+[; ;i2c_driver.c: 210:     I2C1_WaitIdle();
+[e ( _I2C1_WaitIdle ..  ]
+"211
+[; ;i2c_driver.c: 211:     SSP1CON2bits.ACKEN = 1;
+[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
+"212
+[; ;i2c_driver.c: 212: }
+[e :UE 904 ]
+}
+[v F6620 `(a ~T0 @X0 1 tf ]
+"214
+[; ;i2c_driver.c: 214: static __attribute__((inline)) _Bool I2C1_MasterIsRxBufFull(void)
+[v _I2C1_MasterIsRxBufFull `TF6620 ~T0 @X0 1 s ]
+"215
+[; ;i2c_driver.c: 215: {
+{
+[e :U _I2C1_MasterIsRxBufFull ]
+[f ]
+"216
+[; ;i2c_driver.c: 216:     return SSP1STATbits.BF;
+[e ) -> . . _SSP1STATbits 2 0 `a ]
+[e $UE 905  ]
+"217
+[; ;i2c_driver.c: 217: }
+[e :UE 905 ]
 }

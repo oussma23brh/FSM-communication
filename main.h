@@ -35,6 +35,7 @@ extern "C" {
 #define GET_CMD    'g'
 #define BCAST_TEST 't'
 #define END_CHAR   '*'
+#define MAX_BUFFER_SIZE 20
 
 
 /*prototypes*/
@@ -91,13 +92,13 @@ int add_digit_1,add_digit_2;
 char command;
 uint8_t command_index;
 //array to store content of the received frame
-char frame_buffer[20];
+char frame_buffer[MAX_BUFFER_SIZE];
 //index for the frame buffer
 int frame_index;
 //store ADC conversion result
-char fullAckFrame[20];// Acknowledgement frame to be sent as handshake
-char TrimmedFrame[10]; // received frame trimmed of start and end characters and CRC
-char TrimmedAckFrame[20];//Trimmed Acknowledge frame
+char fullAckFrame[MAX_BUFFER_SIZE];// Acknowledgement frame to be sent as handshake
+char TrimmedFrame[MAX_BUFFER_SIZE]; // received frame trimmed of start and end characters and CRC
+char TrimmedAckFrame[MAX_BUFFER_SIZE];//Trimmed Acknowledge frame
 char FrameCheckSum[3]; //Checksum value received from the frame
 char CRCresult[2];// CRC result calculated from received frame
 

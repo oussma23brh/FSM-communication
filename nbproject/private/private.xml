@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/mcc_generated_files/eusart1.c</file>
-            <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/mcc_generated_files/eusart1.h</file>
+            <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/ADC_driver.h</file>
             <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/main.c</file>
+            <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/ADC_driver.c</file>
             <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/main.h</file>
+            <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/i2c_driver.c</file>
+            <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/mcc_generated_files/interrupt_manager.c</file>
+            <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/i2c_driver.h</file>
         </group>
     </open-files>
 </project-private>

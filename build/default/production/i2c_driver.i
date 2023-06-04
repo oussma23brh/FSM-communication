@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/eusart1.c"
+# 1 "i2c_driver.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/eusart1.c" 2
-# 46 "mcc_generated_files/eusart1.c"
-# 1 "mcc_generated_files/eusart1.h" 1
-# 54 "mcc_generated_files/eusart1.h"
+# 1 "i2c_driver.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9644,10 +9641,40 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\xc.h" 2 3
-# 54 "mcc_generated_files/eusart1.h" 2
+# 1 "i2c_driver.c" 2
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdbool.h" 1 3
-# 55 "mcc_generated_files/eusart1.h" 2
+# 3 "i2c_driver.c" 2
+
+# 1 "./i2c_driver.h" 1
+# 14 "./i2c_driver.h"
+void i2c_driver_init(void);
+void i2c_driver_write_byte(uint8_t devaddr, uint8_t reg, uint8_t data);
+void i2c_driver_write_twobytes(uint8_t devaddr, uint8_t reg, uint16_t data);
+void i2c_driver_read_byte(uint8_t devaddr, uint8_t reg, uint8_t * data);
+void i2c_driver_read_twobytes(uint8_t devaddr, uint8_t reg, uint16_t * data);
+# 4 "i2c_driver.c" 2
+
+# 1 "./mcc_generated_files/mcc.h" 1
+# 50 "./mcc_generated_files/mcc.h"
+# 1 "./mcc_generated_files/device_config.h" 1
+# 50 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/pin_manager.h" 1
+# 210 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 222 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 51 "./mcc_generated_files/mcc.h" 2
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\conio.h" 1 3
+
+
+
+
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 1 3
@@ -9794,8 +9821,16 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 57 "mcc_generated_files/eusart1.h" 2
+# 7 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\conio.h" 2 3
+# 54 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 110 "./mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 55 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/eusart1.h" 1
+# 58 "./mcc_generated_files/eusart1.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -9851,8 +9886,8 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 58 "mcc_generated_files/eusart1.h" 2
-# 77 "mcc_generated_files/eusart1.h"
+# 58 "./mcc_generated_files/eusart1.h" 2
+# 77 "./mcc_generated_files/eusart1.h"
 typedef union {
     struct {
         unsigned perr : 1;
@@ -9873,232 +9908,235 @@ extern volatile uint8_t eusart1RxCount;
 
 
 extern void (*EUSART1_RxDefaultInterruptHandler)(void);
-# 118 "mcc_generated_files/eusart1.h"
+# 118 "./mcc_generated_files/eusart1.h"
 void EUSART1_Initialize(void);
 
 void send_string(const char *message);
-# 168 "mcc_generated_files/eusart1.h"
+# 168 "./mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_tx_ready(void);
-# 216 "mcc_generated_files/eusart1.h"
+# 216 "./mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_rx_ready(void);
-# 263 "mcc_generated_files/eusart1.h"
+# 263 "./mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_tx_done(void);
-# 311 "mcc_generated_files/eusart1.h"
+# 311 "./mcc_generated_files/eusart1.h"
 eusart1_status_t EUSART1_get_last_status(void);
-# 331 "mcc_generated_files/eusart1.h"
+# 331 "./mcc_generated_files/eusart1.h"
 uint8_t EUSART1_Read(void);
-# 351 "mcc_generated_files/eusart1.h"
+# 351 "./mcc_generated_files/eusart1.h"
 void EUSART1_Write(uint8_t txData);
-# 373 "mcc_generated_files/eusart1.h"
+# 373 "./mcc_generated_files/eusart1.h"
 void EUSART1_Receive_ISR(void);
-# 394 "mcc_generated_files/eusart1.h"
+# 394 "./mcc_generated_files/eusart1.h"
 void EUSART1_RxDataHandler(void);
-# 412 "mcc_generated_files/eusart1.h"
+# 412 "./mcc_generated_files/eusart1.h"
 void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 430 "mcc_generated_files/eusart1.h"
+# 430 "./mcc_generated_files/eusart1.h"
 void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 448 "mcc_generated_files/eusart1.h"
+# 448 "./mcc_generated_files/eusart1.h"
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
-# 469 "mcc_generated_files/eusart1.h"
+# 469 "./mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 46 "mcc_generated_files/eusart1.c" 2
-
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 210 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 222 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 47 "mcc_generated_files/eusart1.c" 2
-# 60 "mcc_generated_files/eusart1.c"
-volatile uint8_t eusart1RxHead = 0;
-volatile uint8_t eusart1RxTail = 0;
-volatile uint8_t eusart1RxBuffer[8];
-volatile eusart1_status_t eusart1RxStatusBuffer[8];
-volatile uint8_t eusart1RxCount;
-volatile eusart1_status_t eusart1RxLastError;
+# 56 "./mcc_generated_files/mcc.h" 2
+# 71 "./mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+# 84 "./mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 5 "i2c_driver.c" 2
 
 
 
 
-void (*EUSART1_RxDefaultInterruptHandler)(void);
+static __attribute__((inline)) void I2C1_WaitIdle(void);
+static __attribute__((inline)) void I2C1_MasterStart(void);
+static __attribute__((inline)) void I2C1_MasterEnableRestart(void);
+static __attribute__((inline)) void I2C1_MasterStop(void);
+static __attribute__((inline)) void I2C1_MasterSendTxData(uint8_t data);
+static __attribute__((inline)) uint8_t I2C1_MasterGetRxData(uint8_t ack);
+static __attribute__((inline)) void I2C1_MasterStartRx(void);
+static __attribute__((inline)) void I2C1_MasterStopRx(void);
+static __attribute__((inline)) _Bool I2C1_MasterIsNack(void);
+static __attribute__((inline)) void I2C1_MasterSendNack(uint8_t ack);
+static __attribute__((inline)) _Bool I2C1_MasterIsRxBufFull(void);
 
-void (*EUSART1_FramingErrorHandler)(void);
-void (*EUSART1_OverrunErrorHandler)(void);
-void (*EUSART1_ErrorHandler)(void);
 
-void EUSART1_DefaultFramingErrorHandler(void);
-void EUSART1_DefaultOverrunErrorHandler(void);
-void EUSART1_DefaultErrorHandler(void);
+void i2c_driver_init(void)
+{
+    SSP1STAT = 0x00;
+    SSP1CON1 = 0x08;
+    SSP1CON2 = 0x00;
+    SSP1ADD = 0x27;
+    SSP1CON1bits.SSPEN = 1;
+}
 
-void EUSART1_Initialize(void)
+void i2c_driver_write_byte(uint8_t devaddr, uint8_t reg, uint8_t data)
+{
+  while (1)
+  {
+    I2C1_MasterStart();
+    I2C1_MasterSendTxData(devaddr);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    I2C1_MasterSendTxData(reg);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    I2C1_MasterSendTxData(data);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    break;
+  }
+  I2C1_MasterStop();
+}
+
+void i2c_driver_write_twobytes(uint8_t devaddr, uint8_t reg, uint16_t data)
+{
+  while (1)
+  {
+    I2C1_MasterStart();
+    I2C1_MasterSendTxData(devaddr);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    I2C1_MasterSendTxData(reg);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    I2C1_MasterSendTxData((data >> 8) & 0x00FF);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    I2C1_MasterSendTxData(data & 0x00FF);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    break;
+  }
+  I2C1_MasterStop();
+}
+
+void i2c_driver_read_byte(uint8_t devaddr, uint8_t reg, uint8_t * data)
+{
+  while (1)
+  {
+    I2C1_MasterStart();
+    I2C1_MasterSendTxData(devaddr);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    I2C1_MasterSendTxData(reg);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    I2C1_MasterEnableRestart();
+
+    I2C1_MasterSendTxData(devaddr | 0x1);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    *data = I2C1_MasterGetRxData(1);
+
+    break;
+  }
+  I2C1_MasterStop();
+}
+
+void i2c_driver_read_twobytes(uint8_t devaddr, uint8_t reg, uint16_t * data)
+{
+  while (1)
+  {
+    I2C1_MasterStart();
+    I2C1_MasterSendTxData(devaddr);
+    if (I2C1_MasterIsNack())
+      continue;
+    I2C1_MasterSendTxData(reg);
+    if (I2C1_MasterIsNack())
+      continue;
+    I2C1_MasterEnableRestart();
+
+    I2C1_MasterSendTxData(devaddr | 0x1);
+    if (I2C1_MasterIsNack())
+      continue;
+    *data = (I2C1_MasterGetRxData(0) << 8);
+    *data += I2C1_MasterGetRxData(1);
+
+    break;
+  }
+  I2C1_MasterStop();
+}
+
+static __attribute__((inline)) void I2C1_WaitIdle(void)
 {
 
-    PIE1bits.RC1IE = 0;
-    EUSART1_SetRxInterruptHandler(EUSART1_Receive_ISR);
+  while ((SSP1STATbits.RW) || (SSP1CON2bits.SEN) ||
+         (SSP1CON2bits.RSEN) || (SSP1CON2bits.PEN) ||
+         (SSP1CON2bits.RCEN) || (SSP1CON2bits.ACKEN) != 0) {}
 
-
-
-    BAUDCON1 = 0x08;
-
-
-    RCSTA1 = 0x90;
-
-
-    TXSTA1 = 0x24;
-
-
-    SPBRG1 = 0xCF;
-
-
-    SPBRGH1 = 0x00;
-
-
-    EUSART1_SetFramingErrorHandler(EUSART1_DefaultFramingErrorHandler);
-    EUSART1_SetOverrunErrorHandler(EUSART1_DefaultOverrunErrorHandler);
-    EUSART1_SetErrorHandler(EUSART1_DefaultErrorHandler);
-
-    eusart1RxLastError.status = 0;
-
-
-    eusart1RxHead = 0;
-    eusart1RxTail = 0;
-    eusart1RxCount = 0;
-
-
-    PIE1bits.RC1IE = 1;
 }
 
-_Bool EUSART1_is_tx_ready(void)
+static __attribute__((inline)) void I2C1_MasterStart(void)
 {
-    return (_Bool)(PIR1bits.TX1IF && TXSTA1bits.TXEN);
+    I2C1_WaitIdle();
+    SSP1CON2bits.SEN = 1;
 }
 
-_Bool EUSART1_is_rx_ready(void)
+static __attribute__((inline)) void I2C1_MasterEnableRestart(void)
 {
-    return (eusart1RxCount ? 1 : 0);
+    I2C1_WaitIdle();
+    SSP1CON2bits.RSEN = 1;
 }
 
-_Bool EUSART1_is_tx_done(void)
+static __attribute__((inline)) void I2C1_MasterStop(void)
 {
-    return TXSTA1bits.TRMT;
+    I2C1_WaitIdle();
+    SSP1CON2bits.PEN = 1;
 }
 
-eusart1_status_t EUSART1_get_last_status(void){
-    return eusart1RxLastError;
-}
-
-uint8_t EUSART1_Read(void)
+static __attribute__((inline)) void I2C1_MasterSendTxData(uint8_t data)
 {
-    while(!PIR1bits.RC1IF)
-    {
-    }
-
-    eusart1RxLastError.status = 0;
-
-    if(1 == RCSTA1bits.OERR)
-    {
-
-
-        RCSTA1bits.CREN = 0;
-        RCSTA1bits.CREN = 1;
-    }
-
-    return RCREG1;
+    I2C1_WaitIdle();
+    SSP1BUF = data;
 }
-
-
-void EUSART1_Write(uint8_t txData)
+static __attribute__((inline)) uint8_t I2C1_MasterGetRxData(uint8_t ack)
 {
-    TXREG1 = txData;
-    while(0 == TXSTA1bits.TRMT)
-    {
-    }
+    uint8_t b;
 
+    I2C1_WaitIdle();
+    I2C1_MasterStartRx();
+    while (!I2C1_MasterIsRxBufFull()) {}
+
+    b = SSP1BUF;
+    I2C1_MasterStopRx();
+    I2C1_MasterSendNack(ack);
+    return b;
 }
-
-char getch(void)
+# 190 "i2c_driver.c"
+static __attribute__((inline)) void I2C1_MasterStartRx(void)
 {
-    return EUSART1_Read();
+    SSP1CON2bits.RCEN = 1;
 }
 
-void putch(char txData)
+static __attribute__((inline)) void I2C1_MasterStopRx(void)
 {
-    EUSART1_Write(txData);
+    SSP1CON2bits.RCEN = 0;
 }
 
 
-void EUSART1_Receive_ISR(void)
+static __attribute__((inline)) _Bool I2C1_MasterIsNack(void)
 {
-
-    eusart1RxStatusBuffer[eusart1RxHead].status = 0;
-
-    if(RCSTA1bits.FERR){
-        eusart1RxStatusBuffer[eusart1RxHead].ferr = 1;
-        EUSART1_FramingErrorHandler();
-    }
-
-    if(RCSTA1bits.OERR){
-        eusart1RxStatusBuffer[eusart1RxHead].oerr = 1;
-        EUSART1_OverrunErrorHandler();
-    }
-
-    if(eusart1RxStatusBuffer[eusart1RxHead].status){
-        EUSART1_ErrorHandler();
-    } else {
-        EUSART1_RxDataHandler();
-    }
-
-
+  I2C1_WaitIdle();
+  return SSP1CON2bits.ACKSTAT;
 }
 
-void EUSART1_RxDataHandler(void){
-
-    eusart1RxBuffer[eusart1RxHead++] = RCREG1;
-    if(sizeof(eusart1RxBuffer) <= eusart1RxHead)
-    {
-        eusart1RxHead = 0;
-    }
-    eusart1RxCount++;
+static __attribute__((inline)) void I2C1_MasterSendNack(uint8_t ack)
+{
+    SSP1CON2bits.ACKDT = ack;
+    I2C1_WaitIdle();
+    SSP1CON2bits.ACKEN = 1;
 }
 
-void EUSART1_DefaultFramingErrorHandler(void){}
-
-void EUSART1_DefaultOverrunErrorHandler(void){
-
-
-    RCSTA1bits.CREN = 0;
-    RCSTA1bits.CREN = 1;
-
-}
-
-void EUSART1_DefaultErrorHandler(void){
-    EUSART1_RxDataHandler();
-}
-
-void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void)){
-    EUSART1_FramingErrorHandler = interruptHandler;
-}
-
-void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void)){
-    EUSART1_OverrunErrorHandler = interruptHandler;
-}
-
-void EUSART1_SetErrorHandler(void (* interruptHandler)(void)){
-    EUSART1_ErrorHandler = interruptHandler;
-}
-
-
-void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void)){
-    EUSART1_RxDefaultInterruptHandler = interruptHandler;
-}
-
-
-void send_string(const char *message){
-    do { LATEbits.LATE0 = 1; } while(0);
-    uint16_t i;
-    for(i=0;i<strlen(message);i++){
-        while(!EUSART1_is_tx_ready());
-        EUSART1_Write(message[i]);
-    }
-    do { LATEbits.LATE0 = 0; } while(0);
+static __attribute__((inline)) _Bool I2C1_MasterIsRxBufFull(void)
+{
+    return SSP1STATbits.BF;
 }

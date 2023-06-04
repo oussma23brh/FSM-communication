@@ -1,94 +1,13 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"15834 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15834:     struct {
-[s S753 :1 `uc 1 ]
-[n S753 . NOT_BOR ]
-"15837
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15837:     struct {
-[s S754 :1 `uc 1 :1 `uc 1 ]
-[n S754 . . NOT_POR ]
-"15841
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15841:     struct {
-[s S755 :2 `uc 1 :1 `uc 1 ]
-[n S755 . . NOT_PD ]
-"15845
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15845:     struct {
-[s S756 :3 `uc 1 :1 `uc 1 ]
-[n S756 . . NOT_TO ]
-"15849
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15849:     struct {
-[s S757 :4 `uc 1 :1 `uc 1 ]
-[n S757 . . NOT_RI ]
-"15853
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15853:     struct {
-[s S758 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S758 . nBOR nPOR nPD nTO nRI . SBOREN IPEN ]
-"15863
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15863:     struct {
-[s S759 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S759 . BOR POR PD TO RI ]
-"15833
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15833: typedef union {
-[u S752 `S753 1 `S754 1 `S755 1 `S756 1 `S757 1 `S758 1 `S759 1 ]
-[n S752 . . . . . . . . ]
-"15871
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 15871: extern volatile RCONbits_t RCONbits __attribute__((address(0xFD0)));
-[v _RCONbits `VS752 ~T0 @X0 0 e@4048 ]
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"16932
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 16932:     struct {
-[s S826 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S826 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"16942
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 16942:     struct {
-[s S827 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S827 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"16952
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 16952:     struct {
-[s S828 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S828 . . GIEL GIEH ]
-"16931
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 16931: typedef union {
-[u S825 `S826 1 `S827 1 `S828 1 ]
-[n S825 . . . . ]
-"16958
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 16958: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS825 ~T0 @X0 0 e@4082 ]
-"9420
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9420:     struct {
-[s S438 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S438 . TMR1IE TMR2IE CCP1IE SSP1IE TX1IE RC1IE ADIE ]
-"9429
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9429:     struct {
-[s S439 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S439 . . SSPIE TXIE RCIE ]
-"9419
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9419: typedef union {
-[u S437 `S438 1 `S439 1 ]
-[n S437 . . . ]
-"9436
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9436: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
-[v _PIE1bits `VS437 ~T0 @X0 0 e@3997 ]
-"9497
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9497:     struct {
-[s S441 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S441 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF ]
-"9506
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9506:     struct {
-[s S442 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S442 . . SSPIF TXIF RCIF ]
-"9496
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9496: typedef union {
-[u S440 `S441 1 `S442 1 ]
-[n S440 . . . ]
-"9513
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 9513: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
-[v _PIR1bits `VS440 ~T0 @X0 0 e@3998 ]
-[v F6505 `(v ~T0 @X0 0 tf ]
-"96 mcc_generated_files/eusart1.h
-[; ;mcc_generated_files/eusart1.h: 96: extern void (*EUSART1_RxDefaultInterruptHandler)(void);
-[v _EUSART1_RxDefaultInterruptHandler `*F6505 ~T0 @X0 0 e ]
+"15 ./i2c_driver.h
+[; ;./i2c_driver.h: 15: void i2c_driver_write_byte(uint8_t devaddr, uint8_t reg, uint8_t data);
+[v _i2c_driver_write_byte `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"17
+[; ;./i2c_driver.h: 17: void i2c_driver_read_byte(uint8_t devaddr, uint8_t reg, uint8_t * data);
+[v _i2c_driver_read_byte `(v ~T0 @X0 0 ef3`uc`uc`*uc ]
+"18
+[; ;./i2c_driver.h: 18: void i2c_driver_read_twobytes(uint8_t devaddr, uint8_t reg, uint16_t * data);
+[v _i2c_driver_read_twobytes `(v ~T0 @X0 0 ef3`uc`uc`*us ]
 "54 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -848,74 +767,111 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17406
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 17406: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"52 mcc_generated_files/interrupt_manager.c
-[; ;mcc_generated_files/interrupt_manager.c: 52: void INTERRUPT_Initialize (void)
-[v _INTERRUPT_Initialize `(v ~T0 @X0 1 ef ]
+"47 ./ADC_driver.h
+[; ;./ADC_driver.h: 47: uint16_t ADC_result0 = 0x0FFF;
+[v _ADC_result0 `us ~T0 @X0 1 e ]
+[i _ADC_result0
+-> -> 4095 `i `us
+]
+"48
+[; ;./ADC_driver.h: 48: uint16_t ADC_result[4];
+[v _ADC_result `us ~T0 @X0 -> 4 `i e ]
+"49
+[; ;./ADC_driver.h: 49: double SC_voltage = 0;
+[v _SC_voltage `d ~T0 @X0 1 e ]
+[i _SC_voltage
+-> -> 0 `i `d
+]
+"50
+[; ;./ADC_driver.h: 50: double voltage = 0;
+[v _voltage `d ~T0 @X0 1 e ]
+[i _voltage
+-> -> 0 `i `d
+]
+"51
+[; ;./ADC_driver.h: 51: char ResultBuffer[15];
+[v _ResultBuffer `uc ~T0 @X0 -> 15 `i e ]
+"52
+[; ;./ADC_driver.h: 52: char DigitalBuffer[20];
+[v _DigitalBuffer `uc ~T0 @X0 -> 20 `i e ]
 "53
-[; ;mcc_generated_files/interrupt_manager.c: 53: {
+[; ;./ADC_driver.h: 53: char SCBuffer[20];
+[v _SCBuffer `uc ~T0 @X0 -> 20 `i e ]
+"7 ADC_driver.c
+[; ;ADC_driver.c: 7: void ADC_init(void){
+[v _ADC_init `(v ~T0 @X0 1 ef ]
 {
-[e :U _INTERRUPT_Initialize ]
+[e :U _ADC_init ]
 [f ]
-"55
-[; ;mcc_generated_files/interrupt_manager.c: 55:     RCONbits.IPEN = 0;
-[e = . . _RCONbits 5 7 -> -> 0 `i `uc ]
-"56
-[; ;mcc_generated_files/interrupt_manager.c: 56: }
-[e :UE 859 ]
+"8
+[; ;ADC_driver.c: 8:     i2c_driver_write_byte(0x40, 0x19, 0x0F);
+[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 25 `i `uc -> -> 15 `i `uc ]
+"9
+[; ;ADC_driver.c: 9:     i2c_driver_write_byte(0x40, 0x14, 0x02);
+[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 20 `i `uc -> -> 2 `i `uc ]
+"10
+[; ;ADC_driver.c: 10: }
+[e :UE 854 ]
 }
-[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
-"58
-[; ;mcc_generated_files/interrupt_manager.c: 58: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
-[v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
-"59
-[; ;mcc_generated_files/interrupt_manager.c: 59: {
+"13
+[; ;ADC_driver.c: 13: void ADC_reset(void){
+[v _ADC_reset `(v ~T0 @X0 1 ef ]
 {
-[e :U _INTERRUPT_InterruptManager ]
+[e :U _ADC_reset ]
 [f ]
-"61
-[; ;mcc_generated_files/interrupt_manager.c: 61:     if(INTCONbits.PEIE == 1)
-[e $ ! == -> . . _INTCONbits 1 6 `i -> 1 `i 861  ]
-"62
-[; ;mcc_generated_files/interrupt_manager.c: 62:     {
-{
-"63
-[; ;mcc_generated_files/interrupt_manager.c: 63:         if(PIE1bits.RC1IE == 1 && PIR1bits.RC1IF == 1)
-[e $ ! && == -> . . _PIE1bits 0 5 `i -> 1 `i == -> . . _PIR1bits 0 5 `i -> 1 `i 862  ]
-"64
-[; ;mcc_generated_files/interrupt_manager.c: 64:         {
-{
-"65
-[; ;mcc_generated_files/interrupt_manager.c: 65:             EUSART1_RxDefaultInterruptHandler();
-[e ( *U _EUSART1_RxDefaultInterruptHandler ..  ]
-"66
-[; ;mcc_generated_files/interrupt_manager.c: 66:         }
+"14
+[; ;ADC_driver.c: 14:     i2c_driver_write_byte(0x40,0x14,0x80);
+[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 20 `i `uc -> -> 128 `i `uc ]
+"16
+[; ;ADC_driver.c: 16: }
+[e :UE 855 ]
 }
-[e $U 863  ]
-"67
-[; ;mcc_generated_files/interrupt_manager.c: 67:         else
-[e :U 862 ]
-"68
-[; ;mcc_generated_files/interrupt_manager.c: 68:         {
+"19
+[; ;ADC_driver.c: 19: void ADC_read(void){
+[v _ADC_read `(v ~T0 @X0 1 ef ]
 {
-"70
-[; ;mcc_generated_files/interrupt_manager.c: 70:         }
-}
-[e :U 863 ]
-"71
-[; ;mcc_generated_files/interrupt_manager.c: 71:     }
-}
-[e $U 864  ]
-"72
-[; ;mcc_generated_files/interrupt_manager.c: 72:     else
-[e :U 861 ]
-"73
-[; ;mcc_generated_files/interrupt_manager.c: 73:     {
+[e :U _ADC_read ]
+[f ]
+"20
+[; ;ADC_driver.c: 20:     i2c_driver_write_byte(0x40, 0x14, 0x02);
+[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 20 `i `uc -> -> 2 `i `uc ]
+"21
+[; ;ADC_driver.c: 21:     i2c_driver_write_byte(0x40,0x1C, 0x00);
+[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 28 `i `uc -> -> 0 `i `uc ]
+"22
+[; ;ADC_driver.c: 22:     uint8_t ADC_data[2];
+[v _ADC_data `uc ~T0 @X0 -> 2 `i a ]
+"24
+[; ;ADC_driver.c: 24:     uint8_t busy_status;
+[v _busy_status `uc ~T0 @X0 1 a ]
+"25
+[; ;ADC_driver.c: 25:     do{
+[e :U 859 ]
 {
-"75
-[; ;mcc_generated_files/interrupt_manager.c: 75:     }
+"26
+[; ;ADC_driver.c: 26:         i2c_driver_read_byte(0x40,0x10,&busy_status);
+[e ( _i2c_driver_read_byte (3 , , -> -> 64 `i `uc -> -> 16 `i `uc &U _busy_status ]
+"27
+[; ;ADC_driver.c: 27:     }while(busy_status & (1<<7) !=0);
 }
-[e :U 864 ]
-"76
-[; ;mcc_generated_files/interrupt_manager.c: 76: }
-[e :UE 860 ]
+[e $ != & -> _busy_status `i -> != << -> 1 `i -> 7 `i -> 0 `i `i -> 0 `i 859  ]
+[e :U 858 ]
+"28
+[; ;ADC_driver.c: 28:     i2c_driver_write_byte(0x40, 0x14, 0x00);
+[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 20 `i `uc -> -> 0 `i `uc ]
+"31
+[; ;ADC_driver.c: 31:     i2c_driver_read_twobytes(0x40, 0x20, &ADC_result[0]);
+[e ( _i2c_driver_read_twobytes (3 , , -> -> 64 `i `uc -> -> 32 `i `uc &U *U + &U _ADC_result * -> -> -> 0 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux ]
+"34
+[; ;ADC_driver.c: 34:     i2c_driver_read_twobytes(0x40, 0x21, &ADC_result[1]);
+[e ( _i2c_driver_read_twobytes (3 , , -> -> 64 `i `uc -> -> 33 `i `uc &U *U + &U _ADC_result * -> -> -> 1 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux ]
+"37
+[; ;ADC_driver.c: 37:     i2c_driver_read_twobytes(0x40, 0x22, &ADC_result[2]);
+[e ( _i2c_driver_read_twobytes (3 , , -> -> 64 `i `uc -> -> 34 `i `uc &U *U + &U _ADC_result * -> -> -> 2 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux ]
+"40
+[; ;ADC_driver.c: 40:     i2c_driver_read_twobytes(0x40, 0x23, &ADC_result[3]);
+[e ( _i2c_driver_read_twobytes (3 , , -> -> 64 `i `uc -> -> 35 `i `uc &U *U + &U _ADC_result * -> -> -> 3 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux ]
+"43
+[; ;ADC_driver.c: 43: }
+[e :UE 856 ]
 }

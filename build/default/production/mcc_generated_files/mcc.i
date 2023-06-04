@@ -9650,9 +9650,9 @@ unsigned char __t3rd16on(void);
 # 50 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 182 "mcc_generated_files/pin_manager.h"
+# 210 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 194 "mcc_generated_files/pin_manager.h"
+# 222 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "mcc_generated_files/mcc.h" 2
 
@@ -9820,7 +9820,64 @@ void INTERRUPT_Initialize (void);
 # 55 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/eusart1.h" 1
-# 76 "mcc_generated_files/eusart1.h"
+# 58 "mcc_generated_files/eusart1.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 2 3
+
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+# 65 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 58 "mcc_generated_files/eusart1.h" 2
+# 77 "mcc_generated_files/eusart1.h"
 typedef union {
     struct {
         unsigned perr : 1;
@@ -9841,31 +9898,33 @@ extern volatile uint8_t eusart1RxCount;
 
 
 extern void (*EUSART1_RxDefaultInterruptHandler)(void);
-# 117 "mcc_generated_files/eusart1.h"
+# 118 "mcc_generated_files/eusart1.h"
 void EUSART1_Initialize(void);
-# 165 "mcc_generated_files/eusart1.h"
+
+void send_string(const char *message);
+# 168 "mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_tx_ready(void);
-# 213 "mcc_generated_files/eusart1.h"
+# 216 "mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_rx_ready(void);
-# 260 "mcc_generated_files/eusart1.h"
+# 263 "mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_tx_done(void);
-# 308 "mcc_generated_files/eusart1.h"
+# 311 "mcc_generated_files/eusart1.h"
 eusart1_status_t EUSART1_get_last_status(void);
-# 328 "mcc_generated_files/eusart1.h"
+# 331 "mcc_generated_files/eusart1.h"
 uint8_t EUSART1_Read(void);
-# 348 "mcc_generated_files/eusart1.h"
+# 351 "mcc_generated_files/eusart1.h"
 void EUSART1_Write(uint8_t txData);
-# 370 "mcc_generated_files/eusart1.h"
+# 373 "mcc_generated_files/eusart1.h"
 void EUSART1_Receive_ISR(void);
-# 391 "mcc_generated_files/eusart1.h"
+# 394 "mcc_generated_files/eusart1.h"
 void EUSART1_RxDataHandler(void);
-# 409 "mcc_generated_files/eusart1.h"
+# 412 "mcc_generated_files/eusart1.h"
 void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 427 "mcc_generated_files/eusart1.h"
+# 430 "mcc_generated_files/eusart1.h"
 void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 445 "mcc_generated_files/eusart1.h"
+# 448 "mcc_generated_files/eusart1.h"
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
-# 466 "mcc_generated_files/eusart1.h"
+# 469 "mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
 # 56 "mcc_generated_files/mcc.h" 2
 # 71 "mcc_generated_files/mcc.h"
@@ -9888,7 +9947,7 @@ void SYSTEM_Initialize(void)
 void OSCILLATOR_Initialize(void)
 {
 
-    OSCCON = 0x60;
+    OSCCON = 0x70;
 
     OSCCON2 = 0x04;
 
