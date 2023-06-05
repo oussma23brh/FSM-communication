@@ -1,41 +1,41 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "67 ./main.h
 [; ;./main.h: 67: UART_state frame_state;
-[c E7013 0 1 2 .. ]
-[n E7013 . SETUP IDLE PARSING  ]
+[c E7011 0 1 2 .. ]
+[n E7011 . SETUP IDLE PARSING  ]
 "70
 [; ;./main.h: 70: comm_mode destination, prev_destination = UNICAST;
-[c E7019 0 1 2 .. ]
-[n E7019 . BROADCAST UNICAST MULTICAST  ]
-[v F7035 `(v ~T0 @X0 0 t? ]
+[c E7017 0 1 2 .. ]
+[n E7017 . BROADCAST UNICAST MULTICAST  ]
+[v F7033 `(v ~T0 @X0 0 t? ]
 "46
 [; ;./main.h: 46: void Idle(void);
 [v _Idle `(v ~T0 @X0 0 ef ]
-[v F7036 `(v ~T0 @X0 0 t? ]
+[v F7034 `(v ~T0 @X0 0 t? ]
 "47
 [; ;./main.h: 47: void ReceivedFrameChecksum(void);
 [v _ReceivedFrameChecksum `(v ~T0 @X0 0 ef ]
-[v F7038 `(v ~T0 @X0 0 t? ]
+[v F7036 `(v ~T0 @X0 0 t? ]
 "48
 [; ;./main.h: 48: void Destination_Check(void);
 [v _Destination_Check `(v ~T0 @X0 0 ef ]
-[v F7040 `(v ~T0 @X0 0 t? ]
+[v F7038 `(v ~T0 @X0 0 t? ]
 "49
 [; ;./main.h: 49: void Parse(void);
 [v _Parse `(v ~T0 @X0 0 ef ]
-[v F7042 `(v ~T0 @X0 0 t? ]
+[v F7040 `(v ~T0 @X0 0 t? ]
 "50
 [; ;./main.h: 50: void Decode(void);
 [v _Decode `(v ~T0 @X0 0 ef ]
-[v F7044 `(v ~T0 @X0 0 t? ]
+[v F7042 `(v ~T0 @X0 0 t? ]
 "51
 [; ;./main.h: 51: void Execute(void);
 [v _Execute `(v ~T0 @X0 0 ef ]
-[v F7046 `(v ~T0 @X0 0 t? ]
+[v F7044 `(v ~T0 @X0 0 t? ]
 "76
 [; ;./main.h: 76: State_Type curr_state ;
-[c E7026 0 1 2 3 4 5 .. ]
-[n E7026 . RST ERROR_CHECK DEST_CHK PARSE DECODE EXECUTE  ]
+[c E7024 0 1 2 3 4 5 .. ]
+[n E7024 . RST ERROR_CHECK DEST_CHK PARSE DECODE EXECUTE  ]
 [p mainexit ]
 "71 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
@@ -98,11 +98,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\string.h: 54: size_t strlen (const char *);
 [v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
 "55 ./main.h
-[; ;./main.h: 55: void TrimFrame(char* receivedFrame);
-[v _TrimFrame `(v ~T0 @X0 0 ef1`*uc ]
+[; ;./main.h: 55: void TrimFrame(void);
+[v _TrimFrame `(v ~T0 @X0 0 ef ]
 "57
-[; ;./main.h: 57: void GetChecksumValue(char *receivedFrame);
-[v _GetChecksumValue `(v ~T0 @X0 0 ef1`*uc ]
+[; ;./main.h: 57: void GetChecksumValue(void);
+[v _GetChecksumValue `(v ~T0 @X0 0 ef ]
 "34 C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\stdlib.h
 [; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\stdlib.h: 34: long strtol (const char *restrict, char **restrict, int);
 [v _strtol `(l ~T0 @X0 0 ef3`*Cuc`**uc`i ]
@@ -1012,30 +1012,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _SCBuffer `uc ~T0 @X0 -> 20 `i e ]
 "67 ./main.h
 [; ;./main.h: 67: UART_state frame_state;
-[v _frame_state `E7013 ~T0 @X0 1 e ]
+[v _frame_state `E7011 ~T0 @X0 1 e ]
 "70
 [; ;./main.h: 70: comm_mode destination, prev_destination = UNICAST;
-[v _destination `E7019 ~T0 @X0 1 e ]
-[v _prev_destination `E7019 ~T0 @X0 1 e ]
+[v _destination `E7017 ~T0 @X0 1 e ]
+[v _prev_destination `E7017 ~T0 @X0 1 e ]
 [i _prev_destination
-. `E7019 1
+. `E7017 1
 ]
 "74
 [; ;./main.h: 74: void (*function_table [])() = { Idle , ReceivedFrameChecksum, Destination_Check , Parse , Decode , Execute };
-[v _function_table `*F7035 ~T0 @X0 -> 6 `i e ]
+[v _function_table `*F7033 ~T0 @X0 -> 6 `i e ]
 [i _function_table
 :U ..
--> &U _Idle `*F7036
--> &U _ReceivedFrameChecksum `*F7038
--> &U _Destination_Check `*F7040
--> &U _Parse `*F7042
--> &U _Decode `*F7044
--> &U _Execute `*F7046
+-> &U _Idle `*F7034
+-> &U _ReceivedFrameChecksum `*F7036
+-> &U _Destination_Check `*F7038
+-> &U _Parse `*F7040
+-> &U _Decode `*F7042
+-> &U _Execute `*F7044
 ..
 ]
 "76
 [; ;./main.h: 76: State_Type curr_state ;
-[v _curr_state `E7026 ~T0 @X0 1 e ]
+[v _curr_state `E7024 ~T0 @X0 1 e ]
 "80
 [; ;./main.h: 80: uint8_t read_flag=0;
 [v _read_flag `uc ~T0 @X0 1 e ]
@@ -1202,20 +1202,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _clear_buffer (1 &U _frame_buffer ]
 "90
 [; ;main.c: 90:                 frame_state = IDLE;
-[e = _frame_state . `E7013 1 ]
+[e = _frame_state . `E7011 1 ]
 "93
 [; ;main.c: 93:             case IDLE:
 [e :U 868 ]
 "94
-[; ;main.c: 94:                 if(frame_char == 's' ){
-[e $ ! == -> _frame_char `ui -> 115 `ui 869  ]
+[; ;main.c: 94:                 if(frame_char == '$' ){
+[e $ ! == -> _frame_char `ui -> 36 `ui 869  ]
 {
 "95
 [; ;main.c: 95:                     fill_buffer(frame_char);
 [e ( _fill_buffer (1 _frame_char ]
 "96
 [; ;main.c: 96:                     frame_state = PARSING;
-[e = _frame_state . `E7013 2 ]
+[e = _frame_state . `E7011 2 ]
 "97
 [; ;main.c: 97:                 }
 }
@@ -1229,7 +1229,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "102
 [; ;main.c: 102:                 if (frame_index >= 20) frame_state = SETUP;
 [e $ ! >= _frame_index -> 20 `i 871  ]
-[e = _frame_state . `E7013 0 ]
+[e = _frame_state . `E7011 0 ]
 [e :U 871 ]
 "103
 [; ;main.c: 103:                 fill_buffer(frame_char);
@@ -1246,10 +1246,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _fill_buffer (1 -> -> 0 `ui `uc ]
 "108
 [; ;main.c: 108:                     curr_state = ERROR_CHECK;
-[e = _curr_state . `E7026 1 ]
+[e = _curr_state . `E7024 1 ]
 "109
 [; ;main.c: 109:                     frame_state = SETUP;
-[e = _frame_state . `E7013 0 ]
+[e = _frame_state . `E7011 0 ]
 "110
 [; ;main.c: 110:                 }
 }
@@ -1262,9 +1262,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 865  ]
 [e :U 866 ]
-[e [\ -> _frame_state `ui , $ -> . `E7013 0 `ui 867
- , $ -> . `E7013 1 `ui 868
- , $ -> . `E7013 2 `ui 870
+[e [\ -> _frame_state `ui , $ -> . `E7011 0 `ui 867
+ , $ -> . `E7011 1 `ui 868
+ , $ -> . `E7011 2 `ui 870
  865 ]
 [e :U 865 ]
 "115
@@ -1279,19 +1279,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _buffer `*uc ~T0 @X0 1 r1 ]
 [f ]
 "119
-[; ;main.c: 119:     uint8_t i;
-[v _i `uc ~T0 @X0 1 a ]
-"120
-[; ;main.c: 120:     for(int i=0;i<strlen(buffer);i++){
-{
+[; ;main.c: 119:     int i;
 [v _i `i ~T0 @X0 1 a ]
+"120
+[; ;main.c: 120:     for(i=0;i<strlen(buffer);i++){
+{
 [e = _i -> 0 `i ]
 [e $U 877  ]
 [e :U 874 ]
 {
 "121
-[; ;main.c: 121:         buffer[i] = ((void*)0);
-[e = *U + _buffer * -> _i `x -> -> # *U _buffer `i `x -> -> -> 0 `i `*v `uc ]
+[; ;main.c: 121:         buffer[i] = '\0';
+[e = *U + _buffer * -> _i `x -> -> # *U _buffer `i `x -> -> 0 `ui `uc ]
 "122
 [; ;main.c: 122:     }
 }
@@ -1326,10 +1325,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "132
 [; ;main.c: 132:     curr_state = RST;
-[e = _curr_state . `E7026 0 ]
+[e = _curr_state . `E7024 0 ]
 "133
 [; ;main.c: 133:     frame_state = SETUP;
-[e = _frame_state . `E7013 0 ]
+[e = _frame_state . `E7011 0 ]
 "134
 [; ;main.c: 134: }
 [e :UE 879 ]
@@ -1349,7 +1348,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 883 ]
 "139
 [; ;main.c: 139:     curr_state = ERROR_CHECK;
-[e = _curr_state . `E7026 1 ]
+[e = _curr_state . `E7024 1 ]
 "140
 [; ;main.c: 140: }
 [e :UE 880 ]
@@ -1370,827 +1369,763 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 147:     clear_buffer(FrameCheckSum);
 [e ( _clear_buffer (1 &U _FrameCheckSum ]
 "148
-[; ;main.c: 148:     TrimFrame(frame_buffer);
-[e ( _TrimFrame (1 &U _frame_buffer ]
+[; ;main.c: 148:     TrimFrame();
+[e ( _TrimFrame ..  ]
 "151
-[; ;main.c: 151:     GetChecksumValue(frame_buffer);
-[e ( _GetChecksumValue (1 &U _frame_buffer ]
-"154
-[; ;main.c: 154:     int hexFrameCheckSum = (int)strtol(FrameCheckSum, ((void*)0), 16);
+[; ;main.c: 151:     GetChecksumValue();
+[e ( _GetChecksumValue ..  ]
+"155
+[; ;main.c: 155:     int hexFrameCheckSum = (int)strtol(FrameCheckSum, ((void*)0), 16);
 [v _hexFrameCheckSum `i ~T0 @X0 1 a ]
 [e = _hexFrameCheckSum -> ( _strtol (3 , , -> &U _FrameCheckSum `*Cuc -> -> -> 0 `i `*v `**uc -> 16 `i `i ]
-"156
-[; ;main.c: 156:     ChecksumCalc(TrimmedFrame);
-[e ( _ChecksumCalc (1 &U _TrimmedFrame ]
 "158
-[; ;main.c: 158:     int hexCRCresult = (int)strtol(CRCresult, ((void*)0), 16);
+[; ;main.c: 158:     ChecksumCalc(TrimmedFrame);
+[e ( _ChecksumCalc (1 &U _TrimmedFrame ]
+"160
+[; ;main.c: 160:     int hexCRCresult = (int)strtol(CRCresult, ((void*)0), 16);
 [v _hexCRCresult `i ~T0 @X0 1 a ]
 [e = _hexCRCresult -> ( _strtol (3 , , -> &U _CRCresult `*Cuc -> -> -> 0 `i `*v `**uc -> 16 `i `i ]
-"160
-[; ;main.c: 160:     if(hexCRCresult == hexFrameCheckSum){
+"162
+[; ;main.c: 162:     if(hexCRCresult == hexFrameCheckSum){
 [e $ ! == _hexCRCresult _hexFrameCheckSum 885  ]
 {
-"161
-[; ;main.c: 161:         send_string("No Error! Frame is valid.\n");
-[e ( _send_string (1 :s 4C ]
-"162
-[; ;main.c: 162:         curr_state = DEST_CHK;
-[e = _curr_state . `E7026 2 ]
 "163
-[; ;main.c: 163:     }
+[; ;main.c: 163:         send_string("No Error! Frame is valid.\n");
+[e ( _send_string (1 :s 4C ]
+"164
+[; ;main.c: 164:         curr_state = DEST_CHK;
+[e = _curr_state . `E7024 2 ]
+"165
+[; ;main.c: 165:     }
 }
 [e $U 886  ]
-"164
-[; ;main.c: 164:     else{
+"166
+[; ;main.c: 166:     else{
 [e :U 885 ]
 {
-"165
-[; ;main.c: 165:         send_string("Error! Ignore frame.\n");
-[e ( _send_string (1 :s 5C ]
-"166
-[; ;main.c: 166:         frame_ready_flag = 0;
-[e = _frame_ready_flag -> -> 0 `i `uc ]
 "167
-[; ;main.c: 167:         curr_state = RST;
-[e = _curr_state . `E7026 0 ]
+[; ;main.c: 167:         send_string("Error! Ignore frame.\n");
+[e ( _send_string (1 :s 5C ]
 "168
-[; ;main.c: 168:     }
+[; ;main.c: 168:         frame_ready_flag = 0;
+[e = _frame_ready_flag -> -> 0 `i `uc ]
+"169
+[; ;main.c: 169:         curr_state = RST;
+[e = _curr_state . `E7024 0 ]
+"170
+[; ;main.c: 170:     }
 }
 [e :U 886 ]
-"170
-[; ;main.c: 170: }
+"172
+[; ;main.c: 172: }
 [e :UE 884 ]
 }
-"173
-[; ;main.c: 173: void Destination_Check(void){
+"175
+[; ;main.c: 175: void Destination_Check(void){
 [v _Destination_Check `(v ~T0 @X0 1 ef ]
 {
 [e :U _Destination_Check ]
 [f ]
-"175
-[; ;main.c: 175:     switch(frame_buffer[1]){
+"177
+[; ;main.c: 177:     switch(frame_buffer[1]){
 [e $U 889  ]
 {
-"176
-[; ;main.c: 176:         case 'b':
+"178
+[; ;main.c: 178:         case 'B':
 [e :U 890 ]
-"177
-[; ;main.c: 177:             destination = BROADCAST;
-[e = _destination . `E7019 0 ]
 "179
-[; ;main.c: 179:             break;
-[e $U 888  ]
-"180
-[; ;main.c: 180:         case 'u':
-[e :U 891 ]
+[; ;main.c: 179:             destination = BROADCAST;
+[e = _destination . `E7017 0 ]
 "181
-[; ;main.c: 181:             destination = UNICAST;
-[e = _destination . `E7019 1 ]
+[; ;main.c: 181:             break;
+[e $U 888  ]
+"182
+[; ;main.c: 182:         case 'U':
+[e :U 891 ]
 "183
-[; ;main.c: 183:             break;
+[; ;main.c: 183:             destination = UNICAST;
+[e = _destination . `E7017 1 ]
+"185
+[; ;main.c: 185:             break;
 [e $U 888  ]
-"184
-[; ;main.c: 184:         default:
-[e :U 892 ]
 "186
-[; ;main.c: 186:             frame_ready_flag = 0;
-[e = _frame_ready_flag -> -> 0 `i `uc ]
-"187
-[; ;main.c: 187:             curr_state = RST;
-[e = _curr_state . `E7026 0 ]
+[; ;main.c: 186:         default:
+[e :U 892 ]
 "188
-[; ;main.c: 188:             break;
-[e $U 888  ]
+[; ;main.c: 188:             frame_ready_flag = 0;
+[e = _frame_ready_flag -> -> 0 `i `uc ]
 "189
-[; ;main.c: 189:     }
+[; ;main.c: 189:             curr_state = RST;
+[e = _curr_state . `E7024 0 ]
+"190
+[; ;main.c: 190:             break;
+[e $U 888  ]
+"191
+[; ;main.c: 191:     }
 }
 [e $U 888  ]
 [e :U 889 ]
-[e [\ -> *U + &U _frame_buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _frame_buffer `ui `ux `i , $ -> -> 98 `ui `i 890
- , $ -> -> 117 `ui `i 891
+[e [\ -> *U + &U _frame_buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _frame_buffer `ui `ux `i , $ -> -> 66 `ui `i 890
+ , $ -> -> 85 `ui `i 891
  892 ]
 [e :U 888 ]
-"190
-[; ;main.c: 190:     curr_state = PARSE;
-[e = _curr_state . `E7026 3 ]
-"191
-[; ;main.c: 191: }
+"192
+[; ;main.c: 192:     curr_state = PARSE;
+[e = _curr_state . `E7024 3 ]
+"193
+[; ;main.c: 193: }
 [e :UE 887 ]
 }
-"193
-[; ;main.c: 193: void Parse(void){
+"195
+[; ;main.c: 195: void Parse(void){
 [v _Parse `(v ~T0 @X0 1 ef ]
 {
 [e :U _Parse ]
 [f ]
-"195
-[; ;main.c: 195:     uint8_t i=0;
+"197
+[; ;main.c: 197:     uint8_t i=0;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"196
-[; ;main.c: 196:     if(destination == UNICAST){
-[e $ ! == -> _destination `ui -> . `E7019 1 `ui 894  ]
-{
-"197
-[; ;main.c: 197:             add_digit_1 = frame_buffer[i+2] - '0';
-[e = _add_digit_1 -> - -> *U + &U _frame_buffer * -> -> + -> _i `i -> 2 `i `ui `ux -> -> # *U &U _frame_buffer `ui `ux `ui -> 48 `ui `i ]
 "198
-[; ;main.c: 198:             i++;
-[e ++ _i -> -> 1 `i `uc ]
+[; ;main.c: 198:     if(destination == UNICAST){
+[e $ ! == -> _destination `ui -> . `E7017 1 `ui 894  ]
+{
 "199
-[; ;main.c: 199:             add_digit_2 = frame_buffer[i+2] - '0';
-[e = _add_digit_2 -> - -> *U + &U _frame_buffer * -> -> + -> _i `i -> 2 `i `ui `ux -> -> # *U &U _frame_buffer `ui `ux `ui -> 48 `ui `i ]
+[; ;main.c: 199:             add_digit_1 = frame_buffer[i+2] - '0';
+[e = _add_digit_1 -> - -> *U + &U _frame_buffer * -> -> + -> _i `i -> 2 `i `ui `ux -> -> # *U &U _frame_buffer `ui `ux `ui -> 48 `ui `i ]
 "200
 [; ;main.c: 200:             i++;
 [e ++ _i -> -> 1 `i `uc ]
 "201
-[; ;main.c: 201:     }
+[; ;main.c: 201:             add_digit_2 = frame_buffer[i+2] - '0';
+[e = _add_digit_2 -> - -> *U + &U _frame_buffer * -> -> + -> _i `i -> 2 `i `ui `ux -> -> # *U &U _frame_buffer `ui `ux `ui -> 48 `ui `i ]
+"202
+[; ;main.c: 202:             i++;
+[e ++ _i -> -> 1 `i `uc ]
+"203
+[; ;main.c: 203:     }
 }
 [e :U 894 ]
-"202
-[; ;main.c: 202:     command_index = i+2;
-[e = _command_index -> + -> _i `i -> 2 `i `uc ]
-"203
-[; ;main.c: 203:     command = frame_buffer[command_index];
-[e = _command *U + &U _frame_buffer * -> _command_index `ux -> -> # *U &U _frame_buffer `ui `ux ]
 "204
-[; ;main.c: 204:     curr_state = DECODE;
-[e = _curr_state . `E7026 4 ]
+[; ;main.c: 204:     command_index = i+2;
+[e = _command_index -> + -> _i `i -> 2 `i `uc ]
 "205
-[; ;main.c: 205: }
+[; ;main.c: 205:     command = frame_buffer[command_index];
+[e = _command *U + &U _frame_buffer * -> _command_index `ux -> -> # *U &U _frame_buffer `ui `ux ]
+"206
+[; ;main.c: 206:     curr_state = DECODE;
+[e = _curr_state . `E7024 4 ]
+"207
+[; ;main.c: 207: }
 [e :UE 893 ]
 }
-"208
-[; ;main.c: 208: void Decode(void){
+"210
+[; ;main.c: 210: void Decode(void){
 [v _Decode `(v ~T0 @X0 1 ef ]
 {
 [e :U _Decode ]
 [f ]
-"210
-[; ;main.c: 210:     uint8_t frameID = parse_frame_ID();
+"212
+[; ;main.c: 212:     uint8_t frameID = parse_frame_ID();
 [v _frameID `uc ~T0 @X0 1 a ]
 [e = _frameID -> ( _parse_frame_ID ..  `uc ]
-"212
-[; ;main.c: 212:     uint8_t hardID = get_ID();
+"214
+[; ;main.c: 214:     uint8_t hardID = get_ID();
 [v _hardID `uc ~T0 @X0 1 a ]
 [e = _hardID -> ( _get_ID ..  `uc ]
-"214
-[; ;main.c: 214:     char message[200];
+"216
+[; ;main.c: 216:     char message[200];
 [v _message `uc ~T0 @X0 -> 200 `i a ]
-"221
-[; ;main.c: 221:     send_string("address from frame: ");
-[e ( _send_string (1 :s 6C ]
-"222
-[; ;main.c: 222:     sprintf(frameAddress,"%d",frameID);
-[e ( _sprintf (1 , (. , &U _frameAddress :s 7C -> _frameID `i ]
 "223
-[; ;main.c: 223:     send_string(frameAddress); send_string("\n");
+[; ;main.c: 223:     send_string("address from frame: ");
+[e ( _send_string (1 :s 6C ]
+"224
+[; ;main.c: 224:     sprintf(frameAddress,"%d",frameID);
+[e ( _sprintf (1 , (. , &U _frameAddress :s 7C -> _frameID `i ]
+"225
+[; ;main.c: 225:     send_string(frameAddress); send_string("\n");
 [e ( _send_string (1 -> &U _frameAddress `*Cuc ]
 [e ( _send_string (1 :s 8C ]
-"224
-[; ;main.c: 224:     send_string("address from hardware is:");
-[e ( _send_string (1 :s 9C ]
-"225
-[; ;main.c: 225:     sprintf(realAdress,"%d",hardID);
-[e ( _sprintf (1 , (. , &U _realAdress :s 10C -> _hardID `i ]
 "226
-[; ;main.c: 226:     send_string(realAdress); send_string("\n");
+[; ;main.c: 226:     send_string("address from hardware is:");
+[e ( _send_string (1 :s 9C ]
+"227
+[; ;main.c: 227:     sprintf(realAdress,"%d",hardID);
+[e ( _sprintf (1 , (. , &U _realAdress :s 10C -> _hardID `i ]
+"228
+[; ;main.c: 228:     send_string(realAdress); send_string("\n");
 [e ( _send_string (1 -> &U _realAdress `*Cuc ]
 [e ( _send_string (1 :s 11C ]
-"230
-[; ;main.c: 230:     if((destination == BROADCAST) || ( (destination == UNICAST) && (frameID == hardID) )){
-[e $ ! || == -> _destination `ui -> . `E7019 0 `ui && == -> _destination `ui -> . `E7019 1 `ui == -> _frameID `i -> _hardID `i 896  ]
+"232
+[; ;main.c: 232:     if((destination == BROADCAST) || ( (destination == UNICAST) && (frameID == hardID) )){
+[e $ ! || == -> _destination `ui -> . `E7017 0 `ui && == -> _destination `ui -> . `E7017 1 `ui == -> _frameID `i -> _hardID `i 896  ]
 {
-"231
-[; ;main.c: 231:         switch(command){
+"233
+[; ;main.c: 233:         switch(command){
 [e $U 898  ]
 {
-"232
-[; ;main.c: 232:             case 'r':
+"234
+[; ;main.c: 234:             case 'R':
 [e :U 899 ]
-"233
-[; ;main.c: 233:                 read_flag = 1;
-[e = _read_flag -> -> 1 `i `uc ]
 "235
-[; ;main.c: 235:                 break;
-[e $U 897  ]
-"236
-[; ;main.c: 236:             case 'g':
-[e :U 900 ]
+[; ;main.c: 235:                 read_flag = 1;
+[e = _read_flag -> -> 1 `i `uc ]
 "237
-[; ;main.c: 237:                 get_flag = 1;
-[e = _get_flag -> -> 1 `i `uc ]
+[; ;main.c: 237:                 break;
+[e $U 897  ]
+"238
+[; ;main.c: 238:             case 'G':
+[e :U 900 ]
 "239
-[; ;main.c: 239:                 break;
-[e $U 897  ]
-"240
-[; ;main.c: 240:             case 't':
-[e :U 901 ]
+[; ;main.c: 239:                 get_flag = 1;
+[e = _get_flag -> -> 1 `i `uc ]
 "241
-[; ;main.c: 241:                 broadcast_test_flag = 1;
-[e = _broadcast_test_flag -> -> 1 `i `uc ]
+[; ;main.c: 241:                 break;
+[e $U 897  ]
+"242
+[; ;main.c: 242:             case 'C':
+[e :U 901 ]
 "243
-[; ;main.c: 243:                 break;
-[e $U 897  ]
-"244
-[; ;main.c: 244:             default:
-[e :U 902 ]
+[; ;main.c: 243:                 broadcast_test_flag = 1;
+[e = _broadcast_test_flag -> -> 1 `i `uc ]
 "245
-[; ;main.c: 245:                 send_string("Command character error\n");
-[e ( _send_string (1 :s 12C ]
-"246
-[; ;main.c: 246:                 goto exitToRST;
-[e $U 903  ]
-"247
-[; ;main.c: 247:                 break;
+[; ;main.c: 245:                 break;
 [e $U 897  ]
+"246
+[; ;main.c: 246:             default:
+[e :U 902 ]
+"247
+[; ;main.c: 247:                 send_string("Command character error\n");
+[e ( _send_string (1 :s 12C ]
 "248
-[; ;main.c: 248:         }
+[; ;main.c: 248:                 goto exitToRST;
+[e $U 903  ]
+"249
+[; ;main.c: 249:                 break;
+[e $U 897  ]
+"250
+[; ;main.c: 250:         }
 }
 [e $U 897  ]
 [e :U 898 ]
-[e [\ -> _command `i , $ -> -> 114 `ui `i 899
- , $ -> -> 103 `ui `i 900
- , $ -> -> 116 `ui `i 901
+[e [\ -> _command `i , $ -> -> 82 `ui `i 899
+ , $ -> -> 71 `ui `i 900
+ , $ -> -> 67 `ui `i 901
  902 ]
 [e :U 897 ]
-"249
-[; ;main.c: 249:         curr_state = EXECUTE;
-[e = _curr_state . `E7026 5 ]
-"250
-[; ;main.c: 250:     }
+"251
+[; ;main.c: 251:         curr_state = EXECUTE;
+[e = _curr_state . `E7024 5 ]
+"252
+[; ;main.c: 252:     }
 }
 [e $U 904  ]
-"251
-[; ;main.c: 251:     else{
+"253
+[; ;main.c: 253:     else{
 [e :U 896 ]
 {
-"252
-[; ;main.c: 252: exitToRST:
-[e :U 903 ]
-"253
-[; ;main.c: 253:         frame_ready_flag = 0;
-[e = _frame_ready_flag -> -> 0 `i `uc ]
 "254
-[; ;main.c: 254:         frame_index = 0;
-[e = _frame_index -> 0 `i ]
+[; ;main.c: 254: exitToRST:
+[e :U 903 ]
 "255
-[; ;main.c: 255:         clear_buffer(frame_buffer);
-[e ( _clear_buffer (1 &U _frame_buffer ]
+[; ;main.c: 255:         frame_ready_flag = 0;
+[e = _frame_ready_flag -> -> 0 `i `uc ]
 "256
-[; ;main.c: 256:         curr_state = RST;
-[e = _curr_state . `E7026 0 ]
+[; ;main.c: 256:         frame_index = 0;
+[e = _frame_index -> 0 `i ]
+"257
+[; ;main.c: 257:         clear_buffer(frame_buffer);
+[e ( _clear_buffer (1 &U _frame_buffer ]
 "258
-[; ;main.c: 258:     }
+[; ;main.c: 258:         curr_state = RST;
+[e = _curr_state . `E7024 0 ]
+"260
+[; ;main.c: 260:     }
 }
 [e :U 904 ]
-"259
-[; ;main.c: 259: }
+"261
+[; ;main.c: 261: }
 [e :UE 895 ]
 }
-"261
-[; ;main.c: 261: void Execute(void){
+"263
+[; ;main.c: 263: void Execute(void){
 [v _Execute `(v ~T0 @X0 1 ef ]
 {
 [e :U _Execute ]
 [f ]
-"263
-[; ;main.c: 263:     char acknowledge_frame[30];
-[v _acknowledge_frame `uc ~T0 @X0 -> 30 `i a ]
 "265
-[; ;main.c: 265:     uint8_t k;
+[; ;main.c: 265:     char acknowledge_frame[30];
+[v _acknowledge_frame `uc ~T0 @X0 -> 30 `i a ]
+"267
+[; ;main.c: 267:     uint8_t k;
 [v _k `uc ~T0 @X0 1 a ]
-"266
-[; ;main.c: 266:     for(k=0;k<30;k++){
+"268
+[; ;main.c: 268:     for(k=0;k<30;k++){
 {
 [e = _k -> -> 0 `i `uc ]
 [e $ < -> _k `i -> 30 `i 906  ]
 [e $U 907  ]
 [e :U 906 ]
 {
-"267
-[; ;main.c: 267:         acknowledge_frame[k] = ((void*)0);
+"269
+[; ;main.c: 269:         acknowledge_frame[k] = ((void*)0);
 [e = *U + &U _acknowledge_frame * -> _k `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> -> 0 `i `*v `uc ]
-"268
-[; ;main.c: 268:     }
+"270
+[; ;main.c: 270:     }
 }
 [e ++ _k -> -> 1 `i `uc ]
 [e $ < -> _k `i -> 30 `i 906  ]
 [e :U 907 ]
 }
-"270
-[; ;main.c: 270:     uint8_t i = 0;
+"271
+[; ;main.c: 271:     send_string("received frame: "); send_string(frame_buffer); send_string("\n");
+[e ( _send_string (1 :s 13C ]
+[e ( _send_string (1 -> &U _frame_buffer `*Cuc ]
+[e ( _send_string (1 :s 14C ]
+"272
+[; ;main.c: 272:     send_string("ack frame before command fill: "); send_string(acknowledge_frame); send_string("\n");
+[e ( _send_string (1 :s 15C ]
+[e ( _send_string (1 -> &U _acknowledge_frame `*Cuc ]
+[e ( _send_string (1 :s 16C ]
+"274
+[; ;main.c: 274:     uint8_t i = 0;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"271
-[; ;main.c: 271:     for(i=0;i<command_index+1;i++){
+"275
+[; ;main.c: 275:     for(i=0;i<command_index+1;i++){
 {
 [e = _i -> -> 0 `i `uc ]
 [e $U 912  ]
 [e :U 909 ]
 {
-"272
-[; ;main.c: 272:         acknowledge_frame[i] = frame_buffer[i];
+"276
+[; ;main.c: 276:         acknowledge_frame[i] = frame_buffer[i];
 [e = *U + &U _acknowledge_frame * -> _i `ux -> -> # *U &U _acknowledge_frame `ui `ux *U + &U _frame_buffer * -> _i `ux -> -> # *U &U _frame_buffer `ui `ux ]
-"273
-[; ;main.c: 273:     }
+"277
+[; ;main.c: 277:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 912 ]
 [e $ < -> _i `i + -> _command_index `i -> 1 `i 909  ]
 [e :U 910 ]
 }
-"276
-[; ;main.c: 276:     if(read_flag){
+"278
+[; ;main.c: 278:     send_string("ack frame after command fill: "); send_string(acknowledge_frame); send_string("\n");
+[e ( _send_string (1 :s 17C ]
+[e ( _send_string (1 -> &U _acknowledge_frame `*Cuc ]
+[e ( _send_string (1 :s 18C ]
+"281
+[; ;main.c: 281:     if(read_flag){
 [e $ ! != -> _read_flag `i -> 0 `i 913  ]
 {
-"277
-[; ;main.c: 277:         ADC_read();
-[e ( _ADC_read ..  ]
-"278
-[; ;main.c: 278:         if(destination == BROADCAST){
-[e $ ! == -> _destination `ui -> . `E7019 0 `ui 914  ]
-{
-"279
-[; ;main.c: 279:             frame_ready_flag = 0;
-[e = _frame_ready_flag -> -> 0 `i `uc ]
-"280
-[; ;main.c: 280:             read_flag = 0;
-[e = _read_flag -> -> 0 `i `uc ]
-"281
-[; ;main.c: 281:             prev_destination = destination;
-[e = _prev_destination _destination ]
 "282
-[; ;main.c: 282:             goto exitToIDLe;
-[e $U 915  ]
+[; ;main.c: 282:         ADC_read();
+[e ( _ADC_read ..  ]
 "283
-[; ;main.c: 283:         }
+[; ;main.c: 283:         if(destination == BROADCAST){
+[e $ ! == -> _destination `ui -> . `E7017 0 `ui 914  ]
+{
+"284
+[; ;main.c: 284:             frame_ready_flag = 0;
+[e = _frame_ready_flag -> -> 0 `i `uc ]
+"285
+[; ;main.c: 285:             read_flag = 0;
+[e = _read_flag -> -> 0 `i `uc ]
+"286
+[; ;main.c: 286:             prev_destination = destination;
+[e = _prev_destination _destination ]
+"287
+[; ;main.c: 287:             goto exitToIDLe;
+[e $U 915  ]
+"288
+[; ;main.c: 288:         }
 }
 [e :U 914 ]
-"285
-[; ;main.c: 285:         acknowledge_frame[i++] = 'o';
-[e = *U + &U _acknowledge_frame * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> 111 `ui `uc ]
-"286
-[; ;main.c: 286:         acknowledge_frame[i++] = 'k';
-[e = *U + &U _acknowledge_frame * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> 107 `ui `uc ]
-"287
-[; ;main.c: 287:         acknowledge_frame[i++] = '*';
-[e = *U + &U _acknowledge_frame * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> 42 `ui `uc ]
-"288
-[; ;main.c: 288:         read_flag = 0;
-[e = _read_flag -> -> 0 `i `uc ]
 "290
-[; ;main.c: 290:     }else if(get_flag){
+[; ;main.c: 290:         acknowledge_frame[i++] = 'O';
+[e = *U + &U _acknowledge_frame * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> 79 `ui `uc ]
+"291
+[; ;main.c: 291:         acknowledge_frame[i++] = 'K';
+[e = *U + &U _acknowledge_frame * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> 75 `ui `uc ]
+"293
+[; ;main.c: 293:         read_flag = 0;
+[e = _read_flag -> -> 0 `i `uc ]
+"295
+[; ;main.c: 295:     }else if(get_flag){
 }
 [e $U 916  ]
 [e :U 913 ]
 [e $ ! != -> _get_flag `i -> 0 `i 917  ]
 {
-"291
-[; ;main.c: 291:         if(destination == BROADCAST){
-[e $ ! == -> _destination `ui -> . `E7019 0 `ui 918  ]
-{
-"292
-[; ;main.c: 292:             frame_ready_flag = 0;
-[e = _frame_ready_flag -> -> 0 `i `uc ]
-"293
-[; ;main.c: 293:             get_flag = 0;
-[e = _get_flag -> -> 0 `i `uc ]
-"294
-[; ;main.c: 294:             prev_destination = destination;
-[e = _prev_destination _destination ]
-"295
-[; ;main.c: 295:             goto exitToIDLe;
-[e $U 915  ]
 "296
-[; ;main.c: 296:         }
+[; ;main.c: 296:         if(destination == BROADCAST){
+[e $ ! == -> _destination `ui -> . `E7017 0 `ui 918  ]
+{
+"297
+[; ;main.c: 297:             frame_ready_flag = 0;
+[e = _frame_ready_flag -> -> 0 `i `uc ]
+"298
+[; ;main.c: 298:             get_flag = 0;
+[e = _get_flag -> -> 0 `i `uc ]
+"299
+[; ;main.c: 299:             prev_destination = destination;
+[e = _prev_destination _destination ]
+"300
+[; ;main.c: 300:             goto exitToIDLe;
+[e $U 915  ]
+"301
+[; ;main.c: 301:         }
 }
 [e :U 918 ]
-"299
-[; ;main.c: 299:         char data_ch1[10],data_ch2[10],data_ch3[10],data_ch4[10];
+"304
+[; ;main.c: 304:         char data_ch1[10],data_ch2[10],data_ch3[10],data_ch4[10];
 [v _data_ch1 `uc ~T0 @X0 -> 10 `i a ]
 [v _data_ch2 `uc ~T0 @X0 -> 10 `i a ]
 [v _data_ch3 `uc ~T0 @X0 -> 10 `i a ]
 [v _data_ch4 `uc ~T0 @X0 -> 10 `i a ]
-"300
-[; ;main.c: 300:         sprintf(data_ch1,"%0.4x",ADC_result[0]); data_ch1[4] = '\0';
-[e ( _sprintf (1 , (. , &U _data_ch1 :s 13C -> *U + &U _ADC_result * -> -> -> 0 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
-[e = *U + &U _data_ch1 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch1 `ui `ux -> -> 0 `ui `uc ]
-"301
-[; ;main.c: 301:         sprintf(data_ch2,"%0.4x",ADC_result[1]); data_ch2[4] = '\0';
-[e ( _sprintf (1 , (. , &U _data_ch2 :s 14C -> *U + &U _ADC_result * -> -> -> 1 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
-[e = *U + &U _data_ch2 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch2 `ui `ux -> -> 0 `ui `uc ]
-"302
-[; ;main.c: 302:         sprintf(data_ch3,"%0.4x",ADC_result[2]); data_ch3[4] = '\0';
-[e ( _sprintf (1 , (. , &U _data_ch3 :s 15C -> *U + &U _ADC_result * -> -> -> 2 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
-[e = *U + &U _data_ch3 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch3 `ui `ux -> -> 0 `ui `uc ]
-"303
-[; ;main.c: 303:         sprintf(data_ch4,"%0.4x",ADC_result[3]); data_ch4[4] = '\0';
-[e ( _sprintf (1 , (. , &U _data_ch4 :s 16C -> *U + &U _ADC_result * -> -> -> 3 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
-[e = *U + &U _data_ch4 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch4 `ui `ux -> -> 0 `ui `uc ]
-"304
-[; ;main.c: 304:         send_string("Result of ch1    "); send_string(data_ch1); send_string("\n");
-[e ( _send_string (1 :s 17C ]
-[e ( _send_string (1 -> &U _data_ch1 `*Cuc ]
-[e ( _send_string (1 :s 18C ]
 "305
-[; ;main.c: 305:         send_string("Result of ch2    "); send_string(data_ch2); send_string("\n");
-[e ( _send_string (1 :s 19C ]
-[e ( _send_string (1 -> &U _data_ch2 `*Cuc ]
-[e ( _send_string (1 :s 20C ]
+[; ;main.c: 305:         sprintf(data_ch1,"%0.4x",ADC_result[0]); data_ch1[4] = '\0';
+[e ( _sprintf (1 , (. , &U _data_ch1 :s 19C -> *U + &U _ADC_result * -> -> -> 0 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
+[e = *U + &U _data_ch1 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch1 `ui `ux -> -> 0 `ui `uc ]
 "306
-[; ;main.c: 306:         send_string("Result of ch3    "); send_string(data_ch3); send_string("\n");
-[e ( _send_string (1 :s 21C ]
-[e ( _send_string (1 -> &U _data_ch3 `*Cuc ]
-[e ( _send_string (1 :s 22C ]
+[; ;main.c: 306:         sprintf(data_ch2,"%0.4x",ADC_result[1]); data_ch2[4] = '\0';
+[e ( _sprintf (1 , (. , &U _data_ch2 :s 20C -> *U + &U _ADC_result * -> -> -> 1 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
+[e = *U + &U _data_ch2 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch2 `ui `ux -> -> 0 `ui `uc ]
 "307
-[; ;main.c: 307:         send_string("Result of ch4    "); send_string(data_ch4); send_string("\n");
-[e ( _send_string (1 :s 23C ]
-[e ( _send_string (1 -> &U _data_ch4 `*Cuc ]
-[e ( _send_string (1 :s 24C ]
+[; ;main.c: 307:         sprintf(data_ch3,"%0.4x",ADC_result[2]); data_ch3[4] = '\0';
+[e ( _sprintf (1 , (. , &U _data_ch3 :s 21C -> *U + &U _ADC_result * -> -> -> 2 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
+[e = *U + &U _data_ch3 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch3 `ui `ux -> -> 0 `ui `uc ]
+"308
+[; ;main.c: 308:         sprintf(data_ch4,"%0.4x",ADC_result[3]); data_ch4[4] = '\0';
+[e ( _sprintf (1 , (. , &U _data_ch4 :s 22C -> *U + &U _ADC_result * -> -> -> 3 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
+[e = *U + &U _data_ch4 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch4 `ui `ux -> -> 0 `ui `uc ]
 "309
-[; ;main.c: 309:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch1, strlen(data_ch1));
-[e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch1 `*Cv ( _strlen (1 -> &U _data_ch1 `*Cuc ]
+[; ;main.c: 309:         send_string("Result of ch1    "); send_string(data_ch1); send_string("\n");
+[e ( _send_string (1 :s 23C ]
+[e ( _send_string (1 -> &U _data_ch1 `*Cuc ]
+[e ( _send_string (1 :s 24C ]
 "310
-[; ;main.c: 310:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch2, strlen(data_ch2));
-[e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch2 `*Cv ( _strlen (1 -> &U _data_ch2 `*Cuc ]
+[; ;main.c: 310:         send_string("Result of ch2    "); send_string(data_ch2); send_string("\n");
+[e ( _send_string (1 :s 25C ]
+[e ( _send_string (1 -> &U _data_ch2 `*Cuc ]
+[e ( _send_string (1 :s 26C ]
 "311
-[; ;main.c: 311:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch3, strlen(data_ch3));
-[e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch3 `*Cv ( _strlen (1 -> &U _data_ch3 `*Cuc ]
+[; ;main.c: 311:         send_string("Result of ch3    "); send_string(data_ch3); send_string("\n");
+[e ( _send_string (1 :s 27C ]
+[e ( _send_string (1 -> &U _data_ch3 `*Cuc ]
+[e ( _send_string (1 :s 28C ]
 "312
-[; ;main.c: 312:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch4, strlen(data_ch4));
-[e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch4 `*Cv ( _strlen (1 -> &U _data_ch4 `*Cuc ]
-"313
-[; ;main.c: 313:         sprintf(acknowledge_frame + strlen(acknowledge_frame), "*\0");
-[e ( _sprintf (1 , + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux :s 25C ]
+[; ;main.c: 312:         send_string("Result of ch4    "); send_string(data_ch4); send_string("\n");
+[e ( _send_string (1 :s 29C ]
+[e ( _send_string (1 -> &U _data_ch4 `*Cuc ]
+[e ( _send_string (1 :s 30C ]
 "314
-[; ;main.c: 314:         get_flag = 0;
-[e = _get_flag -> -> 0 `i `uc ]
+[; ;main.c: 314:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch1, strlen(data_ch1));
+[e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch1 `*Cv ( _strlen (1 -> &U _data_ch1 `*Cuc ]
+"315
+[; ;main.c: 315:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch2, strlen(data_ch2));
+[e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch2 `*Cv ( _strlen (1 -> &U _data_ch2 `*Cuc ]
 "316
-[; ;main.c: 316:     }else if(broadcast_test_flag){
+[; ;main.c: 316:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch3, strlen(data_ch3));
+[e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch3 `*Cv ( _strlen (1 -> &U _data_ch3 `*Cuc ]
+"317
+[; ;main.c: 317:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch4, strlen(data_ch4));
+[e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch4 `*Cv ( _strlen (1 -> &U _data_ch4 `*Cuc ]
+"319
+[; ;main.c: 319:         get_flag = 0;
+[e = _get_flag -> -> 0 `i `uc ]
+"321
+[; ;main.c: 321:     }else if(broadcast_test_flag){
 }
 [e $U 919  ]
 [e :U 917 ]
 [e $ ! != -> _broadcast_test_flag `i -> 0 `i 920  ]
 {
-"317
-[; ;main.c: 317:         if(BROADCAST == prev_destination){
-[e $ ! == -> . `E7019 0 `ui -> _prev_destination `ui 921  ]
+"322
+[; ;main.c: 322:         if(BROADCAST == prev_destination){
+[e $ ! == -> . `E7017 0 `ui -> _prev_destination `ui 921  ]
 {
-"318
-[; ;main.c: 318:             acknowledge_frame[i++] = 'y';
-[e = *U + &U _acknowledge_frame * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> 121 `ui `uc ]
-"319
-[; ;main.c: 319:         }else{
+"323
+[; ;main.c: 323:             acknowledge_frame[i++] = 'Y';
+[e = *U + &U _acknowledge_frame * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> 89 `ui `uc ]
+"324
+[; ;main.c: 324:         }else{
 }
 [e $U 922  ]
 [e :U 921 ]
 {
-"320
-[; ;main.c: 320:             acknowledge_frame[i++] = 'n';
-[e = *U + &U _acknowledge_frame * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> 110 `ui `uc ]
-"321
-[; ;main.c: 321:         }
+"325
+[; ;main.c: 325:             acknowledge_frame[i++] = 'N';
+[e = *U + &U _acknowledge_frame * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> 78 `ui `uc ]
+"326
+[; ;main.c: 326:         }
 }
 [e :U 922 ]
-"322
-[; ;main.c: 322:         acknowledge_frame[i] = '*';
-[e = *U + &U _acknowledge_frame * -> _i `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> 42 `ui `uc ]
-"323
-[; ;main.c: 323:         broadcast_test_flag = 0;
+"328
+[; ;main.c: 328:         broadcast_test_flag = 0;
 [e = _broadcast_test_flag -> -> 0 `i `uc ]
-"324
-[; ;main.c: 324:     }
+"329
+[; ;main.c: 329:     }
 }
 [e :U 920 ]
 [e :U 919 ]
 [e :U 916 ]
-"326
-[; ;main.c: 326:     ACKframeChecksum(acknowledge_frame);
-[e ( _ACKframeChecksum (1 &U _acknowledge_frame ]
-"327
-[; ;main.c: 327:     send_string("I am the final frame: \n");
-[e ( _send_string (1 :s 26C ]
-"328
-[; ;main.c: 328:     send_string(fullAckFrame); send_string("\n");
-[e ( _send_string (1 -> &U _fullAckFrame `*Cuc ]
-[e ( _send_string (1 :s 27C ]
-"329
-[; ;main.c: 329:     frame_ready_flag = 0;
-[e = _frame_ready_flag -> -> 0 `i `uc ]
-"330
-[; ;main.c: 330:     prev_destination = destination;
-[e = _prev_destination _destination ]
 "331
-[; ;main.c: 331: exitToIDLe:
-[e :U 915 ]
+[; ;main.c: 331:     ACKframeChecksum(acknowledge_frame);
+[e ( _ACKframeChecksum (1 &U _acknowledge_frame ]
 "332
-[; ;main.c: 332:     curr_state = RST;
-[e = _curr_state . `E7026 0 ]
+[; ;main.c: 332:     send_string("I am the final frame: \n");
+[e ( _send_string (1 :s 31C ]
 "333
-[; ;main.c: 333: }
+[; ;main.c: 333:     send_string(fullAckFrame); send_string("\n");
+[e ( _send_string (1 -> &U _fullAckFrame `*Cuc ]
+[e ( _send_string (1 :s 32C ]
+"334
+[; ;main.c: 334:     frame_ready_flag = 0;
+[e = _frame_ready_flag -> -> 0 `i `uc ]
+"335
+[; ;main.c: 335:     prev_destination = destination;
+[e = _prev_destination _destination ]
+"336
+[; ;main.c: 336: exitToIDLe:
+[e :U 915 ]
+"337
+[; ;main.c: 337:     curr_state = RST;
+[e = _curr_state . `E7024 0 ]
+"338
+[; ;main.c: 338: }
 [e :UE 905 ]
 }
-"337
-[; ;main.c: 337: int get_ID(void){
+"342
+[; ;main.c: 342: int get_ID(void){
 [v _get_ID `(i ~T0 @X0 1 ef ]
 {
 [e :U _get_ID ]
 [f ]
-"338
-[; ;main.c: 338:     return PORTAbits.RA0 | PORTAbits.RA1 << 1 | PORTAbits.RA2 << 2 | PORTDbits.RD0 << 3 | PORTDbits.RD1 << 4;
+"343
+[; ;main.c: 343:     return PORTAbits.RA0 | PORTAbits.RA1 << 1 | PORTAbits.RA2 << 2 | PORTDbits.RD0 << 3 | PORTDbits.RD1 << 4;
 [e ) | | | | -> . . _PORTAbits 0 0 `i << -> . . _PORTAbits 0 1 `i -> 1 `i << -> . . _PORTAbits 0 2 `i -> 2 `i << -> . . _PORTDbits 0 0 `i -> 3 `i << -> . . _PORTDbits 0 1 `i -> 4 `i ]
 [e $UE 923  ]
-"339
-[; ;main.c: 339: }
+"344
+[; ;main.c: 344: }
 [e :UE 923 ]
 }
-"342
-[; ;main.c: 342: int parse_frame_ID(void){
+"347
+[; ;main.c: 347: int parse_frame_ID(void){
 [v _parse_frame_ID `(i ~T0 @X0 1 ef ]
 {
 [e :U _parse_frame_ID ]
 [f ]
-"343
-[; ;main.c: 343:     return add_digit_1 * 10 + add_digit_2;
+"348
+[; ;main.c: 348:     return add_digit_1 * 10 + add_digit_2;
 [e ) + * _add_digit_1 -> 10 `i _add_digit_2 ]
 [e $UE 924  ]
-"344
-[; ;main.c: 344: }
+"349
+[; ;main.c: 349: }
 [e :UE 924 ]
 }
-"347
-[; ;main.c: 347: void ChecksumCalc(char* dataString){
+"352
+[; ;main.c: 352: void ChecksumCalc(char* dataString){
 [v _ChecksumCalc `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _ChecksumCalc ]
 [v _dataString `*uc ~T0 @X0 1 r1 ]
 [f ]
-"348
-[; ;main.c: 348:     uint8_t xorTemp;
+"353
+[; ;main.c: 353:     uint8_t xorTemp;
 [v _xorTemp `uc ~T0 @X0 1 a ]
-"349
-[; ;main.c: 349:     xorTemp = (uint8_t)dataString[0];
+"354
+[; ;main.c: 354:     xorTemp = (uint8_t)dataString[0];
 [e = _xorTemp -> *U + _dataString * -> -> 0 `i `x -> -> # *U _dataString `i `x `uc ]
-"350
-[; ;main.c: 350:     for(int i = 1; i < strlen(dataString); i++){
+"355
+[; ;main.c: 355:     for(int i = 1; i < strlen(dataString); i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 1 `i ]
 [e $U 929  ]
 [e :U 926 ]
 {
-"351
-[; ;main.c: 351:         xorTemp ^= (uint8_t)dataString[i];
+"356
+[; ;main.c: 356:         xorTemp ^= (uint8_t)dataString[i];
 [e =^ _xorTemp -> -> *U + _dataString * -> _i `x -> -> # *U _dataString `i `x `uc `uc ]
-"352
-[; ;main.c: 352:         }
+"357
+[; ;main.c: 357:         }
 }
 [e ++ _i -> 1 `i ]
 [e :U 929 ]
 [e $ < -> _i `ui ( _strlen (1 -> _dataString `*Cuc 926  ]
 [e :U 927 ]
 }
-"353
-[; ;main.c: 353:     sprintf(CRCresult,"%.2x",xorTemp);
-[e ( _sprintf (1 , (. , &U _CRCresult :s 28C -> _xorTemp `i ]
-"354
-[; ;main.c: 354: }
+"358
+[; ;main.c: 358:     sprintf(CRCresult,"%.2x",xorTemp);
+[e ( _sprintf (1 , (. , &U _CRCresult :s 33C -> _xorTemp `i ]
+"359
+[; ;main.c: 359: }
 [e :UE 925 ]
 }
-"357
-[; ;main.c: 357: void TrimFrame(char* receivedFrame){
-[v _TrimFrame `(v ~T0 @X0 1 ef1`*uc ]
+"362
+[; ;main.c: 362: void TrimFrame(void){
+[v _TrimFrame `(v ~T0 @X0 1 ef ]
 {
 [e :U _TrimFrame ]
-[v _receivedFrame `*uc ~T0 @X0 1 r1 ]
 [f ]
-"358
-[; ;main.c: 358:     uint8_t index = 0;
+"363
+[; ;main.c: 363:     uint8_t index = 0;
 [v _index `uc ~T0 @X0 1 a ]
 [e = _index -> -> 0 `i `uc ]
-"359
-[; ;main.c: 359:     uint8_t i;
+"364
+[; ;main.c: 364:     uint8_t i;
 [v _i `uc ~T0 @X0 1 a ]
-"360
-[; ;main.c: 360:     for(i = 0; i < strlen(receivedFrame)-3; i++){
+"365
+[; ;main.c: 365:     for(i = 0; i < strlen(frame_buffer)-3; i++){
 {
 [e = _i -> -> 0 `i `uc ]
 [e $U 934  ]
 [e :U 931 ]
 {
-"361
-[; ;main.c: 361:         TrimmedFrame[index] = receivedFrame[i];
-[e = *U + &U _TrimmedFrame * -> _index `ux -> -> # *U &U _TrimmedFrame `ui `ux *U + _receivedFrame * -> _i `ux -> -> # *U _receivedFrame `ui `ux ]
-"362
-[; ;main.c: 362:         index++;
+"366
+[; ;main.c: 366:         TrimmedFrame[index] = frame_buffer[i];
+[e = *U + &U _TrimmedFrame * -> _index `ux -> -> # *U &U _TrimmedFrame `ui `ux *U + &U _frame_buffer * -> _i `ux -> -> # *U &U _frame_buffer `ui `ux ]
+"367
+[; ;main.c: 367:         index++;
 [e ++ _index -> -> 1 `i `uc ]
-"363
-[; ;main.c: 363:     }
+"368
+[; ;main.c: 368:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 934 ]
-[e $ < -> _i `ui - ( _strlen (1 -> _receivedFrame `*Cuc -> -> 3 `i `ui 931  ]
+[e $ < -> _i `ui - ( _strlen (1 -> &U _frame_buffer `*Cuc -> -> 3 `i `ui 931  ]
 [e :U 932 ]
 }
-"364
-[; ;main.c: 364:     TrimmedFrame[index] = '\0';
+"369
+[; ;main.c: 369:     TrimmedFrame[index] = '\0';
 [e = *U + &U _TrimmedFrame * -> _index `ux -> -> # *U &U _TrimmedFrame `ui `ux -> -> 0 `ui `uc ]
-"365
-[; ;main.c: 365: }
+"371
+[; ;main.c: 371: }
 [e :UE 930 ]
 }
-"368
-[; ;main.c: 368: void TrimAckFrame(char* AckFrame){
-[v _TrimAckFrame `(v ~T0 @X0 1 ef1`*uc ]
+"397
+[; ;main.c: 397: void GetChecksumValue(void){
+[v _GetChecksumValue `(v ~T0 @X0 1 ef ]
 {
-[e :U _TrimAckFrame ]
-[v _AckFrame `*uc ~T0 @X0 1 r1 ]
+[e :U _GetChecksumValue ]
 [f ]
-"369
-[; ;main.c: 369:     uint8_t index = 0;
+"398
+[; ;main.c: 398:     uint8_t index = 0;
 [v _index `uc ~T0 @X0 1 a ]
 [e = _index -> -> 0 `i `uc ]
-"370
-[; ;main.c: 370:     uint8_t i;
+"399
+[; ;main.c: 399:     uint8_t i=0;
 [v _i `uc ~T0 @X0 1 a ]
-"371
-[; ;main.c: 371:     for(i = 0; i < strlen(AckFrame)-1; i++){
-{
 [e = _i -> -> 0 `i `uc ]
+"401
+[; ;main.c: 401:     for(i = strlen(frame_buffer)-3; i < strlen(frame_buffer)-1; i++){
+{
+[e = _i -> - ( _strlen (1 -> &U _frame_buffer `*Cuc -> -> 3 `i `ui `uc ]
 [e $U 939  ]
 [e :U 936 ]
 {
-"372
-[; ;main.c: 372:         TrimmedAckFrame[index] = AckFrame[i];
-[e = *U + &U _TrimmedAckFrame * -> _index `ux -> -> # *U &U _TrimmedAckFrame `ui `ux *U + _AckFrame * -> _i `ux -> -> # *U _AckFrame `ui `ux ]
-"373
-[; ;main.c: 373:         index++;
+"402
+[; ;main.c: 402:     send_string("Received frame: "); send_string(frame_buffer); send_string("\n");
+[e ( _send_string (1 :s 34C ]
+[e ( _send_string (1 -> &U _frame_buffer `*Cuc ]
+[e ( _send_string (1 :s 35C ]
+"403
+[; ;main.c: 403:         FrameCheckSum[index] = frame_buffer[i];
+[e = *U + &U _FrameCheckSum * -> _index `ux -> -> # *U &U _FrameCheckSum `ui `ux *U + &U _frame_buffer * -> _i `ux -> -> # *U &U _frame_buffer `ui `ux ]
+"404
+[; ;main.c: 404:         index++;
 [e ++ _index -> -> 1 `i `uc ]
-"374
-[; ;main.c: 374:     }
+"405
+[; ;main.c: 405:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 939 ]
-[e $ < -> _i `ui - ( _strlen (1 -> _AckFrame `*Cuc -> -> 1 `i `ui 936  ]
+[e $ < -> _i `ui - ( _strlen (1 -> &U _frame_buffer `*Cuc -> -> 1 `i `ui 936  ]
 [e :U 937 ]
 }
-"375
-[; ;main.c: 375:     TrimmedAckFrame[index] = '\0';
-[e = *U + &U _TrimmedAckFrame * -> _index `ux -> -> # *U &U _TrimmedAckFrame `ui `ux -> -> 0 `ui `uc ]
-"376
-[; ;main.c: 376: }
+"407
+[; ;main.c: 407:     FrameCheckSum[index]='\0';
+[e = *U + &U _FrameCheckSum * -> _index `ux -> -> # *U &U _FrameCheckSum `ui `ux -> -> 0 `ui `uc ]
+"409
+[; ;main.c: 409: }
 [e :UE 935 ]
 }
-"379
-[; ;main.c: 379: void RemoveEndChar(char* AckFrame){
-[v _RemoveEndChar `(v ~T0 @X0 1 ef1`*uc ]
-{
-[e :U _RemoveEndChar ]
-[v _AckFrame `*uc ~T0 @X0 1 r1 ]
-[f ]
-"380
-[; ;main.c: 380:     uint8_t index = 0;
-[v _index `uc ~T0 @X0 1 a ]
-[e = _index -> -> 0 `i `uc ]
-"381
-[; ;main.c: 381:     uint8_t i;
-[v _i `uc ~T0 @X0 1 a ]
-"382
-[; ;main.c: 382:     for(i = 0; i < strlen(AckFrame)-1; i++){
-{
-[e = _i -> -> 0 `i `uc ]
-[e $U 944  ]
-[e :U 941 ]
-{
-"383
-[; ;main.c: 383:         fullAckFrame[index] = AckFrame[i];
-[e = *U + &U _fullAckFrame * -> _index `ux -> -> # *U &U _fullAckFrame `ui `ux *U + _AckFrame * -> _i `ux -> -> # *U _AckFrame `ui `ux ]
-"384
-[; ;main.c: 384:         index++;
-[e ++ _index -> -> 1 `i `uc ]
-"385
-[; ;main.c: 385:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 944 ]
-[e $ < -> _i `ui - ( _strlen (1 -> _AckFrame `*Cuc -> -> 1 `i `ui 941  ]
-[e :U 942 ]
-}
-"386
-[; ;main.c: 386: }
-[e :UE 940 ]
-}
-"389
-[; ;main.c: 389: void GetChecksumValue(char *receivedFrame){
-[v _GetChecksumValue `(v ~T0 @X0 1 ef1`*uc ]
-{
-[e :U _GetChecksumValue ]
-[v _receivedFrame `*uc ~T0 @X0 1 r1 ]
-[f ]
-"390
-[; ;main.c: 390:     uint8_t index = 0;
-[v _index `uc ~T0 @X0 1 a ]
-[e = _index -> -> 0 `i `uc ]
-"391
-[; ;main.c: 391:     uint8_t i=0;
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-"394
-[; ;main.c: 394:     for(i = strlen(receivedFrame)-3; i < strlen(receivedFrame)-1; i++){
-{
-[e = _i -> - ( _strlen (1 -> _receivedFrame `*Cuc -> -> 3 `i `ui `uc ]
-[e $U 949  ]
-[e :U 946 ]
-{
-"395
-[; ;main.c: 395:         FrameCheckSum[index] = receivedFrame[i];
-[e = *U + &U _FrameCheckSum * -> _index `ux -> -> # *U &U _FrameCheckSum `ui `ux *U + _receivedFrame * -> _i `ux -> -> # *U _receivedFrame `ui `ux ]
-"396
-[; ;main.c: 396:         index++;
-[e ++ _index -> -> 1 `i `uc ]
-"397
-[; ;main.c: 397:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 949 ]
-[e $ < -> _i `ui - ( _strlen (1 -> _receivedFrame `*Cuc -> -> 1 `i `ui 946  ]
-[e :U 947 ]
-}
-"398
-[; ;main.c: 398:     FrameCheckSum[index]='\0';
-[e = *U + &U _FrameCheckSum * -> _index `ux -> -> # *U &U _FrameCheckSum `ui `ux -> -> 0 `ui `uc ]
-"400
-[; ;main.c: 400: }
-[e :UE 945 ]
-}
-"402
-[; ;main.c: 402: void ACKframeChecksum(char* frame){
+"411
+[; ;main.c: 411: void ACKframeChecksum(char* frame){
 [v _ACKframeChecksum `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _ACKframeChecksum ]
 [v _frame `*uc ~T0 @X0 1 r1 ]
 [f ]
-"405
-[; ;main.c: 405:     clear_buffer(TrimmedAckFrame);
-[e ( _clear_buffer (1 &U _TrimmedAckFrame ]
-"407
-[; ;main.c: 407:     clear_buffer(fullAckFrame);
+"416
+[; ;main.c: 416:     clear_buffer(fullAckFrame);
 [e ( _clear_buffer (1 &U _fullAckFrame ]
-"409
-[; ;main.c: 409:     TrimAckFrame(frame);
-[e ( _TrimAckFrame (1 _frame ]
-"412
-[; ;main.c: 412:     ChecksumCalc(TrimmedAckFrame);
-[e ( _ChecksumCalc (1 &U _TrimmedAckFrame ]
-"413
-[; ;main.c: 413:     send_string("Result of XOR checksum: "); send_string(CRCresult); send_string("\n");
-[e ( _send_string (1 :s 29C ]
-[e ( _send_string (1 -> &U _CRCresult `*Cuc ]
-[e ( _send_string (1 :s 30C ]
-"419
-[; ;main.c: 419:     sprintf(fullAckFrame, "%c%s%c%c%c\0",'s',TrimmedAckFrame,CRCresult[0],CRCresult[1],'*');
-[e ( _sprintf (1 , , , , , (. , &U _fullAckFrame :s 31C -> 115 `ui &U _TrimmedAckFrame -> *U + &U _CRCresult * -> -> -> 0 `i `ui `ux -> -> # *U &U _CRCresult `ui `ux `i -> *U + &U _CRCresult * -> -> -> 1 `i `ui `ux -> -> # *U &U _CRCresult `ui `ux `i -> 42 `ui ]
-"420
-[; ;main.c: 420:     send_string("Acknowledgment frame to be sent: "); send_string(fullAckFrame); send_string("\n");
-[e ( _send_string (1 :s 32C ]
-[e ( _send_string (1 -> &U _fullAckFrame `*Cuc ]
-[e ( _send_string (1 :s 33C ]
 "421
-[; ;main.c: 421: }
-[e :UE 950 ]
+[; ;main.c: 421:     ChecksumCalc(frame);
+[e ( _ChecksumCalc (1 _frame ]
+"422
+[; ;main.c: 422:     send_string("Result of XOR checksum: "); send_string(CRCresult); send_string("\n");
+[e ( _send_string (1 :s 36C ]
+[e ( _send_string (1 -> &U _CRCresult `*Cuc ]
+[e ( _send_string (1 :s 37C ]
+"423
+[; ;main.c: 423:     send_string("ack frame: "); send_string(frame); send_string("\n");
+[e ( _send_string (1 :s 38C ]
+[e ( _send_string (1 -> _frame `*Cuc ]
+[e ( _send_string (1 :s 39C ]
+"428
+[; ;main.c: 428:     sprintf(fullAckFrame, "%s%c%c%c\0",frame,CRCresult[0],CRCresult[1],'*');
+[e ( _sprintf (1 , , , , (. , &U _fullAckFrame :s 40C _frame -> *U + &U _CRCresult * -> -> -> 0 `i `ui `ux -> -> # *U &U _CRCresult `ui `ux `i -> *U + &U _CRCresult * -> -> -> 1 `i `ui `ux -> -> # *U &U _CRCresult `ui `ux `i -> 42 `ui ]
+"429
+[; ;main.c: 429:     send_string("Acknowledgment frame to be sent: "); send_string(fullAckFrame); send_string("\n");
+[e ( _send_string (1 :s 41C ]
+[e ( _send_string (1 -> &U _fullAckFrame `*Cuc ]
+[e ( _send_string (1 :s 42C ]
+"430
+[; ;main.c: 430: }
+[e :UE 940 ]
 }
 [p f _sprintf 13435012 ]
-[a 13C 37 48 46 52 120 0 ]
-[a 14C 37 48 46 52 120 0 ]
-[a 15C 37 48 46 52 120 0 ]
-[a 16C 37 48 46 52 120 0 ]
-[a 28C 37 46 50 120 0 ]
+[a 19C 37 48 46 52 120 0 ]
+[a 20C 37 48 46 52 120 0 ]
+[a 21C 37 48 46 52 120 0 ]
+[a 22C 37 48 46 52 120 0 ]
+[a 33C 37 46 50 120 0 ]
 [a 7C 37 100 0 ]
 [a 10C 37 100 0 ]
 [a 9C 97 100 100 114 101 115 115 32 102 114 111 109 32 104 97 114 100 119 97 114 101 32 105 115 58 0 ]
-[a 32C 65 99 107 110 111 119 108 101 100 103 109 101 110 116 32 102 114 97 109 101 32 116 111 32 98 101 32 115 101 110 116 58 32 0 ]
-[a 29C 82 101 115 117 108 116 32 111 102 32 88 79 82 32 99 104 101 99 107 115 117 109 58 32 0 ]
+[a 41C 65 99 107 110 111 119 108 101 100 103 109 101 110 116 32 102 114 97 109 101 32 116 111 32 98 101 32 115 101 110 116 58 32 0 ]
+[a 36C 82 101 115 117 108 116 32 111 102 32 88 79 82 32 99 104 101 99 107 115 117 109 58 32 0 ]
+[a 17C 97 99 107 32 102 114 97 109 101 32 97 102 116 101 114 32 99 111 109 109 97 110 100 32 102 105 108 108 58 32 0 ]
+[a 15C 97 99 107 32 102 114 97 109 101 32 98 101 102 111 114 101 32 99 111 109 109 97 110 100 32 102 105 108 108 58 32 0 ]
 [a 6C 97 100 100 114 101 115 115 32 102 114 111 109 32 102 114 97 109 101 58 32 0 ]
-[a 23C 82 101 115 117 108 116 32 111 102 32 99 104 52 32 32 32 32 0 ]
-[a 21C 82 101 115 117 108 116 32 111 102 32 99 104 51 32 32 32 32 0 ]
-[a 19C 82 101 115 117 108 116 32 111 102 32 99 104 50 32 32 32 32 0 ]
-[a 17C 82 101 115 117 108 116 32 111 102 32 99 104 49 32 32 32 32 0 ]
+[a 38C 97 99 107 32 102 114 97 109 101 58 32 0 ]
+[a 13C 114 101 99 101 105 118 101 100 32 102 114 97 109 101 58 32 0 ]
+[a 34C 82 101 99 101 105 118 101 100 32 102 114 97 109 101 58 32 0 ]
+[a 29C 82 101 115 117 108 116 32 111 102 32 99 104 52 32 32 32 32 0 ]
+[a 27C 82 101 115 117 108 116 32 111 102 32 99 104 51 32 32 32 32 0 ]
+[a 25C 82 101 115 117 108 116 32 111 102 32 99 104 50 32 32 32 32 0 ]
+[a 23C 82 101 115 117 108 116 32 111 102 32 99 104 49 32 32 32 32 0 ]
 [a 12C 67 111 109 109 97 110 100 32 99 104 97 114 97 99 116 101 114 32 101 114 114 111 114 10 0 ]
 [a 5C 69 114 114 111 114 33 32 73 103 110 111 114 101 32 102 114 97 109 101 46 10 0 ]
 [a 4C 78 111 32 69 114 114 111 114 33 32 70 114 97 109 101 32 105 115 32 118 97 108 105 100 46 10 0 ]
 [a 3C 65 68 67 32 114 101 97 100 121 33 10 0 ]
 [a 1C 72 101 108 108 111 33 10 0 ]
-[a 26C 73 32 97 109 32 116 104 101 32 102 105 110 97 108 32 102 114 97 109 101 58 32 10 0 ]
+[a 31C 73 32 97 109 32 116 104 101 32 102 105 110 97 108 32 102 114 97 109 101 58 32 10 0 ]
 [a 2C 82 101 115 101 116 32 68 79 78 69 33 32 10 0 ]
 [a 8C 10 0 ]
 [a 11C 10 0 ]
+[a 14C 10 0 ]
+[a 16C 10 0 ]
 [a 18C 10 0 ]
-[a 20C 10 0 ]
-[a 22C 10 0 ]
 [a 24C 10 0 ]
-[a 27C 10 0 ]
+[a 26C 10 0 ]
+[a 28C 10 0 ]
 [a 30C 10 0 ]
-[a 33C 10 0 ]
-[a 31C 37 99 37 115 37 99 37 99 37 99 0 0 ]
-[a 25C 42 0 0 ]
+[a 32C 10 0 ]
+[a 35C 10 0 ]
+[a 37C 10 0 ]
+[a 39C 10 0 ]
+[a 42C 10 0 ]
+[a 40C 37 115 37 99 37 99 37 99 0 0 ]

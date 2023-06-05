@@ -28,12 +28,12 @@ extern "C" {
 #include "ADC_driver.h"
 
 /*defines*/
-#define START_CHAR   's'
-#define BCAST_CHAR   'b'
-#define UCAST_CHAR   'u'
-#define READ_CMD    'r'
-#define GET_CMD    'g'
-#define BCAST_TEST 't'
+#define START_CHAR   '$'
+#define BCAST_CHAR   'B'
+#define UCAST_CHAR   'U'
+#define READ_CMD    'R'
+#define GET_CMD    'G'
+#define BCAST_TEST 'C'
 #define END_CHAR   '*'
 #define MAX_BUFFER_SIZE 20
 
@@ -52,9 +52,9 @@ void Execute(void);
 int get_ID(void);
 int parse_frame_ID(void);
 void ChecksumCalc(char* dataString);
-void TrimFrame(char* receivedFrame);
+void TrimFrame(void);
 void TrimAckFrame(char* AckFrame);
-void GetChecksumValue(char *receivedFrame);
+void GetChecksumValue(void);
 void ACKframeChecksum(char* acknowledge_frame);
 void PrintString(char* String);
 

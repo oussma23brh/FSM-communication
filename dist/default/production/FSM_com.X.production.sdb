@@ -4,19 +4,19 @@
 [d chip 18F46K22 ]
 [d frameptr 4065 ]
 "67 C:\Users\oussama\MPLABXProjects\FSM_com.X/main.h
-[e E7013 . `uc
+[e E7011 . `uc
 SETUP 0
 IDLE 1
 PARSING 2
 ]
 "70
-[e E7019 . `uc
+[e E7017 . `uc
 BROADCAST 0
 UNICAST 1
 MULTICAST 2
 ]
 "76
-[e E7026 . `uc
+[e E7024 . `uc
 RST 0
 ERROR_CHECK 1
 DEST_CHK 2
@@ -152,27 +152,25 @@ EXECUTE 5
 [v _Idle Idle `(v  1 e 1 0 ]
 "142
 [v _ReceivedFrameChecksum ReceivedFrameChecksum `(v  1 e 1 0 ]
-"173
+"175
 [v _Destination_Check Destination_Check `(v  1 e 1 0 ]
-"193
+"195
 [v _Parse Parse `(v  1 e 1 0 ]
-"208
+"210
 [v _Decode Decode `(v  1 e 1 0 ]
-"261
+"263
 [v _Execute Execute `(v  1 e 1 0 ]
-"337
-[v _get_ID get_ID `(i  1 e 2 0 ]
 "342
-[v _parse_frame_ID parse_frame_ID `(i  1 e 2 0 ]
+[v _get_ID get_ID `(i  1 e 2 0 ]
 "347
+[v _parse_frame_ID parse_frame_ID `(i  1 e 2 0 ]
+"352
 [v _ChecksumCalc ChecksumCalc `(v  1 e 1 0 ]
-"357
+"362
 [v _TrimFrame TrimFrame `(v  1 e 1 0 ]
-"368
-[v _TrimAckFrame TrimAckFrame `(v  1 e 1 0 ]
-"389
+"397
 [v _GetChecksumValue GetChecksumValue `(v  1 e 1 0 ]
-"402
+"411
 [v _ACKframeChecksum ACKframeChecksum `(v  1 e 1 0 ]
 "80 C:\Users\oussama\MPLABXProjects\FSM_com.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
@@ -217,14 +215,14 @@ EXECUTE 5
 "48 C:\Users\oussama\MPLABXProjects\FSM_com.X/ADC_driver.h
 [v _ADC_result ADC_result `[4]us  1 e 8 0 ]
 "67 C:\Users\oussama\MPLABXProjects\FSM_com.X/main.h
-[v _frame_state frame_state `E7013  1 e 1 0 ]
+[v _frame_state frame_state `E7011  1 e 1 0 ]
 "70
-[v _destination destination `E7019  1 e 1 0 ]
-[v _prev_destination prev_destination `E7019  1 e 1 0 ]
+[v _destination destination `E7017  1 e 1 0 ]
+[v _prev_destination prev_destination `E7017  1 e 1 0 ]
 "74
 [v _function_table function_table `[6]*.37(v  1 e 12 0 ]
 "76
-[v _curr_state curr_state `E7026  1 e 1 0 ]
+[v _curr_state curr_state `E7024  1 e 1 0 ]
 "80
 [v _read_flag read_flag `uc  1 e 1 0 ]
 "81
@@ -252,8 +250,6 @@ EXECUTE 5
 [v _fullAckFrame fullAckFrame `[20]uc  1 e 20 0 ]
 "100
 [v _TrimmedFrame TrimmedFrame `[20]uc  1 e 20 0 ]
-"101
-[v _TrimmedAckFrame TrimmedAckFrame `[20]uc  1 e 20 0 ]
 "102
 [v _FrameCheckSum FrameCheckSum `[3]uc  1 e 3 0 ]
 "103
@@ -270,7 +266,7 @@ EXECUTE 5
 [v _ANSELE ANSELE `VEuc  1 e 1 @3900 ]
 "2719
 [v _WPUB WPUB `VEuc  1 e 1 @3937 ]
-[s S839 . 1 `uc 1 RA0 1 0 :1:0 
+[s S837 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -280,65 +276,65 @@ EXECUTE 5
 `uc 1 RA7 1 0 :1:7 
 ]
 "6365
-[s S848 . 1 `uc 1 AN0 1 0 :1:0 
+[s S846 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 AN3 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 AN4 1 0 :1:5 
 ]
-[s S855 . 1 `uc 1 C12IN0M 1 0 :1:0 
+[s S853 . 1 `uc 1 C12IN0M 1 0 :1:0 
 `uc 1 C12IN1M 1 0 :1:1 
 `uc 1 C2INP 1 0 :1:2 
 `uc 1 C1INP 1 0 :1:3 
 `uc 1 C1OUT 1 0 :1:4 
 `uc 1 C2OUT 1 0 :1:5 
 ]
-[s S862 . 1 `uc 1 C12IN0N 1 0 :1:0 
+[s S860 . 1 `uc 1 C12IN0N 1 0 :1:0 
 `uc 1 C12IN1N 1 0 :1:1 
 `uc 1 VREFM 1 0 :1:2 
 `uc 1 VREFP 1 0 :1:3 
 `uc 1 T0CKI 1 0 :1:4 
 `uc 1 SS 1 0 :1:5 
 ]
-[s S869 . 1 `uc 1 . 1 0 :5:0 
+[s S867 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_SS 1 0 :1:5 
 ]
-[s S872 . 1 `uc 1 . 1 0 :2:0 
+[s S870 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 VREFN 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 SRQ 1 0 :1:4 
 `uc 1 nSS 1 0 :1:5 
 ]
-[s S878 . 1 `uc 1 . 1 0 :2:0 
+[s S876 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 CVREF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S883 . 1 `uc 1 . 1 0 :2:0 
+[s S881 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 DACOUT 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S888 . 1 `uc 1 . 1 0 :5:0 
+[s S886 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SS1 1 0 :1:5 
 ]
-[s S891 . 1 `uc 1 . 1 0 :5:0 
+[s S889 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_SS1 1 0 :1:5 
 ]
-[s S894 . 1 `uc 1 . 1 0 :5:0 
+[s S892 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 nSS1 1 0 :1:5 
 ]
-[s S897 . 1 `uc 1 . 1 0 :5:0 
+[s S895 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRNQ 1 0 :1:5 
 ]
-[s S900 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S898 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 `uc 1 . 1 0 :6:1 
 `uc 1 RJPU 1 0 :1:7 
 ]
-[u S904 . 1 `S839 1 . 1 0 `S848 1 . 1 0 `S855 1 . 1 0 `S862 1 . 1 0 `S869 1 . 1 0 `S872 1 . 1 0 `S878 1 . 1 0 `S883 1 . 1 0 `S888 1 . 1 0 `S891 1 . 1 0 `S894 1 . 1 0 `S897 1 . 1 0 `S900 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES904  1 e 1 @3968 ]
-[s S984 . 1 `uc 1 RD0 1 0 :1:0 
+[u S902 . 1 `S837 1 . 1 0 `S846 1 . 1 0 `S853 1 . 1 0 `S860 1 . 1 0 `S867 1 . 1 0 `S870 1 . 1 0 `S876 1 . 1 0 `S881 1 . 1 0 `S886 1 . 1 0 `S889 1 . 1 0 `S892 1 . 1 0 `S895 1 . 1 0 `S898 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES902  1 e 1 @3968 ]
+[s S982 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -348,7 +344,7 @@ EXECUTE 5
 `uc 1 RD7 1 0 :1:7 
 ]
 "7205
-[s S993 . 1 `uc 1 . 1 0 :2:0 
+[s S991 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 P2B 1 0 :1:2 
 `uc 1 P2C 1 0 :1:3 
 `uc 1 P2D 1 0 :1:4 
@@ -356,16 +352,16 @@ EXECUTE 5
 `uc 1 P1C 1 0 :1:6 
 `uc 1 P1D 1 0 :1:7 
 ]
-[s S1001 . 1 `uc 1 . 1 0 :1:0 
+[s S999 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCP4 1 0 :1:1 
 `uc 1 . 1 0 :4:2 
 `uc 1 TX2 1 0 :1:6 
 `uc 1 RX2 1 0 :1:7 
 ]
-[s S1007 . 1 `uc 1 . 1 0 :3:0 
+[s S1005 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_SS2 1 0 :1:3 
 ]
-[s S1010 . 1 `uc 1 SCK2 1 0 :1:0 
+[s S1008 . 1 `uc 1 SCK2 1 0 :1:0 
 `uc 1 SDI2 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 nSS2 1 0 :1:3 
@@ -374,12 +370,12 @@ EXECUTE 5
 `uc 1 CK2 1 0 :1:6 
 `uc 1 DT2 1 0 :1:7 
 ]
-[s S1019 . 1 `uc 1 SCL2 1 0 :1:0 
+[s S1017 . 1 `uc 1 SCL2 1 0 :1:0 
 `uc 1 SDA2 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SS2 1 0 :1:3 
 ]
-[s S1024 . 1 `uc 1 AN20 1 0 :1:0 
+[s S1022 . 1 `uc 1 AN20 1 0 :1:0 
 `uc 1 AN21 1 0 :1:1 
 `uc 1 AN22 1 0 :1:2 
 `uc 1 AN23 1 0 :1:3 
@@ -388,8 +384,8 @@ EXECUTE 5
 `uc 1 AN26 1 0 :1:6 
 `uc 1 AN27 1 0 :1:7 
 ]
-[u S1033 . 1 `S984 1 . 1 0 `S993 1 . 1 0 `S1001 1 . 1 0 `S1007 1 . 1 0 `S1010 1 . 1 0 `S1019 1 . 1 0 `S1024 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES1033  1 e 1 @3971 ]
+[u S1031 . 1 `S982 1 . 1 0 `S991 1 . 1 0 `S999 1 . 1 0 `S1005 1 . 1 0 `S1008 1 . 1 0 `S1017 1 . 1 0 `S1022 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES1031  1 e 1 @3971 ]
 "7560
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
 "7672
@@ -530,7 +526,7 @@ EXECUTE 5
 [v _BAUDCON1 BAUDCON1 `VEuc  1 e 1 @4024 ]
 "13783
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @4037 ]
-[s S1487 . 1 `uc 1 SEN 1 0 :1:0 
+[s S1482 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -540,7 +536,7 @@ EXECUTE 5
 `uc 1 GCEN 1 0 :1:7 
 ]
 "13831
-[s S1496 . 1 `uc 1 SEN1 1 0 :1:0 
+[s S1491 . 1 `uc 1 SEN1 1 0 :1:0 
 `uc 1 ADMSK1 1 0 :1:1 
 `uc 1 ADMSK2 1 0 :1:2 
 `uc 1 ADMSK3 1 0 :1:3 
@@ -549,37 +545,37 @@ EXECUTE 5
 `uc 1 ACKSTAT1 1 0 :1:6 
 `uc 1 GCEN1 1 0 :1:7 
 ]
-[s S1505 . 1 `uc 1 . 1 0 :1:0 
+[s S1500 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK11 1 0 :1:1 
 `uc 1 ADMSK21 1 0 :1:2 
 `uc 1 ADMSK31 1 0 :1:3 
 `uc 1 ADMSK4 1 0 :1:4 
 `uc 1 ADMSK5 1 0 :1:5 
 ]
-[s S1512 . 1 `uc 1 . 1 0 :1:0 
+[s S1507 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RSEN1 1 0 :1:1 
 `uc 1 PEN1 1 0 :1:2 
 `uc 1 RCEN1 1 0 :1:3 
 `uc 1 ADMSK41 1 0 :1:4 
 `uc 1 ADMSK51 1 0 :1:5 
 ]
-[u S1519 . 1 `S1487 1 . 1 0 `S1496 1 . 1 0 `S1505 1 . 1 0 `S1512 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES1519  1 e 1 @4037 ]
+[u S1514 . 1 `S1482 1 . 1 0 `S1491 1 . 1 0 `S1500 1 . 1 0 `S1507 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES1514  1 e 1 @4037 ]
 "14137
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @4038 ]
-[s S1236 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S1231 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "14172
-[s S1242 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S1237 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[s S1247 . 1 `uc 1 SSPM01 1 0 :1:0 
+[s S1242 . 1 `uc 1 SSPM01 1 0 :1:0 
 `uc 1 SSPM11 1 0 :1:1 
 `uc 1 SSPM21 1 0 :1:2 
 `uc 1 SSPM31 1 0 :1:3 
@@ -588,18 +584,18 @@ EXECUTE 5
 `uc 1 SSPOV1 1 0 :1:6 
 `uc 1 WCOL1 1 0 :1:7 
 ]
-[u S1256 . 1 `S1236 1 . 1 0 `S1242 1 . 1 0 `S1247 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES1256  1 e 1 @4038 ]
+[u S1251 . 1 `S1231 1 . 1 0 `S1237 1 . 1 0 `S1242 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES1251  1 e 1 @4038 ]
 "14375
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @4039 ]
-[s S1313 . 1 `uc 1 . 1 0 :2:0 
+[s S1308 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_NOT_W 1 0 :1:2 
 ]
 "14481
-[s S1316 . 1 `uc 1 . 1 0 :5:0 
+[s S1311 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 D_NOT_A 1 0 :1:5 
 ]
-[s S1319 . 1 `uc 1 BF 1 0 :1:0 
+[s S1314 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -608,38 +604,38 @@ EXECUTE 5
 `uc 1 CKE 1 0 :1:6 
 `uc 1 SMP 1 0 :1:7 
 ]
-[s S1328 . 1 `uc 1 . 1 0 :2:0 
+[s S1323 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S1333 . 1 `uc 1 . 1 0 :2:0 
+[s S1328 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 A 1 0 :1:5 
 ]
-[s S1338 . 1 `uc 1 . 1 0 :2:0 
+[s S1333 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S1343 . 1 `uc 1 . 1 0 :2:0 
+[s S1338 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S1348 . 1 `uc 1 . 1 0 :2:0 
+[s S1343 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_WRITE 1 0 :1:2 
 ]
-[s S1351 . 1 `uc 1 . 1 0 :5:0 
+[s S1346 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_ADDRESS 1 0 :1:5 
 ]
-[s S1354 . 1 `uc 1 . 1 0 :2:0 
+[s S1349 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S1359 . 1 `uc 1 BF1 1 0 :1:0 
+[s S1354 . 1 `uc 1 BF1 1 0 :1:0 
 `uc 1 UA1 1 0 :1:1 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
@@ -648,31 +644,31 @@ EXECUTE 5
 `uc 1 CKE1 1 0 :1:6 
 `uc 1 SMP1 1 0 :1:7 
 ]
-[s S1368 . 1 `uc 1 . 1 0 :2:0 
+[s S1363 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
 `uc 1 STOP 1 0 :1:4 
 `uc 1 DA1 1 0 :1:5 
 ]
-[s S1374 . 1 `uc 1 . 1 0 :2:0 
+[s S1369 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 START1 1 0 :1:3 
 `uc 1 STOP1 1 0 :1:4 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[s S1380 . 1 `uc 1 . 1 0 :2:0 
+[s S1375 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
-[s S1385 . 1 `uc 1 . 1 0 :2:0 
+[s S1380 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_W 1 0 :1:2 
 ]
-[s S1388 . 1 `uc 1 . 1 0 :5:0 
+[s S1383 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_A 1 0 :1:5 
 ]
-[u S1391 . 1 `S1313 1 . 1 0 `S1316 1 . 1 0 `S1319 1 . 1 0 `S1328 1 . 1 0 `S1333 1 . 1 0 `S1338 1 . 1 0 `S1343 1 . 1 0 `S1348 1 . 1 0 `S1351 1 . 1 0 `S1354 1 . 1 0 `S1359 1 . 1 0 `S1368 1 . 1 0 `S1374 1 . 1 0 `S1380 1 . 1 0 `S1385 1 . 1 0 `S1388 1 . 1 0 ]
-[v _SSP1STATbits SSP1STATbits `VES1391  1 e 1 @4039 ]
+[u S1386 . 1 `S1308 1 . 1 0 `S1311 1 . 1 0 `S1314 1 . 1 0 `S1323 1 . 1 0 `S1328 1 . 1 0 `S1333 1 . 1 0 `S1338 1 . 1 0 `S1343 1 . 1 0 `S1346 1 . 1 0 `S1349 1 . 1 0 `S1354 1 . 1 0 `S1363 1 . 1 0 `S1369 1 . 1 0 `S1375 1 . 1 0 `S1380 1 . 1 0 `S1383 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES1386  1 e 1 @4039 ]
 "15005
 [v _SSP1ADD SSP1ADD `VEuc  1 e 1 @4040 ]
 "15259
@@ -850,42 +846,42 @@ EXECUTE 5
 [v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 21 ]
 "235
 } 0
-"261 C:\Users\oussama\MPLABXProjects\FSM_com.X\main.c
+"263 C:\Users\oussama\MPLABXProjects\FSM_com.X\main.c
 [v _Execute Execute `(v  1 e 1 0 ]
 {
-"299
-[v Execute@data_ch4 data_ch4 `[10]uc  1 a 10 30 ]
-[v Execute@data_ch3 data_ch3 `[10]uc  1 a 10 20 ]
-[v Execute@data_ch2 data_ch2 `[10]uc  1 a 10 10 ]
-[v Execute@data_ch1 data_ch1 `[10]uc  1 a 10 0 ]
-"263
-[v Execute@acknowledge_frame acknowledge_frame `[30]uc  1 a 30 40 ]
-"270
-[v Execute@i i `uc  1 a 1 73 ]
+"304
+[v Execute@data_ch4 data_ch4 `[10]uc  1 a 10 60 ]
+[v Execute@data_ch3 data_ch3 `[10]uc  1 a 10 50 ]
+[v Execute@data_ch2 data_ch2 `[10]uc  1 a 10 40 ]
+[v Execute@data_ch1 data_ch1 `[10]uc  1 a 10 30 ]
 "265
-[v Execute@k k `uc  1 a 1 72 ]
-"333
+[v Execute@acknowledge_frame acknowledge_frame `[30]uc  1 a 30 0 ]
+"274
+[v Execute@i i `uc  1 a 1 71 ]
+"267
+[v Execute@k k `uc  1 a 1 70 ]
+"338
 } 0
-"208
+"210
 [v _Decode Decode `(v  1 e 1 0 ]
 {
+"214
+[v Decode@hardID hardID `uc  1 a 1 94 ]
 "212
-[v Decode@hardID hardID `uc  1 a 1 96 ]
-"210
-[v Decode@frameID frameID `uc  1 a 1 95 ]
-"259
+[v Decode@frameID frameID `uc  1 a 1 93 ]
+"261
 } 0
-"193
+"195
 [v _Parse Parse `(v  1 e 1 0 ]
 {
-"195
+"197
 [v Parse@i i `uc  1 a 1 22 ]
-"205
+"207
 } 0
-"173
+"175
 [v _Destination_Check Destination_Check `(v  1 e 1 0 ]
 {
-"191
+"193
 } 0
 "137
 [v _Idle Idle `(v  1 e 1 0 ]
@@ -895,11 +891,11 @@ EXECUTE 5
 "142
 [v _ReceivedFrameChecksum ReceivedFrameChecksum `(v  1 e 1 0 ]
 {
-"158
-[v ReceivedFrameChecksum@hexCRCresult hexCRCresult `i  1 a 2 100 ]
-"154
-[v ReceivedFrameChecksum@hexFrameCheckSum hexFrameCheckSum `i  1 a 2 98 ]
-"170
+"160
+[v ReceivedFrameChecksum@hexCRCresult hexCRCresult `i  1 a 2 98 ]
+"155
+[v ReceivedFrameChecksum@hexFrameCheckSum hexFrameCheckSum `i  1 a 2 96 ]
+"172
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\strtol.c
 [v _strtol strtol `(l  1 e 4 0 ]
@@ -964,27 +960,23 @@ EXECUTE 5
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 25 ]
 "129
 } 0
-"357 C:\Users\oussama\MPLABXProjects\FSM_com.X\main.c
+"362 C:\Users\oussama\MPLABXProjects\FSM_com.X\main.c
 [v _TrimFrame TrimFrame `(v  1 e 1 0 ]
 {
-"359
-[v TrimFrame@i i `uc  1 a 1 32 ]
-"358
-[v TrimFrame@index index `uc  1 a 1 31 ]
-"357
-[v TrimFrame@receivedFrame receivedFrame `*.39uc  1 p 2 25 ]
-"365
+"364
+[v TrimFrame@i i `uc  1 a 1 30 ]
+"363
+[v TrimFrame@index index `uc  1 a 1 29 ]
+"371
 } 0
-"389
+"397
 [v _GetChecksumValue GetChecksumValue `(v  1 e 1 0 ]
 {
-"391
-[v GetChecksumValue@i i `uc  1 a 1 32 ]
-"390
-[v GetChecksumValue@index index `uc  1 a 1 31 ]
-"389
-[v GetChecksumValue@receivedFrame receivedFrame `*.39uc  1 p 2 25 ]
-"400
+"399
+[v GetChecksumValue@i i `uc  1 a 1 36 ]
+"398
+[v GetChecksumValue@index index `uc  1 a 1 35 ]
+"409
 } 0
 "131
 [v _Initialize Initialize `(v  1 e 1 0 ]
@@ -1074,43 +1066,32 @@ EXECUTE 5
 {
 "148
 } 0
-"402 C:\Users\oussama\MPLABXProjects\FSM_com.X\main.c
+"411 C:\Users\oussama\MPLABXProjects\FSM_com.X\main.c
 [v _ACKframeChecksum ACKframeChecksum `(v  1 e 1 0 ]
 {
-[v ACKframeChecksum@frame frame `*.39uc  1 p 2 98 ]
-"421
+[v ACKframeChecksum@frame frame `*.39uc  1 p 2 96 ]
+"430
 } 0
-"368
-[v _TrimAckFrame TrimAckFrame `(v  1 e 1 0 ]
-{
-"370
-[v TrimAckFrame@i i `uc  1 a 1 32 ]
-"369
-[v TrimAckFrame@index index `uc  1 a 1 31 ]
-"368
-[v TrimAckFrame@AckFrame AckFrame `*.39uc  1 p 2 25 ]
-"376
-} 0
-"347
+"352
 [v _ChecksumCalc ChecksumCalc `(v  1 e 1 0 ]
 {
-"350
-[v ChecksumCalc@i i `i  1 a 2 96 ]
-"348
-[v ChecksumCalc@xorTemp xorTemp `uc  1 a 1 95 ]
-"347
-[v ChecksumCalc@dataString dataString `*.39uc  1 p 2 93 ]
-"354
+"355
+[v ChecksumCalc@i i `i  1 a 2 94 ]
+"353
+[v ChecksumCalc@xorTemp xorTemp `uc  1 a 1 93 ]
+"352
+[v ChecksumCalc@dataString dataString `*.39uc  1 p 2 91 ]
+"359
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S2111 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[u S2106 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
 "13
-[s S2114 _IO_FILE 11 `S2111 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v sprintf@f f `S2114  1 a 11 82 ]
+[s S2109 _IO_FILE 11 `S2106 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v sprintf@f f `S2109  1 a 11 80 ]
 "12
-[v sprintf@ap ap `[1]*.39v  1 a 2 80 ]
+[v sprintf@ap ap `[1]*.39v  1 a 2 78 ]
 "9
 [v sprintf@s s `*.39uc  1 p 2 66 ]
 [v sprintf@fmt fmt `*.32Cuc  1 p 2 68 ]
@@ -1121,9 +1102,9 @@ EXECUTE 5
 {
 "1523
 [v vfprintf@cfmt cfmt `*.32uc  1 a 2 50 ]
-[s S2146 _IO_FILE 0 ]
+[s S2141 _IO_FILE 0 ]
 "1520
-[v vfprintf@fp fp `*.39S2146  1 p 2 60 ]
+[v vfprintf@fp fp `*.39S2141  1 p 2 60 ]
 [v vfprintf@fmt fmt `*.32Cuc  1 p 2 62 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 64 ]
 "1543
@@ -1131,18 +1112,18 @@ EXECUTE 5
 "1007
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S2165 . 8 `o 1 ll 8 0 `uo 1 llu 8 0 `*.2v 1 vp 3 0 `d 1 f 4 0 ]
+[u S2160 . 8 `o 1 ll 8 0 `uo 1 llu 8 0 `*.2v 1 vp 3 0 `d 1 f 4 0 ]
 "1016
-[v vfpfcnvrt@convarg convarg `S2165  1 a 8 50 ]
+[v vfpfcnvrt@convarg convarg `S2160  1 a 8 50 ]
 "1009
 [v vfpfcnvrt@cp cp `*.32uc  1 a 2 58 ]
 "1010
 [v vfpfcnvrt@done done `i  1 a 2 46 ]
 "1009
 [v vfpfcnvrt@c c `uc  1 a 1 45 ]
-[s S2146 _IO_FILE 0 ]
+[s S2141 _IO_FILE 0 ]
 "1007
-[v vfpfcnvrt@fp fp `*.39S2146  1 p 2 35 ]
+[v vfpfcnvrt@fp fp `*.39S2141  1 p 2 35 ]
 [v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 37 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 39 ]
 "1517
@@ -1158,9 +1139,9 @@ EXECUTE 5
 [v xtoa@p p `i  1 a 2 20 ]
 "938
 [v xtoa@c c `uc  1 a 1 34 ]
-[s S2146 _IO_FILE 0 ]
+[s S2141 _IO_FILE 0 ]
 "934
-[v xtoa@fp fp `*.39S2146  1 p 2 0 ]
+[v xtoa@fp fp `*.39S2141  1 p 2 0 ]
 [v xtoa@d d `uo  1 p 8 2 ]
 "1001
 } 0
@@ -1189,9 +1170,9 @@ EXECUTE 5
 "842
 [v stoa@i i `i  1 a 2 9 ]
 [v stoa@w w `i  1 a 2 7 ]
-[s S2146 _IO_FILE 0 ]
+[s S2141 _IO_FILE 0 ]
 "839
-[v stoa@fp fp `*.39S2146  1 p 2 32 ]
+[v stoa@fp fp `*.39S2141  1 p 2 32 ]
 [v stoa@s s `*.39uc  1 p 2 34 ]
 "841
 [v stoa@F1157 F1157 `[7]uc  1 s 7 F1157 ]
@@ -1208,9 +1189,9 @@ EXECUTE 5
 [v dtoa@p p `i  1 a 2 20 ]
 "445
 [v dtoa@s s `uc  1 a 1 32 ]
-[s S2146 _IO_FILE 0 ]
+[s S2141 _IO_FILE 0 ]
 "443
-[v dtoa@fp fp `*.39S2146  1 p 2 0 ]
+[v dtoa@fp fp `*.39S2141  1 p 2 0 ]
 [v dtoa@d d `o  1 p 8 2 ]
 "502
 } 0
@@ -1220,9 +1201,9 @@ EXECUTE 5
 "135
 [v pad@w w `i  1 a 2 48 ]
 [v pad@i i `i  1 a 2 46 ]
-[s S2146 _IO_FILE 0 ]
+[s S2141 _IO_FILE 0 ]
 "133
-[v pad@fp fp `*.39S2146  1 p 2 39 ]
+[v pad@fp fp `*.39S2141  1 p 2 39 ]
 [v pad@buf buf `*.39uc  1 p 2 41 ]
 [v pad@p p `i  1 p 2 43 ]
 "164
@@ -1236,9 +1217,9 @@ EXECUTE 5
 [v fputs@c c `uc  1 a 1 36 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 32 ]
-[u S2111 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S2114 _IO_FILE 11 `S2111 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputs@fp fp `*.39S2114  1 p 2 34 ]
+[u S2106 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S2109 _IO_FILE 11 `S2106 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.39S2109  1 p 2 34 ]
 "19
 } 0
 "1 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\abs.c
@@ -1277,9 +1258,9 @@ EXECUTE 5
 "408
 [v ctoa@w w `i  1 a 2 38 ]
 [v ctoa@l l `i  1 a 2 36 ]
-[s S2146 _IO_FILE 0 ]
+[s S2141 _IO_FILE 0 ]
 "406
-[v ctoa@fp fp `*.39S2146  1 p 2 32 ]
+[v ctoa@fp fp `*.39S2141  1 p 2 32 ]
 [v ctoa@c c `uc  1 p 1 34 ]
 "439
 } 0
@@ -1287,9 +1268,9 @@ EXECUTE 5
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 23 ]
-[u S2111 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S2114 _IO_FILE 11 `S2111 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.39S2114  1 p 2 25 ]
+[u S2106 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S2109 _IO_FILE 11 `S2106 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.39S2109  1 p 2 25 ]
 "24
 } 0
 "171 C:\Users\oussama\MPLABXProjects\FSM_com.X\mcc_generated_files/eusart1.c
@@ -1346,10 +1327,10 @@ EXECUTE 5
 [v EUSART1_Write@txData txData `uc  1 a 1 21 ]
 "164
 } 0
-"342 C:\Users\oussama\MPLABXProjects\FSM_com.X\main.c
+"347 C:\Users\oussama\MPLABXProjects\FSM_com.X\main.c
 [v _parse_frame_ID parse_frame_ID `(i  1 e 2 0 ]
 {
-"344
+"349
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -1361,16 +1342,16 @@ EXECUTE 5
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 23 ]
 "53
 } 0
-"337 C:\Users\oussama\MPLABXProjects\FSM_com.X\main.c
+"342 C:\Users\oussama\MPLABXProjects\FSM_com.X\main.c
 [v _get_ID get_ID `(i  1 e 2 0 ]
 {
-"339
+"344
 } 0
 "118
 [v _clear_buffer clear_buffer `(v  1 e 1 0 ]
 {
-"120
-[v clear_buffer@i_1137 i `i  1 a 2 27 ]
+"119
+[v clear_buffer@i i `i  1 a 2 27 ]
 "118
 [v clear_buffer@buffer buffer `*.39uc  1 p 2 25 ]
 "123
@@ -1453,8 +1434,8 @@ EXECUTE 5
 "118
 [v i2_clear_buffer clear_buffer `(v  1 e 1 0 ]
 {
-"120
-[v i2clear_buffer@i_1137 i `i  1 a 2 6 ]
+"119
+[v i2clear_buffer@i i `i  1 a 2 6 ]
 "118
 [v i2clear_buffer@buffer buffer `*.39uc  1 p 2 4 ]
 "123
