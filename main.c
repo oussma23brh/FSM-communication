@@ -63,11 +63,11 @@ void main(void)
     Initialize();       // Initialize the parsing FSM
     
     //send_string("Hello!\n");
-    //AD5593_init_w_EVREF();        //reset and ititialize AD5593 to operate with EVREF
-    ADC_reset();                  //reset the LMP92001
+    AD5593_init_w_EVREF();        //reset and ititialize AD5593 to operate with EVREF
+    //ADC_reset();                  //reset the LMP92001
     //send_string("Reset DONE! \n");
-    __delay_ms(1);       //wait for the adc to reset
-    ADC_init();        //initialize the LMP92001
+    //__delay_ms(1);       //wait for the adc to reset
+    //ADC_init();        //initialize the LMP92001
     //send_string("ADC ready!\n");    
     while (1)
     {
@@ -282,8 +282,8 @@ void Execute(void){
         TMR0_StopTimer();           //Stop the timer
         timer0_flag = 0;            //reset the timer's flag
         TMR0_Reload();              //Reload the timer
-        //AD5593_ADC_read();        //Call AD5593_read
-        ADC_read();                 //trigger the LMP92001 conversion
+        AD5593_ADC_read();        //Call AD5593_read
+        //ADC_read();                 //trigger the LMP92001 conversion
         if(destination == BROADCAST){ 
             frame_ready_flag = 0;
             read_flag = 0; //clear read flag at the end of operation

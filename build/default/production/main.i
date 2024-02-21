@@ -10524,11 +10524,11 @@ void main(void)
     Initialize();
 
 
+    AD5593_init_w_EVREF();
 
-    ADC_reset();
 
-    _delay((unsigned long)((1)*(16000000/4000.0)));
-    ADC_init();
+
+
 
     while (1)
     {
@@ -10733,8 +10733,8 @@ void Execute(void){
         TMR0_StopTimer();
         timer0_flag = 0;
         TMR0_Reload();
+        AD5593_ADC_read();
 
-        ADC_read();
         if(destination == BROADCAST){
             frame_ready_flag = 0;
             read_flag = 0;

@@ -93,16 +93,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49 ./main.h
 [; ;./main.h: 49: void Initialize(void);
 [v _Initialize `(v ~T0 @X0 0 ef ]
-"42 ./ADC_driver.h
-[; ;./ADC_driver.h: 42: void ADC_reset(void);
-[v _ADC_reset `(v ~T0 @X0 0 ef ]
-[v F192 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\builtins.h
-[v __delay `JF192 ~T0 @X0 0 e ]
-[p i __delay ]
-"43 ./ADC_driver.h
-[; ;./ADC_driver.h: 43: void ADC_init(void);
-[v _ADC_init `(v ~T0 @X0 0 ef ]
+"66 ./AD5593R.h
+[; ;./AD5593R.h: 66: void AD5593_init_w_EVREF(void);
+[v _AD5593_init_w_EVREF `(v ~T0 @X0 0 ef ]
 "7902 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 7902:     struct {
 [s S389 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -178,9 +171,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "272
 [; ;./mcc_generated_files/tmr0.h: 272: void TMR0_Reload(void);
 [v _TMR0_Reload `(v ~T0 @X0 0 ef ]
-"44 ./ADC_driver.h
-[; ;./ADC_driver.h: 44: void ADC_read(void);
-[v _ADC_read `(v ~T0 @X0 0 ef ]
+"67 ./AD5593R.h
+[; ;./AD5593R.h: 67: void AD5593_ADC_read(void);
+[v _AD5593_ADC_read `(v ~T0 @X0 0 ef ]
 "27 C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\string.h: 27: void *memcpy (void *restrict, const void *restrict, size_t);
 [v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
@@ -1176,15 +1169,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "63
 [; ;main.c: 63:     Initialize();
 [e ( _Initialize ..  ]
-"67
-[; ;main.c: 67:     ADC_reset();
-[e ( _ADC_reset ..  ]
-"69
-[; ;main.c: 69:     _delay((unsigned long)((1)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"70
-[; ;main.c: 70:     ADC_init();
-[e ( _ADC_init ..  ]
+"66
+[; ;main.c: 66:     AD5593_init_w_EVREF();
+[e ( _AD5593_init_w_EVREF ..  ]
 "72
 [; ;main.c: 72:     while (1)
 [e :U 861 ]
@@ -1782,9 +1769,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "284
 [; ;main.c: 284:         TMR0_Reload();
 [e ( _TMR0_Reload ..  ]
-"286
-[; ;main.c: 286:         ADC_read();
-[e ( _ADC_read ..  ]
+"285
+[; ;main.c: 285:         AD5593_ADC_read();
+[e ( _AD5593_ADC_read ..  ]
 "287
 [; ;main.c: 287:         if(destination == BROADCAST){
 [e $ ! == -> _destination `ui -> . `E7096 0 `ui 925  ]
