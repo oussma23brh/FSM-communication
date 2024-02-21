@@ -990,8 +990,11 @@ static void stoa(FILE *fp, char *s)
     }
 # 890 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\sources\\c99\\common\\doprnt.c"
 }
-# 934 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\sources\\c99\\common\\doprnt.c"
-static void xtoa(FILE *fp, unsigned long long d)
+# 931 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\sources\\c99\\common\\doprnt.c"
+static void xtoa(FILE *fp, unsigned long long d, char x)
+
+
+
 
 
 {
@@ -1026,7 +1029,14 @@ static void xtoa(FILE *fp, unsigned long long d)
         c = n & 0x0f;
 
         c = (c < 10) ? (int)'0' + c : (int)'a' + (c - 10);
-# 977 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\sources\\c99\\common\\doprnt.c"
+
+        if ((0 && isupper((int)x), ((unsigned)((int)x)-'A') < 26) && (0 && isalpha(c), (((unsigned)(c)|32)-'a') < 26)) {
+            c = (char) toupper(c);
+        }
+
+
+
+
         dbuf[i] = (char)c;
         --p;
         --w;
@@ -1123,17 +1133,29 @@ vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
   if (0
 
     || *cp == 'x'
-# 1252 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\sources\\c99\\common\\doprnt.c"
+
+
+    || *cp == 'X'
+
+
+
+
+
+
+
     ) {
 # 1295 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\sources\\c99\\common\\doprnt.c"
    convarg.llu = (unsigned long long)(unsigned int)(*(unsigned int *)__va_arg(*(unsigned int **)ap, (unsigned int)0));
 
    *fmt = cp+1;
    switch (*cp) {
-# 1312 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\sources\\c99\\common\\doprnt.c"
+# 1309 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\sources\\c99\\common\\doprnt.c"
+    case 'X':
+
+
     case 'x':
 
-     return (void) xtoa(fp,convarg.llu);
+     return (void) xtoa(fp,convarg.llu,*cp);
 
    }
   }

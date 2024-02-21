@@ -1,55 +1,76 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"67 ./main.h
-[; ;./main.h: 67: UART_state frame_state;
-[c E7011 0 1 2 .. ]
-[n E7011 . SETUP IDLE PARSING  ]
-"70
-[; ;./main.h: 70: comm_mode destination, prev_destination = UNICAST;
-[c E7017 0 1 2 .. ]
-[n E7017 . BROADCAST UNICAST MULTICAST  ]
-[v F7033 `(v ~T0 @X0 0 t? ]
-"46
-[; ;./main.h: 46: void Idle(void);
-[v _Idle `(v ~T0 @X0 0 ef ]
-[v F7034 `(v ~T0 @X0 0 t? ]
-"47
-[; ;./main.h: 47: void ReceivedFrameChecksum(void);
-[v _ReceivedFrameChecksum `(v ~T0 @X0 0 ef ]
-[v F7036 `(v ~T0 @X0 0 t? ]
-"48
-[; ;./main.h: 48: void Destination_Check(void);
-[v _Destination_Check `(v ~T0 @X0 0 ef ]
-[v F7038 `(v ~T0 @X0 0 t? ]
-"49
-[; ;./main.h: 49: void Parse(void);
-[v _Parse `(v ~T0 @X0 0 ef ]
-[v F7040 `(v ~T0 @X0 0 t? ]
+"71 ./main.h
+[; ;./main.h: 71: UART_state frame_state;
+[c E7090 0 1 2 .. ]
+[n E7090 . SETUP IDLE PARSING  ]
+"74
+[; ;./main.h: 74: comm_mode destination, prev_destination = UNICAST;
+[c E7096 0 1 2 .. ]
+[n E7096 . BROADCAST UNICAST MULTICAST  ]
+[v F7112 `(v ~T0 @X0 0 t? ]
 "50
-[; ;./main.h: 50: void Decode(void);
-[v _Decode `(v ~T0 @X0 0 ef ]
-[v F7042 `(v ~T0 @X0 0 t? ]
+[; ;./main.h: 50: void Idle(void);
+[v _Idle `(v ~T0 @X0 0 ef ]
+[v F7113 `(v ~T0 @X0 0 t? ]
 "51
-[; ;./main.h: 51: void Execute(void);
+[; ;./main.h: 51: void ReceivedFrameChecksum(void);
+[v _ReceivedFrameChecksum `(v ~T0 @X0 0 ef ]
+[v F7115 `(v ~T0 @X0 0 t? ]
+"52
+[; ;./main.h: 52: void Destination_Check(void);
+[v _Destination_Check `(v ~T0 @X0 0 ef ]
+[v F7117 `(v ~T0 @X0 0 t? ]
+"53
+[; ;./main.h: 53: void Parse(void);
+[v _Parse `(v ~T0 @X0 0 ef ]
+[v F7119 `(v ~T0 @X0 0 t? ]
+"54
+[; ;./main.h: 54: void Decode(void);
+[v _Decode `(v ~T0 @X0 0 ef ]
+[v F7121 `(v ~T0 @X0 0 t? ]
+"55
+[; ;./main.h: 55: void Execute(void);
 [v _Execute `(v ~T0 @X0 0 ef ]
-[v F7044 `(v ~T0 @X0 0 t? ]
-"76
-[; ;./main.h: 76: State_Type curr_state ;
-[c E7024 0 1 2 3 4 5 .. ]
-[n E7024 . RST ERROR_CHECK DEST_CHK PARSE DECODE EXECUTE  ]
+[v F7123 `(v ~T0 @X0 0 t? ]
+"80
+[; ;./main.h: 80: State_Type curr_state ;
+[c E7103 0 1 2 3 4 5 .. ]
+[n E7103 . RST ERROR_CHECK DEST_CHK PARSE DECODE EXECUTE  ]
 [p mainexit ]
-"71 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
+"74 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 74: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "14 ./i2c_driver.h
 [; ;./i2c_driver.h: 14: void i2c_driver_init(void);
 [v _i2c_driver_init `(v ~T0 @X0 0 ef ]
-[v F6531 `(v ~T0 @X0 0 tf ]
+[v F6580 `(v ~T0 @X0 0 tf ]
 "469 ./mcc_generated_files/eusart1.h
 [; ;./mcc_generated_files/eusart1.h: 469: void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-[v _EUSART1_SetRxInterruptHandler `(v ~T0 @X0 0 ef1`*F6531 ]
-"42 ./main.h
-[; ;./main.h: 42: void my_RX_ISR(void);
+[v _EUSART1_SetRxInterruptHandler `(v ~T0 @X0 0 ef1`*F6580 ]
+"43 ./main.h
+[; ;./main.h: 43: void my_RX_ISR(void);
 [v _my_RX_ISR `(v ~T0 @X0 0 ef ]
+[v F6369 `(v ~T0 @X0 0 tf ]
+"309 ./mcc_generated_files/tmr0.h
+[; ;./mcc_generated_files/tmr0.h: 309:  void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _TMR0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F6369 ]
+"44 ./main.h
+[; ;./main.h: 44: void Timer0IntHandler(void);
+[v _Timer0IntHandler `(v ~T0 @X0 0 ef ]
+[v F6354 `(v ~T0 @X0 0 tf ]
+"364 ./mcc_generated_files/tmr1.h
+[; ;./mcc_generated_files/tmr1.h: 364:  void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _TMR1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F6354 ]
+"45 ./main.h
+[; ;./main.h: 45: void Timer1IntHandler(void);
+[v _Timer1IntHandler `(v ~T0 @X0 0 ef ]
+[v F6337 `(v ~T0 @X0 0 tf ]
+"364 ./mcc_generated_files/tmr3.h
+[; ;./mcc_generated_files/tmr3.h: 364:  void TMR3_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _TMR3_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F6337 ]
+"46 ./main.h
+[; ;./main.h: 46: void Timer3IntHandler(void);
+[v _Timer3IntHandler `(v ~T0 @X0 0 ef ]
 "16932 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 16932:     struct {
 [s S826 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -69,63 +90,102 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16958
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 16958: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS825 ~T0 @X0 0 e@4082 ]
-"45 ./main.h
-[; ;./main.h: 45: void Initialize(void);
+"49 ./main.h
+[; ;./main.h: 49: void Initialize(void);
 [v _Initialize `(v ~T0 @X0 0 ef ]
-"120 ./mcc_generated_files/eusart1.h
-[; ;./mcc_generated_files/eusart1.h: 120: void send_string(const char *message);
-[v _send_string `(v ~T0 @X0 0 ef1`*Cuc ]
-"41 ./ADC_driver.h
-[; ;./ADC_driver.h: 41: void ADC_reset(void);
+"42 ./ADC_driver.h
+[; ;./ADC_driver.h: 42: void ADC_reset(void);
 [v _ADC_reset `(v ~T0 @X0 0 ef ]
 [v F192 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\builtins.h
 [v __delay `JF192 ~T0 @X0 0 e ]
 [p i __delay ]
-"42 ./ADC_driver.h
-[; ;./ADC_driver.h: 42: void ADC_init(void);
+"43 ./ADC_driver.h
+[; ;./ADC_driver.h: 43: void ADC_init(void);
 [v _ADC_init `(v ~T0 @X0 0 ef ]
+"7902 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 7902:     struct {
+[s S389 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S389 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
+"7912
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 7912:     struct {
+[s S390 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S390 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
+"7901
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 7901: typedef union {
+[u S388 `S389 1 `S390 1 ]
+[n S388 . . . ]
+"7923
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 7923: extern volatile LATDbits_t LATDbits __attribute__((address(0xF8C)));
+[v _LATDbits `VS388 ~T0 @X0 0 e@3980 ]
+"125 ./mcc_generated_files/tmr3.h
+[; ;./mcc_generated_files/tmr3.h: 125: void TMR3_StartTimer(void);
+[v _TMR3_StartTimer `(v ~T0 @X0 0 ef ]
 "331 ./mcc_generated_files/eusart1.h
 [; ;./mcc_generated_files/eusart1.h: 331: uint8_t EUSART1_Read(void);
 [v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
-"43 ./main.h
-[; ;./main.h: 43: void clear_buffer(char* buffer);
+"47 ./main.h
+[; ;./main.h: 47: void clear_buffer(char* buffer);
 [v _clear_buffer `(v ~T0 @X0 0 ef1`*uc ]
-"44
-[; ;./main.h: 44: void fill_buffer(char received_char);
+"48
+[; ;./main.h: 48: void fill_buffer(char received_char);
 [v _fill_buffer `(v ~T0 @X0 0 ef1`uc ]
+"155 ./mcc_generated_files/tmr1.h
+[; ;./mcc_generated_files/tmr1.h: 155: void TMR1_StopTimer(void);
+[v _TMR1_StopTimer `(v ~T0 @X0 0 ef ]
+"247
+[; ;./mcc_generated_files/tmr1.h: 247: void TMR1_Reload(void);
+[v _TMR1_Reload `(v ~T0 @X0 0 ef ]
+"155 ./mcc_generated_files/tmr3.h
+[; ;./mcc_generated_files/tmr3.h: 155: void TMR3_StopTimer(void);
+[v _TMR3_StopTimer `(v ~T0 @X0 0 ef ]
+"247
+[; ;./mcc_generated_files/tmr3.h: 247: void TMR3_Reload(void);
+[v _TMR3_Reload `(v ~T0 @X0 0 ef ]
 "54 C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\string.h: 54: size_t strlen (const char *);
 [v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
-"55 ./main.h
-[; ;./main.h: 55: void TrimFrame(void);
+"120 ./mcc_generated_files/eusart1.h
+[; ;./mcc_generated_files/eusart1.h: 120: void send_string(const char *message);
+[v _send_string `(v ~T0 @X0 0 ef1`*Cuc ]
+"59 ./main.h
+[; ;./main.h: 59: void TrimFrame(void);
 [v _TrimFrame `(v ~T0 @X0 0 ef ]
-"57
-[; ;./main.h: 57: void GetChecksumValue(void);
+"61
+[; ;./main.h: 61: void GetChecksumValue(void);
 [v _GetChecksumValue `(v ~T0 @X0 0 ef ]
 "34 C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\stdlib.h
 [; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\stdlib.h: 34: long strtol (const char *restrict, char **restrict, int);
 [v _strtol `(l ~T0 @X0 0 ef3`*Cuc`**uc`i ]
-"54 ./main.h
-[; ;./main.h: 54: void ChecksumCalc(char* dataString);
+"58 ./main.h
+[; ;./main.h: 58: void ChecksumCalc(char* dataString);
 [v _ChecksumCalc `(v ~T0 @X0 0 ef1`*uc ]
-"53
-[; ;./main.h: 53: int parse_frame_ID(void);
+"57
+[; ;./main.h: 57: int parse_frame_ID(void);
 [v _parse_frame_ID `(i ~T0 @X0 0 ef ]
-"52
-[; ;./main.h: 52: int get_ID(void);
+"56
+[; ;./main.h: 56: int get_ID(void);
 [v _get_ID `(i ~T0 @X0 0 ef ]
 "109 C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\stdio.h
 [; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\stdio.h: 109: int sprintf(char *restrict, const char *restrict, ...);
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"43 ./ADC_driver.h
-[; ;./ADC_driver.h: 43: void ADC_read(void);
+"129 ./mcc_generated_files/tmr0.h
+[; ;./mcc_generated_files/tmr0.h: 129: void TMR0_StartTimer(void);
+[v _TMR0_StartTimer `(v ~T0 @X0 0 ef ]
+"161
+[; ;./mcc_generated_files/tmr0.h: 161: void TMR0_StopTimer(void);
+[v _TMR0_StopTimer `(v ~T0 @X0 0 ef ]
+"272
+[; ;./mcc_generated_files/tmr0.h: 272: void TMR0_Reload(void);
+[v _TMR0_Reload `(v ~T0 @X0 0 ef ]
+"44 ./ADC_driver.h
+[; ;./ADC_driver.h: 44: void ADC_read(void);
 [v _ADC_read `(v ~T0 @X0 0 ef ]
 "27 C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\string.h: 27: void *memcpy (void *restrict, const void *restrict, size_t);
 [v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
-"58 ./main.h
-[; ;./main.h: 58: void ACKframeChecksum(char* acknowledge_frame);
+"62 ./main.h
+[; ;./main.h: 62: void ACKframeChecksum(char* acknowledge_frame);
 [v _ACKframeChecksum `(v ~T0 @X0 0 ef1`*uc ]
 "6286 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 6286:     struct {
@@ -186,41 +246,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6365
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 6365: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
 [v _PORTAbits `VS331 ~T0 @X0 0 e@3968 ]
-"7148
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 7148:     struct {
-[s S363 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S363 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"7158
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 7158:     struct {
-[s S364 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S364 . . P2B P2C P2D P1B P1C P1D ]
-"7167
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 7167:     struct {
-[s S365 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S365 . . CCP4 . TX2 RX2 ]
-"7174
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 7174:     struct {
-[s S366 :3 `uc 1 :1 `uc 1 ]
-[n S366 . . NOT_SS2 ]
-"7178
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 7178:     struct {
-[s S367 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S367 . SCK2 SDI2 . nSS2 SDO2 . CK2 DT2 ]
-"7188
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 7188:     struct {
-[s S368 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S368 . SCL2 SDA2 . SS2 ]
-"7194
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 7194:     struct {
-[s S369 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S369 . AN20 AN21 AN22 AN23 AN24 AN25 AN26 AN27 ]
-"7147
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 7147: typedef union {
-[u S362 `S363 1 `S364 1 `S365 1 `S366 1 `S367 1 `S368 1 `S369 1 ]
-[n S362 . . . . . . . . ]
-"7205
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 7205: extern volatile PORTDbits_t PORTDbits __attribute__((address(0xF83)));
-[v _PORTDbits `VS362 ~T0 @X0 0 e@3971 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -980,128 +1005,140 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17406
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 17406: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"47 ./ADC_driver.h
-[; ;./ADC_driver.h: 47: uint16_t ADC_result0 = 0x0FFF;
+"48 ./ADC_driver.h
+[; ;./ADC_driver.h: 48: uint16_t ADC_result0 = 0x0FFF;
 [v _ADC_result0 `us ~T0 @X0 1 e ]
 [i _ADC_result0
 -> -> 4095 `i `us
 ]
-"48
-[; ;./ADC_driver.h: 48: uint16_t ADC_result[4];
-[v _ADC_result `us ~T0 @X0 -> 4 `i e ]
 "49
-[; ;./ADC_driver.h: 49: double SC_voltage = 0;
-[v _SC_voltage `d ~T0 @X0 1 e ]
-[i _SC_voltage
--> -> 0 `i `d
+[; ;./ADC_driver.h: 49: uint16_t ADC_result[4];
+[v _ADC_result `us ~T0 @X0 -> 4 `i e ]
+"52 ./AD5593R.h
+[; ;./AD5593R.h: 52: const int _VREF = 0;
+[v __VREF `Ci ~T0 @X0 1 e ]
+[i __VREF
+-> 0 `i
 ]
-"50
-[; ;./ADC_driver.h: 50: double voltage = 0;
-[v _voltage `d ~T0 @X0 1 e ]
-[i _voltage
--> -> 0 `i `d
-]
-"51
-[; ;./ADC_driver.h: 51: char ResultBuffer[15];
-[v _ResultBuffer `uc ~T0 @X0 -> 15 `i e ]
-"52
-[; ;./ADC_driver.h: 52: char DigitalBuffer[20];
-[v _DigitalBuffer `uc ~T0 @X0 -> 20 `i e ]
 "53
-[; ;./ADC_driver.h: 53: char SCBuffer[20];
-[v _SCBuffer `uc ~T0 @X0 -> 20 `i e ]
-"67 ./main.h
-[; ;./main.h: 67: UART_state frame_state;
-[v _frame_state `E7011 ~T0 @X0 1 e ]
-"70
-[; ;./main.h: 70: comm_mode destination, prev_destination = UNICAST;
-[v _destination `E7017 ~T0 @X0 1 e ]
-[v _prev_destination `E7017 ~T0 @X0 1 e ]
-[i _prev_destination
-. `E7017 1
+[; ;./AD5593R.h: 53: const int _2xVREF = 1;
+[v __2xVREF `Ci ~T0 @X0 1 e ]
+[i __2xVREF
+-> 1 `i
 ]
+"71
+[; ;./AD5593R.h: 71: uint16_t reg;
+[v _reg `us ~T0 @X0 1 e ]
+"72
+[; ;./AD5593R.h: 72: uint8_t data[2];
+[v _data `uc ~T0 @X0 -> 2 `i e ]
+"73
+[; ;./AD5593R.h: 73: uint16_t ADC_result[4];
+[v _ADC_result `us ~T0 @X0 -> 4 `i e ]
+"71 ./main.h
+[; ;./main.h: 71: UART_state frame_state;
+[v _frame_state `E7090 ~T0 @X0 1 e ]
 "74
-[; ;./main.h: 74: void (*function_table [])() = { Idle , ReceivedFrameChecksum, Destination_Check , Parse , Decode , Execute };
-[v _function_table `*F7033 ~T0 @X0 -> 6 `i e ]
+[; ;./main.h: 74: comm_mode destination, prev_destination = UNICAST;
+[v _destination `E7096 ~T0 @X0 1 e ]
+[v _prev_destination `E7096 ~T0 @X0 1 e ]
+[i _prev_destination
+. `E7096 1
+]
+"78
+[; ;./main.h: 78: void (*function_table [])() = { Idle , ReceivedFrameChecksum, Destination_Check , Parse , Decode , Execute };
+[v _function_table `*F7112 ~T0 @X0 -> 6 `i e ]
 [i _function_table
 :U ..
--> &U _Idle `*F7034
--> &U _ReceivedFrameChecksum `*F7036
--> &U _Destination_Check `*F7038
--> &U _Parse `*F7040
--> &U _Decode `*F7042
--> &U _Execute `*F7044
+-> &U _Idle `*F7113
+-> &U _ReceivedFrameChecksum `*F7115
+-> &U _Destination_Check `*F7117
+-> &U _Parse `*F7119
+-> &U _Decode `*F7121
+-> &U _Execute `*F7123
 ..
 ]
-"76
-[; ;./main.h: 76: State_Type curr_state ;
-[v _curr_state `E7024 ~T0 @X0 1 e ]
 "80
-[; ;./main.h: 80: uint8_t read_flag=0;
+[; ;./main.h: 80: State_Type curr_state ;
+[v _curr_state `E7103 ~T0 @X0 1 e ]
+"84
+[; ;./main.h: 84: uint8_t read_flag=0;
 [v _read_flag `uc ~T0 @X0 1 e ]
 [i _read_flag
 -> -> 0 `i `uc
 ]
-"81
-[; ;./main.h: 81: uint8_t get_flag=0;
+"85
+[; ;./main.h: 85: uint8_t get_flag=0;
 [v _get_flag `uc ~T0 @X0 1 e ]
 [i _get_flag
 -> -> 0 `i `uc
 ]
-"82
-[; ;./main.h: 82: uint8_t broadcast_test_flag=0;
+"86
+[; ;./main.h: 86: uint8_t broadcast_test_flag=0;
 [v _broadcast_test_flag `uc ~T0 @X0 1 e ]
 [i _broadcast_test_flag
 -> -> 0 `i `uc
 ]
-"84
-[; ;./main.h: 84: char frame_ready_flag=0;
+"87
+[; ;./main.h: 87: uint8_t timer0_flag = 0;
+[v _timer0_flag `uc ~T0 @X0 1 e ]
+[i _timer0_flag
+-> -> 0 `i `uc
+]
+"89
+[; ;./main.h: 89: char frame_ready_flag=0;
 [v _frame_ready_flag `uc ~T0 @X0 1 e ]
 [i _frame_ready_flag
 -> -> 0 `i `uc
 ]
-"86
-[; ;./main.h: 86: char init_buffer_flag = 0;
+"91
+[; ;./main.h: 91: char init_buffer_flag = 0;
 [v _init_buffer_flag `uc ~T0 @X0 1 e ]
 [i _init_buffer_flag
 -> -> 0 `i `uc
 ]
-"88
-[; ;./main.h: 88: char frameAddress[2];
+"93
+[; ;./main.h: 93: char frameAddress[2];
 [v _frameAddress `uc ~T0 @X0 -> 2 `i e ]
-"89
-[; ;./main.h: 89: char realAdress[2];
+"94
+[; ;./main.h: 94: char realAdress[2];
 [v _realAdress `uc ~T0 @X0 -> 2 `i e ]
-"90
-[; ;./main.h: 90: int add_digit_1,add_digit_2;
+"95
+[; ;./main.h: 95: int add_digit_1,add_digit_2;
 [v _add_digit_1 `i ~T0 @X0 1 e ]
 [v _add_digit_2 `i ~T0 @X0 1 e ]
-"92
-[; ;./main.h: 92: char command;
-[v _command `uc ~T0 @X0 1 e ]
-"93
-[; ;./main.h: 93: uint8_t command_index;
-[v _command_index `uc ~T0 @X0 1 e ]
-"95
-[; ;./main.h: 95: char frame_buffer[20];
-[v _frame_buffer `uc ~T0 @X0 -> 20 `i e ]
 "97
-[; ;./main.h: 97: int frame_index;
-[v _frame_index `i ~T0 @X0 1 e ]
+[; ;./main.h: 97: char command;
+[v _command `uc ~T0 @X0 1 e ]
+"98
+[; ;./main.h: 98: uint8_t command_index;
+[v _command_index `uc ~T0 @X0 1 e ]
 "99
-[; ;./main.h: 99: char fullAckFrame[20];
-[v _fullAckFrame `uc ~T0 @X0 -> 20 `i e ]
+[; ;./main.h: 99: uint8_t frameID;
+[v _frameID `uc ~T0 @X0 1 e ]
 "100
-[; ;./main.h: 100: char TrimmedFrame[20];
-[v _TrimmedFrame `uc ~T0 @X0 -> 20 `i e ]
-"101
-[; ;./main.h: 101: char TrimmedAckFrame[20];
-[v _TrimmedAckFrame `uc ~T0 @X0 -> 20 `i e ]
+[; ;./main.h: 100: uint8_t hardID;
+[v _hardID `uc ~T0 @X0 1 e ]
 "102
-[; ;./main.h: 102: char FrameCheckSum[3];
+[; ;./main.h: 102: char frame_buffer[20];
+[v _frame_buffer `uc ~T0 @X0 -> 20 `i e ]
+"104
+[; ;./main.h: 104: int frame_index;
+[v _frame_index `i ~T0 @X0 1 e ]
+"106
+[; ;./main.h: 106: char fullAckFrame[20];
+[v _fullAckFrame `uc ~T0 @X0 -> 20 `i e ]
+"107
+[; ;./main.h: 107: char TrimmedFrame[20];
+[v _TrimmedFrame `uc ~T0 @X0 -> 20 `i e ]
+"108
+[; ;./main.h: 108: char TrimmedAckFrame[20];
+[v _TrimmedAckFrame `uc ~T0 @X0 -> 20 `i e ]
+"109
+[; ;./main.h: 109: char FrameCheckSum[3];
 [v _FrameCheckSum `uc ~T0 @X0 -> 3 `i e ]
-"103
-[; ;./main.h: 103: char CRCresult[2];
+"110
+[; ;./main.h: 110: char CRCresult[2];
 [v _CRCresult `uc ~T0 @X0 -> 2 `i e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "49 main.c
@@ -1121,1011 +1158,964 @@ Version 4.0 HI-TECH Software Intermediate Code
 "54
 [; ;main.c: 54:     EUSART1_SetRxInterruptHandler(my_RX_ISR);
 [e ( _EUSART1_SetRxInterruptHandler (1 &U _my_RX_ISR ]
+"55
+[; ;main.c: 55:     TMR0_SetInterruptHandler(Timer0IntHandler);
+[e ( _TMR0_SetInterruptHandler (1 &U _Timer0IntHandler ]
 "56
-[; ;main.c: 56:     (INTCONbits.GIE = 1);
+[; ;main.c: 56:     TMR1_SetInterruptHandler(Timer1IntHandler);
+[e ( _TMR1_SetInterruptHandler (1 &U _Timer1IntHandler ]
+"57
+[; ;main.c: 57:     TMR3_SetInterruptHandler(Timer3IntHandler);
+[e ( _TMR3_SetInterruptHandler (1 &U _Timer3IntHandler ]
+"59
+[; ;main.c: 59:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"58
-[; ;main.c: 58:     (INTCONbits.PEIE = 1);
+"61
+[; ;main.c: 61:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"62
-[; ;main.c: 62:     Initialize();
-[e ( _Initialize ..  ]
 "63
-[; ;main.c: 63:     send_string("Hello!\n");
-[e ( _send_string (1 :s 1C ]
-"64
-[; ;main.c: 64:     ADC_reset();
-[e ( _ADC_reset ..  ]
-"65
-[; ;main.c: 65:     send_string("Reset DONE! \n");
-[e ( _send_string (1 :s 2C ]
-"66
-[; ;main.c: 66:     _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 63:     Initialize();
+[e ( _Initialize ..  ]
 "67
-[; ;main.c: 67:     ADC_init();
-[e ( _ADC_init ..  ]
-"68
-[; ;main.c: 68:     send_string("ADC ready!\n");
-[e ( _send_string (1 :s 3C ]
+[; ;main.c: 67:     ADC_reset();
+[e ( _ADC_reset ..  ]
 "69
-[; ;main.c: 69:     while (1)
-[e :U 861 ]
+[; ;main.c: 69:     _delay((unsigned long)((1)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "70
-[; ;main.c: 70:     {
+[; ;main.c: 70:     ADC_init();
+[e ( _ADC_init ..  ]
+"72
+[; ;main.c: 72:     while (1)
+[e :U 861 ]
+"73
+[; ;main.c: 73:     {
 {
-"71
-[; ;main.c: 71:         if(frame_ready_flag){
+"74
+[; ;main.c: 74:         if(frame_ready_flag){
 [e $ ! != -> _frame_ready_flag `i -> 0 `i 863  ]
 {
-"72
-[; ;main.c: 72:             function_table[curr_state]();
+"75
+[; ;main.c: 75:             function_table[curr_state]();
 [e ( *U *U + &U _function_table * -> _curr_state `ux -> -> # *U &U _function_table `ui `ux ..  ]
-"73
-[; ;main.c: 73:         }
+"76
+[; ;main.c: 76:         }
 }
 [e :U 863 ]
-"74
-[; ;main.c: 74:     }
+"77
+[; ;main.c: 77:     }
 }
 [e :U 860 ]
 [e $U 861  ]
 [e :U 862 ]
-"75
-[; ;main.c: 75: }
+"78
+[; ;main.c: 78: }
 [e :UE 859 ]
 }
-"77
-[; ;main.c: 77: void my_RX_ISR(void){
+"80
+[; ;main.c: 80: void my_RX_ISR(void){
 [v _my_RX_ISR `(v ~T0 @X0 1 ef ]
 {
 [e :U _my_RX_ISR ]
 [f ]
 "81
-[; ;main.c: 81:         char frame_char;
-[v _frame_char `uc ~T0 @X0 1 a ]
-"83
-[; ;main.c: 83:         frame_char = EUSART1_Read();
-[e = _frame_char -> ( _EUSART1_Read ..  `uc ]
-"85
-[; ;main.c: 85:         switch(frame_state){
-[e $U 866  ]
-{
-"87
-[; ;main.c: 87:             case SETUP:
+[; ;main.c: 81:     do { LATDbits.LATD2 = 0; } while(0);
 [e :U 867 ]
-"88
-[; ;main.c: 88:                 frame_index = 0;
-[e = _frame_index -> 0 `i ]
-"89
-[; ;main.c: 89:                 clear_buffer(frame_buffer);
-[e ( _clear_buffer (1 &U _frame_buffer ]
-"90
-[; ;main.c: 90:                 frame_state = IDLE;
-[e = _frame_state . `E7011 1 ]
-"93
-[; ;main.c: 93:             case IDLE:
-[e :U 868 ]
-"94
-[; ;main.c: 94:                 if(frame_char == '$' ){
-[e $ ! == -> _frame_char `ui -> 36 `ui 869  ]
 {
-"95
-[; ;main.c: 95:                     fill_buffer(frame_char);
-[e ( _fill_buffer (1 _frame_char ]
-"96
-[; ;main.c: 96:                     frame_state = PARSING;
-[e = _frame_state . `E7011 2 ]
-"97
-[; ;main.c: 97:                 }
+[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 869 ]
-"98
-[; ;main.c: 98:                 break;
-[e $U 865  ]
-"100
-[; ;main.c: 100:             case PARSING:
-[e :U 870 ]
-"102
-[; ;main.c: 102:                 if (frame_index >= 20) frame_state = SETUP;
-[e $ ! >= _frame_index -> 20 `i 871  ]
-[e = _frame_state . `E7011 0 ]
-[e :U 871 ]
-"103
-[; ;main.c: 103:                 fill_buffer(frame_char);
-[e ( _fill_buffer (1 _frame_char ]
-"104
-[; ;main.c: 104:                 if(frame_char == '*'){
-[e $ ! == -> _frame_char `ui -> 42 `ui 872  ]
+[e :U 866 ]
+"82
+[; ;main.c: 82:     TMR3_StartTimer();
+[e ( _TMR3_StartTimer ..  ]
+"84
+[; ;main.c: 84:         char frame_char;
+[v _frame_char `uc ~T0 @X0 1 a ]
+"86
+[; ;main.c: 86:         frame_char = EUSART1_Read();
+[e = _frame_char -> ( _EUSART1_Read ..  `uc ]
+"88
+[; ;main.c: 88:         switch(frame_state){
+[e $U 869  ]
 {
-"105
-[; ;main.c: 105:                     frame_ready_flag = 1;
-[e = _frame_ready_flag -> -> 1 `i `uc ]
-"107
-[; ;main.c: 107:                     fill_buffer('\0');
-[e ( _fill_buffer (1 -> -> 0 `ui `uc ]
-"108
-[; ;main.c: 108:                     curr_state = ERROR_CHECK;
-[e = _curr_state . `E7024 1 ]
-"109
-[; ;main.c: 109:                     frame_state = SETUP;
-[e = _frame_state . `E7011 0 ]
-"110
-[; ;main.c: 110:                 }
+"90
+[; ;main.c: 90:             case SETUP:
+[e :U 870 ]
+"91
+[; ;main.c: 91:                 frame_index = 0;
+[e = _frame_index -> 0 `i ]
+"92
+[; ;main.c: 92:                 clear_buffer(frame_buffer);
+[e ( _clear_buffer (1 &U _frame_buffer ]
+"93
+[; ;main.c: 93:                 frame_state = IDLE;
+[e = _frame_state . `E7090 1 ]
+"96
+[; ;main.c: 96:             case IDLE:
+[e :U 871 ]
+"97
+[; ;main.c: 97:                 if(frame_char == '$' ){
+[e $ ! == -> _frame_char `ui -> 36 `ui 872  ]
+{
+"98
+[; ;main.c: 98:                     fill_buffer(frame_char);
+[e ( _fill_buffer (1 _frame_char ]
+"99
+[; ;main.c: 99:                     frame_state = PARSING;
+[e = _frame_state . `E7090 2 ]
+"100
+[; ;main.c: 100:                 }
 }
 [e :U 872 ]
+"101
+[; ;main.c: 101:                 break;
+[e $U 868  ]
+"103
+[; ;main.c: 103:             case PARSING:
+[e :U 873 ]
+"105
+[; ;main.c: 105:                 if (frame_index >= 20) frame_state = SETUP;
+[e $ ! >= _frame_index -> 20 `i 874  ]
+[e = _frame_state . `E7090 0 ]
+[e :U 874 ]
+"106
+[; ;main.c: 106:                 fill_buffer(frame_char);
+[e ( _fill_buffer (1 _frame_char ]
+"107
+[; ;main.c: 107:                 if(frame_char == '*'){
+[e $ ! == -> _frame_char `ui -> 42 `ui 875  ]
+{
+"108
+[; ;main.c: 108:                     frame_ready_flag = 1;
+[e = _frame_ready_flag -> -> 1 `i `uc ]
+"109
+[; ;main.c: 109:                     fill_buffer('\0');
+[e ( _fill_buffer (1 -> -> 0 `ui `uc ]
+"110
+[; ;main.c: 110:                     curr_state = ERROR_CHECK;
+[e = _curr_state . `E7103 1 ]
 "111
-[; ;main.c: 111:                 break;
-[e $U 865  ]
+[; ;main.c: 111:                     frame_state = SETUP;
+[e = _frame_state . `E7090 0 ]
 "112
-[; ;main.c: 112:         }
+[; ;main.c: 112:                 }
 }
-[e $U 865  ]
-[e :U 866 ]
-[e [\ -> _frame_state `ui , $ -> . `E7011 0 `ui 867
- , $ -> . `E7011 1 `ui 868
- , $ -> . `E7011 2 `ui 870
- 865 ]
-[e :U 865 ]
+[e :U 875 ]
+"113
+[; ;main.c: 113:                 break;
+[e $U 868  ]
+"114
+[; ;main.c: 114:         }
+}
+[e $U 868  ]
+[e :U 869 ]
+[e [\ -> _frame_state `ui , $ -> . `E7090 0 `ui 870
+ , $ -> . `E7090 1 `ui 871
+ , $ -> . `E7090 2 `ui 873
+ 868 ]
+[e :U 868 ]
 "115
 [; ;main.c: 115: }
 [e :UE 864 ]
 }
+"117
+[; ;main.c: 117: void Timer0IntHandler(void){
+[v _Timer0IntHandler `(v ~T0 @X0 1 ef ]
+{
+[e :U _Timer0IntHandler ]
+[f ]
 "118
-[; ;main.c: 118: void clear_buffer(char* buffer){
+[; ;main.c: 118:     timer0_flag = 1;
+[e = _timer0_flag -> -> 1 `i `uc ]
+"119
+[; ;main.c: 119: }
+[e :UE 876 ]
+}
+"121
+[; ;main.c: 121: void Timer1IntHandler(void){
+[v _Timer1IntHandler `(v ~T0 @X0 1 ef ]
+{
+[e :U _Timer1IntHandler ]
+[f ]
+"122
+[; ;main.c: 122:     do { LATDbits.LATD3 = 1; } while(0);
+[e :U 880 ]
+{
+[e = . . _LATDbits 0 3 -> -> 1 `i `uc ]
+}
+[e :U 879 ]
+"123
+[; ;main.c: 123:     TMR1_StopTimer();
+[e ( _TMR1_StopTimer ..  ]
+"124
+[; ;main.c: 124:     TMR1_Reload();
+[e ( _TMR1_Reload ..  ]
+"125
+[; ;main.c: 125: }
+[e :UE 877 ]
+}
+"127
+[; ;main.c: 127: void Timer3IntHandler(void){
+[v _Timer3IntHandler `(v ~T0 @X0 1 ef ]
+{
+[e :U _Timer3IntHandler ]
+[f ]
+"128
+[; ;main.c: 128:     do { LATDbits.LATD2 = 1; } while(0);
+[e :U 884 ]
+{
+[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
+}
+[e :U 883 ]
+"129
+[; ;main.c: 129:     TMR3_StopTimer();
+[e ( _TMR3_StopTimer ..  ]
+"130
+[; ;main.c: 130:     TMR3_Reload();
+[e ( _TMR3_Reload ..  ]
+"131
+[; ;main.c: 131: }
+[e :UE 881 ]
+}
+"134
+[; ;main.c: 134: void clear_buffer(char* buffer){
 [v _clear_buffer `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _clear_buffer ]
 [v _buffer `*uc ~T0 @X0 1 r1 ]
 [f ]
-"119
-[; ;main.c: 119:     int i;
+"135
+[; ;main.c: 135:     int i;
 [v _i `i ~T0 @X0 1 a ]
-"120
-[; ;main.c: 120:     for(i=0;i<strlen(buffer);i++){
+"136
+[; ;main.c: 136:     for(i=0;i<strlen(buffer);i++){
 {
 [e = _i -> 0 `i ]
-[e $U 877  ]
-[e :U 874 ]
+[e $U 889  ]
+[e :U 886 ]
 {
-"121
-[; ;main.c: 121:         buffer[i] = '\0';
+"137
+[; ;main.c: 137:         buffer[i] = '\0';
 [e = *U + _buffer * -> _i `x -> -> # *U _buffer `i `x -> -> 0 `ui `uc ]
-"122
-[; ;main.c: 122:     }
+"138
+[; ;main.c: 138:     }
 }
 [e ++ _i -> 1 `i ]
-[e :U 877 ]
-[e $ < -> _i `ui ( _strlen (1 -> _buffer `*Cuc 874  ]
-[e :U 875 ]
+[e :U 889 ]
+[e $ < -> _i `ui ( _strlen (1 -> _buffer `*Cuc 886  ]
+[e :U 887 ]
 }
-"123
-[; ;main.c: 123: }
-[e :UE 873 ]
+"139
+[; ;main.c: 139: }
+[e :UE 885 ]
 }
-"126
-[; ;main.c: 126: void fill_buffer(char received_char){
+"142
+[; ;main.c: 142: void fill_buffer(char received_char){
 [v _fill_buffer `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _fill_buffer ]
 [v _received_char `uc ~T0 @X0 1 r1 ]
 [f ]
-"127
-[; ;main.c: 127:         frame_buffer[frame_index++] = received_char;
+"143
+[; ;main.c: 143:         frame_buffer[frame_index++] = received_char;
 [e = *U + &U _frame_buffer * -> -> ++ _frame_index -> 1 `i `ui `ux -> -> # *U &U _frame_buffer `ui `ux _received_char ]
-"128
-[; ;main.c: 128: }
-[e :UE 878 ]
+"144
+[; ;main.c: 144: }
+[e :UE 890 ]
 }
-"131
-[; ;main.c: 131: void Initialize(void){
+"147
+[; ;main.c: 147: void Initialize(void){
 [v _Initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _Initialize ]
 [f ]
-"132
-[; ;main.c: 132:     curr_state = RST;
-[e = _curr_state . `E7024 0 ]
-"133
-[; ;main.c: 133:     frame_state = SETUP;
-[e = _frame_state . `E7011 0 ]
-"134
-[; ;main.c: 134: }
-[e :UE 879 ]
+"148
+[; ;main.c: 148:     curr_state = RST;
+[e = _curr_state . `E7103 0 ]
+"149
+[; ;main.c: 149:     frame_state = SETUP;
+[e = _frame_state . `E7090 0 ]
+"150
+[; ;main.c: 150: }
+[e :UE 891 ]
 }
-"137
-[; ;main.c: 137: void Idle(void){
+"153
+[; ;main.c: 153: void Idle(void){
 [v _Idle `(v ~T0 @X0 1 ef ]
 {
 [e :U _Idle ]
 [f ]
-"138
-[; ;main.c: 138:     while(!frame_ready_flag);
-[e $U 881  ]
-[e :U 882 ]
-[e :U 881 ]
-[e $ ! != -> _frame_ready_flag `i -> 0 `i 882  ]
-[e :U 883 ]
-"139
-[; ;main.c: 139:     curr_state = ERROR_CHECK;
-[e = _curr_state . `E7024 1 ]
-"140
-[; ;main.c: 140: }
-[e :UE 880 ]
+"154
+[; ;main.c: 154:     while(!frame_ready_flag);
+[e $U 893  ]
+[e :U 894 ]
+[e :U 893 ]
+[e $ ! != -> _frame_ready_flag `i -> 0 `i 894  ]
+[e :U 895 ]
+"155
+[; ;main.c: 155:     curr_state = ERROR_CHECK;
+[e = _curr_state . `E7103 1 ]
+"156
+[; ;main.c: 156: }
+[e :UE 892 ]
 }
-"142
-[; ;main.c: 142: void ReceivedFrameChecksum(void){
+"158
+[; ;main.c: 158: void ReceivedFrameChecksum(void){
 [v _ReceivedFrameChecksum `(v ~T0 @X0 1 ef ]
 {
 [e :U _ReceivedFrameChecksum ]
 [f ]
-"145
-[; ;main.c: 145:     clear_buffer(TrimmedFrame);
+"160
+[; ;main.c: 160:     send_string(frame_buffer); send_string("\n");
+[e ( _send_string (1 -> &U _frame_buffer `*Cuc ]
+[e ( _send_string (1 :s 1C ]
+"161
+[; ;main.c: 161:     clear_buffer(TrimmedFrame);
 [e ( _clear_buffer (1 &U _TrimmedFrame ]
-"146
-[; ;main.c: 146:     clear_buffer(CRCresult);
+"162
+[; ;main.c: 162:     clear_buffer(CRCresult);
 [e ( _clear_buffer (1 &U _CRCresult ]
-"147
-[; ;main.c: 147:     clear_buffer(FrameCheckSum);
+"163
+[; ;main.c: 163:     clear_buffer(FrameCheckSum);
 [e ( _clear_buffer (1 &U _FrameCheckSum ]
-"148
-[; ;main.c: 148:     TrimFrame();
+"164
+[; ;main.c: 164:     TrimFrame();
 [e ( _TrimFrame ..  ]
-"151
-[; ;main.c: 151:     GetChecksumValue();
+"166
+[; ;main.c: 166:     GetChecksumValue();
 [e ( _GetChecksumValue ..  ]
-"155
-[; ;main.c: 155:     int hexFrameCheckSum = (int)strtol(FrameCheckSum, ((void*)0), 16);
+"168
+[; ;main.c: 168:     int hexFrameCheckSum = (int)strtol(FrameCheckSum, ((void*)0), 16);
 [v _hexFrameCheckSum `i ~T0 @X0 1 a ]
 [e = _hexFrameCheckSum -> ( _strtol (3 , , -> &U _FrameCheckSum `*Cuc -> -> -> 0 `i `*v `**uc -> 16 `i `i ]
-"158
-[; ;main.c: 158:     ChecksumCalc(TrimmedFrame);
+"171
+[; ;main.c: 171:     ChecksumCalc(TrimmedFrame);
 [e ( _ChecksumCalc (1 &U _TrimmedFrame ]
-"160
-[; ;main.c: 160:     int hexCRCresult = (int)strtol(CRCresult, ((void*)0), 16);
+"173
+[; ;main.c: 173:     int hexCRCresult = (int)strtol(CRCresult, ((void*)0), 16);
 [v _hexCRCresult `i ~T0 @X0 1 a ]
 [e = _hexCRCresult -> ( _strtol (3 , , -> &U _CRCresult `*Cuc -> -> -> 0 `i `*v `**uc -> 16 `i `i ]
-"162
-[; ;main.c: 162:     if(hexCRCresult == hexFrameCheckSum){
-[e $ ! == _hexCRCresult _hexFrameCheckSum 885  ]
+"176
+[; ;main.c: 176:     if(hexCRCresult == hexFrameCheckSum){
+[e $ ! == _hexCRCresult _hexFrameCheckSum 897  ]
 {
-"163
-[; ;main.c: 163:         send_string("No Error! Frame is valid.\n");
-[e ( _send_string (1 :s 4C ]
-"164
-[; ;main.c: 164:         curr_state = DEST_CHK;
-[e = _curr_state . `E7024 2 ]
-"165
-[; ;main.c: 165:     }
+"178
+[; ;main.c: 178:         curr_state = DEST_CHK;
+[e = _curr_state . `E7103 2 ]
+"179
+[; ;main.c: 179:     }
 }
-[e $U 886  ]
-"166
-[; ;main.c: 166:     else{
-[e :U 885 ]
+[e $U 898  ]
+"180
+[; ;main.c: 180:     else{
+[e :U 897 ]
 {
-"167
-[; ;main.c: 167:         send_string("Error! Ignore frame.\n");
-[e ( _send_string (1 :s 5C ]
-"168
-[; ;main.c: 168:         frame_ready_flag = 0;
+"182
+[; ;main.c: 182:         frame_ready_flag = 0;
 [e = _frame_ready_flag -> -> 0 `i `uc ]
-"169
-[; ;main.c: 169:         curr_state = RST;
-[e = _curr_state . `E7024 0 ]
-"170
-[; ;main.c: 170:     }
+"183
+[; ;main.c: 183:         curr_state = RST;
+[e = _curr_state . `E7103 0 ]
+"184
+[; ;main.c: 184:     }
 }
-[e :U 886 ]
-"172
-[; ;main.c: 172: }
-[e :UE 884 ]
+[e :U 898 ]
+"186
+[; ;main.c: 186: }
+[e :UE 896 ]
 }
-"175
-[; ;main.c: 175: void Destination_Check(void){
+"189
+[; ;main.c: 189: void Destination_Check(void){
 [v _Destination_Check `(v ~T0 @X0 1 ef ]
 {
 [e :U _Destination_Check ]
 [f ]
-"177
-[; ;main.c: 177:     switch(frame_buffer[1]){
-[e $U 889  ]
-{
-"178
-[; ;main.c: 178:         case 'B':
-[e :U 890 ]
-"179
-[; ;main.c: 179:             destination = BROADCAST;
-[e = _destination . `E7017 0 ]
-"181
-[; ;main.c: 181:             break;
-[e $U 888  ]
-"182
-[; ;main.c: 182:         case 'U':
-[e :U 891 ]
-"183
-[; ;main.c: 183:             destination = UNICAST;
-[e = _destination . `E7017 1 ]
-"185
-[; ;main.c: 185:             break;
-[e $U 888  ]
-"186
-[; ;main.c: 186:         default:
-[e :U 892 ]
-"188
-[; ;main.c: 188:             frame_ready_flag = 0;
-[e = _frame_ready_flag -> -> 0 `i `uc ]
-"189
-[; ;main.c: 189:             curr_state = RST;
-[e = _curr_state . `E7024 0 ]
 "190
-[; ;main.c: 190:             break;
-[e $U 888  ]
+[; ;main.c: 190:     switch(frame_buffer[1]){
+[e $U 901  ]
+{
 "191
-[; ;main.c: 191:     }
-}
-[e $U 888  ]
-[e :U 889 ]
-[e [\ -> *U + &U _frame_buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _frame_buffer `ui `ux `i , $ -> -> 66 `ui `i 890
- , $ -> -> 85 `ui `i 891
- 892 ]
-[e :U 888 ]
+[; ;main.c: 191:         case 'B':
+[e :U 902 ]
 "192
-[; ;main.c: 192:     curr_state = PARSE;
-[e = _curr_state . `E7024 3 ]
+[; ;main.c: 192:             destination = BROADCAST;
+[e = _destination . `E7096 0 ]
 "193
-[; ;main.c: 193: }
-[e :UE 887 ]
-}
+[; ;main.c: 193:             break;
+[e $U 900  ]
+"194
+[; ;main.c: 194:         case 'U':
+[e :U 903 ]
 "195
-[; ;main.c: 195: void Parse(void){
+[; ;main.c: 195:             destination = UNICAST;
+[e = _destination . `E7096 1 ]
+"196
+[; ;main.c: 196:             break;
+[e $U 900  ]
+"197
+[; ;main.c: 197:         default:
+[e :U 904 ]
+"198
+[; ;main.c: 198:             frame_ready_flag = 0;
+[e = _frame_ready_flag -> -> 0 `i `uc ]
+"199
+[; ;main.c: 199:             curr_state = RST;
+[e = _curr_state . `E7103 0 ]
+"200
+[; ;main.c: 200:             break;
+[e $U 900  ]
+"201
+[; ;main.c: 201:     }
+}
+[e $U 900  ]
+[e :U 901 ]
+[e [\ -> *U + &U _frame_buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _frame_buffer `ui `ux `i , $ -> -> 66 `ui `i 902
+ , $ -> -> 85 `ui `i 903
+ 904 ]
+[e :U 900 ]
+"202
+[; ;main.c: 202:     curr_state = PARSE;
+[e = _curr_state . `E7103 3 ]
+"203
+[; ;main.c: 203: }
+[e :UE 899 ]
+}
+"205
+[; ;main.c: 205: void Parse(void){
 [v _Parse `(v ~T0 @X0 1 ef ]
 {
 [e :U _Parse ]
 [f ]
-"197
-[; ;main.c: 197:     uint8_t i=0;
+"206
+[; ;main.c: 206:     uint8_t i=0;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"198
-[; ;main.c: 198:     if(destination == UNICAST){
-[e $ ! == -> _destination `ui -> . `E7017 1 `ui 894  ]
-{
-"199
-[; ;main.c: 199:             add_digit_1 = frame_buffer[i+2] - '0';
-[e = _add_digit_1 -> - -> *U + &U _frame_buffer * -> -> + -> _i `i -> 2 `i `ui `ux -> -> # *U &U _frame_buffer `ui `ux `ui -> 48 `ui `i ]
-"200
-[; ;main.c: 200:             i++;
-[e ++ _i -> -> 1 `i `uc ]
-"201
-[; ;main.c: 201:             add_digit_2 = frame_buffer[i+2] - '0';
-[e = _add_digit_2 -> - -> *U + &U _frame_buffer * -> -> + -> _i `i -> 2 `i `ui `ux -> -> # *U &U _frame_buffer `ui `ux `ui -> 48 `ui `i ]
-"202
-[; ;main.c: 202:             i++;
-[e ++ _i -> -> 1 `i `uc ]
-"203
-[; ;main.c: 203:     }
-}
-[e :U 894 ]
-"204
-[; ;main.c: 204:     command_index = i+2;
-[e = _command_index -> + -> _i `i -> 2 `i `uc ]
-"205
-[; ;main.c: 205:     command = frame_buffer[command_index];
-[e = _command *U + &U _frame_buffer * -> _command_index `ux -> -> # *U &U _frame_buffer `ui `ux ]
-"206
-[; ;main.c: 206:     curr_state = DECODE;
-[e = _curr_state . `E7024 4 ]
 "207
-[; ;main.c: 207: }
-[e :UE 893 ]
-}
+[; ;main.c: 207:     if(destination == UNICAST){
+[e $ ! == -> _destination `ui -> . `E7096 1 `ui 906  ]
+{
+"208
+[; ;main.c: 208:             add_digit_1 = frame_buffer[i+2] - '0';
+[e = _add_digit_1 -> - -> *U + &U _frame_buffer * -> -> + -> _i `i -> 2 `i `ui `ux -> -> # *U &U _frame_buffer `ui `ux `ui -> 48 `ui `i ]
+"209
+[; ;main.c: 209:             i++;
+[e ++ _i -> -> 1 `i `uc ]
 "210
-[; ;main.c: 210: void Decode(void){
+[; ;main.c: 210:             add_digit_2 = frame_buffer[i+2] - '0';
+[e = _add_digit_2 -> - -> *U + &U _frame_buffer * -> -> + -> _i `i -> 2 `i `ui `ux -> -> # *U &U _frame_buffer `ui `ux `ui -> 48 `ui `i ]
+"211
+[; ;main.c: 211:             i++;
+[e ++ _i -> -> 1 `i `uc ]
+"212
+[; ;main.c: 212:     }
+}
+[e :U 906 ]
+"213
+[; ;main.c: 213:     command_index = i+2;
+[e = _command_index -> + -> _i `i -> 2 `i `uc ]
+"214
+[; ;main.c: 214:     command = frame_buffer[command_index];
+[e = _command *U + &U _frame_buffer * -> _command_index `ux -> -> # *U &U _frame_buffer `ui `ux ]
+"215
+[; ;main.c: 215:     curr_state = DECODE;
+[e = _curr_state . `E7103 4 ]
+"216
+[; ;main.c: 216: }
+[e :UE 905 ]
+}
+"219
+[; ;main.c: 219: void Decode(void){
 [v _Decode `(v ~T0 @X0 1 ef ]
 {
 [e :U _Decode ]
 [f ]
-"212
-[; ;main.c: 212:     uint8_t frameID = parse_frame_ID();
-[v _frameID `uc ~T0 @X0 1 a ]
+"220
+[; ;main.c: 220:     frameID = parse_frame_ID();
 [e = _frameID -> ( _parse_frame_ID ..  `uc ]
-"214
-[; ;main.c: 214:     uint8_t hardID = get_ID();
-[v _hardID `uc ~T0 @X0 1 a ]
+"222
+[; ;main.c: 222:     hardID = get_ID();
 [e = _hardID -> ( _get_ID ..  `uc ]
-"216
-[; ;main.c: 216:     char message[200];
-[v _message `uc ~T0 @X0 -> 200 `i a ]
-"223
-[; ;main.c: 223:     send_string("address from frame: ");
-[e ( _send_string (1 :s 6C ]
 "224
-[; ;main.c: 224:     sprintf(frameAddress,"%d",frameID);
-[e ( _sprintf (1 , (. , &U _frameAddress :s 7C -> _frameID `i ]
-"225
-[; ;main.c: 225:     send_string(frameAddress); send_string("\n");
-[e ( _send_string (1 -> &U _frameAddress `*Cuc ]
-[e ( _send_string (1 :s 8C ]
-"226
-[; ;main.c: 226:     send_string("address from hardware is:");
-[e ( _send_string (1 :s 9C ]
-"227
-[; ;main.c: 227:     sprintf(realAdress,"%d",hardID);
-[e ( _sprintf (1 , (. , &U _realAdress :s 10C -> _hardID `i ]
-"228
-[; ;main.c: 228:     send_string(realAdress); send_string("\n");
-[e ( _send_string (1 -> &U _realAdress `*Cuc ]
-[e ( _send_string (1 :s 11C ]
-"232
-[; ;main.c: 232:     if((destination == BROADCAST) || ( (destination == UNICAST) && (frameID == hardID) )){
-[e $ ! || == -> _destination `ui -> . `E7017 0 `ui && == -> _destination `ui -> . `E7017 1 `ui == -> _frameID `i -> _hardID `i 896  ]
+[; ;main.c: 224:     char message[200];
+[v _message `uc ~T0 @X0 -> 200 `i a ]
+"236
+[; ;main.c: 236:     if((destination == BROADCAST) || ( (destination == UNICAST) && (frameID == hardID) )){
+[e $ ! || == -> _destination `ui -> . `E7096 0 `ui && == -> _destination `ui -> . `E7096 1 `ui == -> _frameID `i -> _hardID `i 908  ]
 {
-"233
-[; ;main.c: 233:         switch(command){
-[e $U 898  ]
-{
-"234
-[; ;main.c: 234:             case 'R':
-[e :U 899 ]
-"235
-[; ;main.c: 235:                 read_flag = 1;
-[e = _read_flag -> -> 1 `i `uc ]
 "237
-[; ;main.c: 237:                 break;
-[e $U 897  ]
-"238
-[; ;main.c: 238:             case 'G':
-[e :U 900 ]
-"239
-[; ;main.c: 239:                 get_flag = 1;
-[e = _get_flag -> -> 1 `i `uc ]
-"241
-[; ;main.c: 241:                 break;
-[e $U 897  ]
-"242
-[; ;main.c: 242:             case 'C':
-[e :U 901 ]
-"243
-[; ;main.c: 243:                 broadcast_test_flag = 1;
-[e = _broadcast_test_flag -> -> 1 `i `uc ]
-"245
-[; ;main.c: 245:                 break;
-[e $U 897  ]
-"246
-[; ;main.c: 246:             default:
-[e :U 902 ]
-"247
-[; ;main.c: 247:                 send_string("Command character error\n");
-[e ( _send_string (1 :s 12C ]
-"248
-[; ;main.c: 248:                 goto exitToRST;
-[e $U 903  ]
-"249
-[; ;main.c: 249:                 break;
-[e $U 897  ]
-"250
-[; ;main.c: 250:         }
-}
-[e $U 897  ]
-[e :U 898 ]
-[e [\ -> _command `i , $ -> -> 82 `ui `i 899
- , $ -> -> 71 `ui `i 900
- , $ -> -> 67 `ui `i 901
- 902 ]
-[e :U 897 ]
-"251
-[; ;main.c: 251:         curr_state = EXECUTE;
-[e = _curr_state . `E7024 5 ]
-"252
-[; ;main.c: 252:     }
-}
-[e $U 904  ]
-"253
-[; ;main.c: 253:     else{
-[e :U 896 ]
+[; ;main.c: 237:         switch(command){
+[e $U 910  ]
 {
+"238
+[; ;main.c: 238:             case 'R':
+[e :U 911 ]
+"239
+[; ;main.c: 239:                 read_flag = 1;
+[e = _read_flag -> -> 1 `i `uc ]
+"240
+[; ;main.c: 240:                 break;
+[e $U 909  ]
+"241
+[; ;main.c: 241:             case 'G':
+[e :U 912 ]
+"242
+[; ;main.c: 242:                 get_flag = 1;
+[e = _get_flag -> -> 1 `i `uc ]
+"243
+[; ;main.c: 243:                 break;
+[e $U 909  ]
+"244
+[; ;main.c: 244:             case 'C':
+[e :U 913 ]
+"245
+[; ;main.c: 245:                 broadcast_test_flag = 1;
+[e = _broadcast_test_flag -> -> 1 `i `uc ]
+"246
+[; ;main.c: 246:                 break;
+[e $U 909  ]
+"247
+[; ;main.c: 247:             default:
+[e :U 914 ]
+"249
+[; ;main.c: 249:                 goto exitToRST;
+[e $U 915  ]
+"250
+[; ;main.c: 250:                 break;
+[e $U 909  ]
+"251
+[; ;main.c: 251:         }
+}
+[e $U 909  ]
+[e :U 910 ]
+[e [\ -> _command `i , $ -> -> 82 `ui `i 911
+ , $ -> -> 71 `ui `i 912
+ , $ -> -> 67 `ui `i 913
+ 914 ]
+[e :U 909 ]
+"252
+[; ;main.c: 252:         curr_state = EXECUTE;
+[e = _curr_state . `E7103 5 ]
+"253
+[; ;main.c: 253:     }
+}
+[e $U 916  ]
 "254
-[; ;main.c: 254: exitToRST:
-[e :U 903 ]
+[; ;main.c: 254:     else{
+[e :U 908 ]
+{
 "255
-[; ;main.c: 255:         frame_ready_flag = 0;
-[e = _frame_ready_flag -> -> 0 `i `uc ]
+[; ;main.c: 255: exitToRST:
+[e :U 915 ]
 "256
-[; ;main.c: 256:         frame_index = 0;
-[e = _frame_index -> 0 `i ]
+[; ;main.c: 256:         frame_ready_flag = 0;
+[e = _frame_ready_flag -> -> 0 `i `uc ]
 "257
-[; ;main.c: 257:         clear_buffer(frame_buffer);
-[e ( _clear_buffer (1 &U _frame_buffer ]
+[; ;main.c: 257:         frame_index = 0;
+[e = _frame_index -> 0 `i ]
 "258
-[; ;main.c: 258:         curr_state = RST;
-[e = _curr_state . `E7024 0 ]
-"260
-[; ;main.c: 260:     }
-}
-[e :U 904 ]
+[; ;main.c: 258:         clear_buffer(frame_buffer);
+[e ( _clear_buffer (1 &U _frame_buffer ]
+"259
+[; ;main.c: 259:         curr_state = RST;
+[e = _curr_state . `E7103 0 ]
 "261
-[; ;main.c: 261: }
-[e :UE 895 ]
+[; ;main.c: 261:     }
 }
-"263
-[; ;main.c: 263: void Execute(void){
+[e :U 916 ]
+"262
+[; ;main.c: 262: }
+[e :UE 907 ]
+}
+"264
+[; ;main.c: 264: void Execute(void){
 [v _Execute `(v ~T0 @X0 1 ef ]
 {
 [e :U _Execute ]
 [f ]
-"265
-[; ;main.c: 265:     char acknowledge_frame[30];
+"266
+[; ;main.c: 266:     char acknowledge_frame[30];
 [v _acknowledge_frame `uc ~T0 @X0 -> 30 `i a ]
-"267
-[; ;main.c: 267:     uint8_t k;
-[v _k `uc ~T0 @X0 1 a ]
 "268
-[; ;main.c: 268:     for(k=0;k<30;k++){
+[; ;main.c: 268:     uint8_t k;
+[v _k `uc ~T0 @X0 1 a ]
+"269
+[; ;main.c: 269:     for(k=0;k<30;k++){
 {
 [e = _k -> -> 0 `i `uc ]
-[e $ < -> _k `i -> 30 `i 906  ]
-[e $U 907  ]
-[e :U 906 ]
+[e $ < -> _k `i -> 30 `i 918  ]
+[e $U 919  ]
+[e :U 918 ]
 {
-"269
-[; ;main.c: 269:         acknowledge_frame[k] = ((void*)0);
-[e = *U + &U _acknowledge_frame * -> _k `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> -> 0 `i `*v `uc ]
 "270
-[; ;main.c: 270:     }
+[; ;main.c: 270:         acknowledge_frame[k] = ((void*)0);
+[e = *U + &U _acknowledge_frame * -> _k `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> -> 0 `i `*v `uc ]
+"271
+[; ;main.c: 271:     }
 }
 [e ++ _k -> -> 1 `i `uc ]
-[e $ < -> _k `i -> 30 `i 906  ]
-[e :U 907 ]
+[e $ < -> _k `i -> 30 `i 918  ]
+[e :U 919 ]
 }
-"271
-[; ;main.c: 271:     send_string("received frame: "); send_string(frame_buffer); send_string("\n");
-[e ( _send_string (1 :s 13C ]
-[e ( _send_string (1 -> &U _frame_buffer `*Cuc ]
-[e ( _send_string (1 :s 14C ]
-"272
-[; ;main.c: 272:     send_string("ack frame before command fill: "); send_string(acknowledge_frame); send_string("\n");
-[e ( _send_string (1 :s 15C ]
-[e ( _send_string (1 -> &U _acknowledge_frame `*Cuc ]
-[e ( _send_string (1 :s 16C ]
-"274
-[; ;main.c: 274:     uint8_t i = 0;
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
 "275
-[; ;main.c: 275:     for(i=0;i<command_index+1;i++){
+[; ;main.c: 275:     sprintf(acknowledge_frame,"$U%.2d%c",hardID,command);
+[e ( _sprintf (1 , , (. , &U _acknowledge_frame :s 2C -> _hardID `i -> _command `i ]
+"279
+[; ;main.c: 279:     if(read_flag){
+[e $ ! != -> _read_flag `i -> 0 `i 921  ]
 {
-[e = _i -> -> 0 `i `uc ]
-[e $U 912  ]
-[e :U 909 ]
-{
-"276
-[; ;main.c: 276:         acknowledge_frame[i] = frame_buffer[i];
-[e = *U + &U _acknowledge_frame * -> _i `ux -> -> # *U &U _acknowledge_frame `ui `ux *U + &U _frame_buffer * -> _i `ux -> -> # *U &U _frame_buffer `ui `ux ]
-"277
-[; ;main.c: 277:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 912 ]
-[e $ < -> _i `i + -> _command_index `i -> 1 `i 909  ]
-[e :U 910 ]
-}
-"278
-[; ;main.c: 278:     send_string("ack frame after command fill: "); send_string(acknowledge_frame); send_string("\n");
-[e ( _send_string (1 :s 17C ]
-[e ( _send_string (1 -> &U _acknowledge_frame `*Cuc ]
-[e ( _send_string (1 :s 18C ]
+"280
+[; ;main.c: 280:         TMR0_StartTimer();
+[e ( _TMR0_StartTimer ..  ]
 "281
-[; ;main.c: 281:     if(read_flag){
-[e $ ! != -> _read_flag `i -> 0 `i 913  ]
-{
+[; ;main.c: 281:         while(!timer0_flag);
+[e $U 922  ]
+[e :U 923 ]
+[e :U 922 ]
+[e $ ! != -> _timer0_flag `i -> 0 `i 923  ]
+[e :U 924 ]
 "282
-[; ;main.c: 282:         ADC_read();
-[e ( _ADC_read ..  ]
+[; ;main.c: 282:         TMR0_StopTimer();
+[e ( _TMR0_StopTimer ..  ]
 "283
-[; ;main.c: 283:         if(destination == BROADCAST){
-[e $ ! == -> _destination `ui -> . `E7017 0 `ui 914  ]
-{
+[; ;main.c: 283:         timer0_flag = 0;
+[e = _timer0_flag -> -> 0 `i `uc ]
 "284
-[; ;main.c: 284:             frame_ready_flag = 0;
-[e = _frame_ready_flag -> -> 0 `i `uc ]
-"285
-[; ;main.c: 285:             read_flag = 0;
-[e = _read_flag -> -> 0 `i `uc ]
+[; ;main.c: 284:         TMR0_Reload();
+[e ( _TMR0_Reload ..  ]
 "286
-[; ;main.c: 286:             prev_destination = destination;
-[e = _prev_destination _destination ]
+[; ;main.c: 286:         ADC_read();
+[e ( _ADC_read ..  ]
 "287
-[; ;main.c: 287:             goto exitToIDLe;
-[e $U 915  ]
+[; ;main.c: 287:         if(destination == BROADCAST){
+[e $ ! == -> _destination `ui -> . `E7096 0 `ui 925  ]
+{
 "288
-[; ;main.c: 288:         }
-}
-[e :U 914 ]
-"290
-[; ;main.c: 290:         acknowledge_frame[i++] = 'O';
-[e = *U + &U _acknowledge_frame * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> 79 `ui `uc ]
-"291
-[; ;main.c: 291:         acknowledge_frame[i++] = 'K';
-[e = *U + &U _acknowledge_frame * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> 75 `ui `uc ]
-"293
-[; ;main.c: 293:         read_flag = 0;
-[e = _read_flag -> -> 0 `i `uc ]
-"295
-[; ;main.c: 295:     }else if(get_flag){
-}
-[e $U 916  ]
-[e :U 913 ]
-[e $ ! != -> _get_flag `i -> 0 `i 917  ]
-{
-"296
-[; ;main.c: 296:         if(destination == BROADCAST){
-[e $ ! == -> _destination `ui -> . `E7017 0 `ui 918  ]
-{
-"297
-[; ;main.c: 297:             frame_ready_flag = 0;
+[; ;main.c: 288:             frame_ready_flag = 0;
 [e = _frame_ready_flag -> -> 0 `i `uc ]
-"298
-[; ;main.c: 298:             get_flag = 0;
-[e = _get_flag -> -> 0 `i `uc ]
-"299
-[; ;main.c: 299:             prev_destination = destination;
+"289
+[; ;main.c: 289:             read_flag = 0;
+[e = _read_flag -> -> 0 `i `uc ]
+"290
+[; ;main.c: 290:             prev_destination = destination;
 [e = _prev_destination _destination ]
-"300
-[; ;main.c: 300:             goto exitToIDLe;
-[e $U 915  ]
-"301
-[; ;main.c: 301:         }
+"291
+[; ;main.c: 291:             goto exitToIDLe;
+[e $U 926  ]
+"292
+[; ;main.c: 292:         }
 }
-[e :U 918 ]
-"304
-[; ;main.c: 304:         char data_ch1[10],data_ch2[10],data_ch3[10],data_ch4[10];
+[e :U 925 ]
+"294
+[; ;main.c: 294:         sprintf(acknowledge_frame + strlen(acknowledge_frame),"OK");
+[e ( _sprintf (1 , + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux :s 3C ]
+"295
+[; ;main.c: 295:         read_flag = 0;
+[e = _read_flag -> -> 0 `i `uc ]
+"297
+[; ;main.c: 297:     }else if(get_flag){
+}
+[e $U 927  ]
+[e :U 921 ]
+[e $ ! != -> _get_flag `i -> 0 `i 928  ]
+{
+"298
+[; ;main.c: 298:         if(destination == BROADCAST){
+[e $ ! == -> _destination `ui -> . `E7096 0 `ui 929  ]
+{
+"299
+[; ;main.c: 299:             frame_ready_flag = 0;
+[e = _frame_ready_flag -> -> 0 `i `uc ]
+"300
+[; ;main.c: 300:             get_flag = 0;
+[e = _get_flag -> -> 0 `i `uc ]
+"301
+[; ;main.c: 301:             prev_destination = destination;
+[e = _prev_destination _destination ]
+"302
+[; ;main.c: 302:             goto exitToIDLe;
+[e $U 926  ]
+"303
+[; ;main.c: 303:         }
+}
+[e :U 929 ]
+"306
+[; ;main.c: 306:         char data_ch1[10],data_ch2[10],data_ch3[10],data_ch4[10];
 [v _data_ch1 `uc ~T0 @X0 -> 10 `i a ]
 [v _data_ch2 `uc ~T0 @X0 -> 10 `i a ]
 [v _data_ch3 `uc ~T0 @X0 -> 10 `i a ]
 [v _data_ch4 `uc ~T0 @X0 -> 10 `i a ]
-"305
-[; ;main.c: 305:         sprintf(data_ch1,"%0.4x",ADC_result[0]); data_ch1[4] = '\0';
-[e ( _sprintf (1 , (. , &U _data_ch1 :s 19C -> *U + &U _ADC_result * -> -> -> 0 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
-[e = *U + &U _data_ch1 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch1 `ui `ux -> -> 0 `ui `uc ]
-"306
-[; ;main.c: 306:         sprintf(data_ch2,"%0.4x",ADC_result[1]); data_ch2[4] = '\0';
-[e ( _sprintf (1 , (. , &U _data_ch2 :s 20C -> *U + &U _ADC_result * -> -> -> 1 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
-[e = *U + &U _data_ch2 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch2 `ui `ux -> -> 0 `ui `uc ]
 "307
-[; ;main.c: 307:         sprintf(data_ch3,"%0.4x",ADC_result[2]); data_ch3[4] = '\0';
-[e ( _sprintf (1 , (. , &U _data_ch3 :s 21C -> *U + &U _ADC_result * -> -> -> 2 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
-[e = *U + &U _data_ch3 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch3 `ui `ux -> -> 0 `ui `uc ]
+[; ;main.c: 307:         sprintf(data_ch1,"%0.4x",ADC_result[0]); data_ch1[4] = '\0';
+[e ( _sprintf (1 , (. , &U _data_ch1 :s 4C -> *U + &U _ADC_result * -> -> -> 0 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
+[e = *U + &U _data_ch1 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch1 `ui `ux -> -> 0 `ui `uc ]
 "308
-[; ;main.c: 308:         sprintf(data_ch4,"%0.4x",ADC_result[3]); data_ch4[4] = '\0';
-[e ( _sprintf (1 , (. , &U _data_ch4 :s 22C -> *U + &U _ADC_result * -> -> -> 3 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
-[e = *U + &U _data_ch4 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch4 `ui `ux -> -> 0 `ui `uc ]
+[; ;main.c: 308:         sprintf(data_ch2,"%0.4x",ADC_result[1]); data_ch2[4] = '\0';
+[e ( _sprintf (1 , (. , &U _data_ch2 :s 5C -> *U + &U _ADC_result * -> -> -> 1 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
+[e = *U + &U _data_ch2 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch2 `ui `ux -> -> 0 `ui `uc ]
 "309
-[; ;main.c: 309:         send_string("Result of ch1    "); send_string(data_ch1); send_string("\n");
-[e ( _send_string (1 :s 23C ]
-[e ( _send_string (1 -> &U _data_ch1 `*Cuc ]
-[e ( _send_string (1 :s 24C ]
+[; ;main.c: 309:         sprintf(data_ch3,"%0.4x",ADC_result[2]); data_ch3[4] = '\0';
+[e ( _sprintf (1 , (. , &U _data_ch3 :s 6C -> *U + &U _ADC_result * -> -> -> 2 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
+[e = *U + &U _data_ch3 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch3 `ui `ux -> -> 0 `ui `uc ]
 "310
-[; ;main.c: 310:         send_string("Result of ch2    "); send_string(data_ch2); send_string("\n");
-[e ( _send_string (1 :s 25C ]
-[e ( _send_string (1 -> &U _data_ch2 `*Cuc ]
-[e ( _send_string (1 :s 26C ]
-"311
-[; ;main.c: 311:         send_string("Result of ch3    "); send_string(data_ch3); send_string("\n");
-[e ( _send_string (1 :s 27C ]
-[e ( _send_string (1 -> &U _data_ch3 `*Cuc ]
-[e ( _send_string (1 :s 28C ]
-"312
-[; ;main.c: 312:         send_string("Result of ch4    "); send_string(data_ch4); send_string("\n");
-[e ( _send_string (1 :s 29C ]
-[e ( _send_string (1 -> &U _data_ch4 `*Cuc ]
-[e ( _send_string (1 :s 30C ]
-"314
-[; ;main.c: 314:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch1, strlen(data_ch1));
+[; ;main.c: 310:         sprintf(data_ch4,"%0.4x",ADC_result[3]); data_ch4[4] = '\0';
+[e ( _sprintf (1 , (. , &U _data_ch4 :s 7C -> *U + &U _ADC_result * -> -> -> 3 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux `ui ]
+[e = *U + &U _data_ch4 * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_ch4 `ui `ux -> -> 0 `ui `uc ]
+"318
+[; ;main.c: 318:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch1, strlen(data_ch1));
 [e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch1 `*Cv ( _strlen (1 -> &U _data_ch1 `*Cuc ]
-"315
-[; ;main.c: 315:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch2, strlen(data_ch2));
-[e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch2 `*Cv ( _strlen (1 -> &U _data_ch2 `*Cuc ]
-"316
-[; ;main.c: 316:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch3, strlen(data_ch3));
-[e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch3 `*Cv ( _strlen (1 -> &U _data_ch3 `*Cuc ]
-"317
-[; ;main.c: 317:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch4, strlen(data_ch4));
-[e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch4 `*Cv ( _strlen (1 -> &U _data_ch4 `*Cuc ]
 "319
-[; ;main.c: 319:         get_flag = 0;
-[e = _get_flag -> -> 0 `i `uc ]
+[; ;main.c: 319:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch2, strlen(data_ch2));
+[e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch2 `*Cv ( _strlen (1 -> &U _data_ch2 `*Cuc ]
+"320
+[; ;main.c: 320:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch3, strlen(data_ch3));
+[e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch3 `*Cv ( _strlen (1 -> &U _data_ch3 `*Cuc ]
 "321
-[; ;main.c: 321:     }else if(broadcast_test_flag){
-}
-[e $U 919  ]
-[e :U 917 ]
-[e $ ! != -> _broadcast_test_flag `i -> 0 `i 920  ]
-{
+[; ;main.c: 321:         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch4, strlen(data_ch4));
+[e ( _memcpy (3 , , -> + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux `*v -> &U _data_ch4 `*Cv ( _strlen (1 -> &U _data_ch4 `*Cuc ]
 "322
-[; ;main.c: 322:         if(BROADCAST == prev_destination){
-[e $ ! == -> . `E7017 0 `ui -> _prev_destination `ui 921  ]
-{
-"323
-[; ;main.c: 323:             acknowledge_frame[i++] = 'Y';
-[e = *U + &U _acknowledge_frame * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> 89 `ui `uc ]
-"324
-[; ;main.c: 324:         }else{
-}
-[e $U 922  ]
-[e :U 921 ]
-{
+[; ;main.c: 322:         get_flag = 0;
+[e = _get_flag -> -> 0 `i `uc ]
 "325
-[; ;main.c: 325:             acknowledge_frame[i++] = 'N';
-[e = *U + &U _acknowledge_frame * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _acknowledge_frame `ui `ux -> -> 78 `ui `uc ]
-"326
-[; ;main.c: 326:         }
+[; ;main.c: 325:     }else if(broadcast_test_flag){
 }
-[e :U 922 ]
-"328
-[; ;main.c: 328:         broadcast_test_flag = 0;
-[e = _broadcast_test_flag -> -> 0 `i `uc ]
+[e $U 930  ]
+[e :U 928 ]
+[e $ ! != -> _broadcast_test_flag `i -> 0 `i 931  ]
+{
+"327
+[; ;main.c: 327:         if(BROADCAST == prev_destination){
+[e $ ! == -> . `E7096 0 `ui -> _prev_destination `ui 932  ]
+{
 "329
-[; ;main.c: 329:     }
+[; ;main.c: 329:             sprintf(acknowledge_frame + strlen(acknowledge_frame),"%s","YS");
+[e ( _sprintf (1 , (. , + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux :s 8C :s 9C ]
+"330
+[; ;main.c: 330:         }else{
 }
-[e :U 920 ]
-[e :U 919 ]
-[e :U 916 ]
-"331
-[; ;main.c: 331:     ACKframeChecksum(acknowledge_frame);
-[e ( _ACKframeChecksum (1 &U _acknowledge_frame ]
+[e $U 933  ]
+[e :U 932 ]
+{
 "332
-[; ;main.c: 332:     send_string("I am the final frame: \n");
-[e ( _send_string (1 :s 31C ]
+[; ;main.c: 332:             sprintf(acknowledge_frame + strlen(acknowledge_frame),"%s","NO");
+[e ( _sprintf (1 , (. , + &U _acknowledge_frame * -> ( _strlen (1 -> &U _acknowledge_frame `*Cuc `ux -> -> # *U &U _acknowledge_frame `ui `ux :s 10C :s 11C ]
 "333
-[; ;main.c: 333:     send_string(fullAckFrame); send_string("\n");
-[e ( _send_string (1 -> &U _fullAckFrame `*Cuc ]
-[e ( _send_string (1 :s 32C ]
-"334
-[; ;main.c: 334:     frame_ready_flag = 0;
-[e = _frame_ready_flag -> -> 0 `i `uc ]
-"335
-[; ;main.c: 335:     prev_destination = destination;
-[e = _prev_destination _destination ]
-"336
-[; ;main.c: 336: exitToIDLe:
-[e :U 915 ]
-"337
-[; ;main.c: 337:     curr_state = RST;
-[e = _curr_state . `E7024 0 ]
-"338
-[; ;main.c: 338: }
-[e :UE 905 ]
+[; ;main.c: 333:         }
 }
+[e :U 933 ]
+"334
+[; ;main.c: 334:         broadcast_test_flag = 0;
+[e = _broadcast_test_flag -> -> 0 `i `uc ]
+"335
+[; ;main.c: 335:     }
+}
+[e :U 931 ]
+[e :U 930 ]
+[e :U 927 ]
+"337
+[; ;main.c: 337:     ACKframeChecksum(acknowledge_frame);
+[e ( _ACKframeChecksum (1 &U _acknowledge_frame ]
+"339
+[; ;main.c: 339:     send_string(fullAckFrame); send_string("\n");
+[e ( _send_string (1 -> &U _fullAckFrame `*Cuc ]
+[e ( _send_string (1 :s 12C ]
+"340
+[; ;main.c: 340:     frame_ready_flag = 0;
+[e = _frame_ready_flag -> -> 0 `i `uc ]
+"341
+[; ;main.c: 341:     prev_destination = destination;
+[e = _prev_destination _destination ]
 "342
-[; ;main.c: 342: int get_ID(void){
+[; ;main.c: 342: exitToIDLe:
+[e :U 926 ]
+"343
+[; ;main.c: 343:     curr_state = RST;
+[e = _curr_state . `E7103 0 ]
+"344
+[; ;main.c: 344: }
+[e :UE 917 ]
+}
+"348
+[; ;main.c: 348: int get_ID(void){
 [v _get_ID `(i ~T0 @X0 1 ef ]
 {
 [e :U _get_ID ]
 [f ]
-"343
-[; ;main.c: 343:     return PORTAbits.RA0 | PORTAbits.RA1 << 1 | PORTAbits.RA2 << 2 | PORTDbits.RD0 << 3 | PORTDbits.RD1 << 4;
-[e ) | | | | -> . . _PORTAbits 0 0 `i << -> . . _PORTAbits 0 1 `i -> 1 `i << -> . . _PORTAbits 0 2 `i -> 2 `i << -> . . _PORTDbits 0 0 `i -> 3 `i << -> . . _PORTDbits 0 1 `i -> 4 `i ]
-[e $UE 923  ]
-"344
-[; ;main.c: 344: }
-[e :UE 923 ]
+"349
+[; ;main.c: 349:     return PORTAbits.RA0 | PORTAbits.RA1 << 1 | PORTAbits.RA2 << 2 | PORTAbits.RA3 << 3 | PORTAbits.RA4 << 4;
+[e ) | | | | -> . . _PORTAbits 0 0 `i << -> . . _PORTAbits 0 1 `i -> 1 `i << -> . . _PORTAbits 0 2 `i -> 2 `i << -> . . _PORTAbits 0 3 `i -> 3 `i << -> . . _PORTAbits 0 4 `i -> 4 `i ]
+[e $UE 934  ]
+"350
+[; ;main.c: 350: }
+[e :UE 934 ]
 }
-"347
-[; ;main.c: 347: int parse_frame_ID(void){
+"353
+[; ;main.c: 353: int parse_frame_ID(void){
 [v _parse_frame_ID `(i ~T0 @X0 1 ef ]
 {
 [e :U _parse_frame_ID ]
 [f ]
-"348
-[; ;main.c: 348:     return add_digit_1 * 10 + add_digit_2;
+"354
+[; ;main.c: 354:     return add_digit_1 * 10 + add_digit_2;
 [e ) + * _add_digit_1 -> 10 `i _add_digit_2 ]
-[e $UE 924  ]
-"349
-[; ;main.c: 349: }
-[e :UE 924 ]
+[e $UE 935  ]
+"355
+[; ;main.c: 355: }
+[e :UE 935 ]
 }
-"352
-[; ;main.c: 352: void ChecksumCalc(char* dataString){
+"358
+[; ;main.c: 358: void ChecksumCalc(char* dataString){
 [v _ChecksumCalc `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _ChecksumCalc ]
 [v _dataString `*uc ~T0 @X0 1 r1 ]
 [f ]
-"353
-[; ;main.c: 353:     uint8_t xorTemp;
+"359
+[; ;main.c: 359:     uint8_t xorTemp;
 [v _xorTemp `uc ~T0 @X0 1 a ]
-"354
-[; ;main.c: 354:     xorTemp = (uint8_t)dataString[0];
+"360
+[; ;main.c: 360:     xorTemp = (uint8_t)dataString[0];
 [e = _xorTemp -> *U + _dataString * -> -> 0 `i `x -> -> # *U _dataString `i `x `uc ]
-"355
-[; ;main.c: 355:     for(int i = 1; i < strlen(dataString); i++){
+"361
+[; ;main.c: 361:     for(int i = 1; i < strlen(dataString); i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 1 `i ]
-[e $U 929  ]
-[e :U 926 ]
+[e $U 940  ]
+[e :U 937 ]
 {
-"356
-[; ;main.c: 356:         xorTemp ^= (uint8_t)dataString[i];
+"362
+[; ;main.c: 362:         xorTemp ^= (uint8_t)dataString[i];
 [e =^ _xorTemp -> -> *U + _dataString * -> _i `x -> -> # *U _dataString `i `x `uc `uc ]
-"357
-[; ;main.c: 357:         }
+"363
+[; ;main.c: 363:         }
 }
 [e ++ _i -> 1 `i ]
-[e :U 929 ]
-[e $ < -> _i `ui ( _strlen (1 -> _dataString `*Cuc 926  ]
-[e :U 927 ]
+[e :U 940 ]
+[e $ < -> _i `ui ( _strlen (1 -> _dataString `*Cuc 937  ]
+[e :U 938 ]
 }
-"358
-[; ;main.c: 358:     sprintf(CRCresult,"%.2x",xorTemp);
-[e ( _sprintf (1 , (. , &U _CRCresult :s 33C -> _xorTemp `i ]
-"359
-[; ;main.c: 359: }
-[e :UE 925 ]
+"364
+[; ;main.c: 364:     sprintf(CRCresult,"%.2X",xorTemp);
+[e ( _sprintf (1 , (. , &U _CRCresult :s 13C -> _xorTemp `i ]
+"365
+[; ;main.c: 365: }
+[e :UE 936 ]
 }
-"362
-[; ;main.c: 362: void TrimFrame(void){
+"368
+[; ;main.c: 368: void TrimFrame(void){
 [v _TrimFrame `(v ~T0 @X0 1 ef ]
 {
 [e :U _TrimFrame ]
 [f ]
-"363
-[; ;main.c: 363:     uint8_t index = 0;
+"369
+[; ;main.c: 369:     uint8_t index = 0;
 [v _index `uc ~T0 @X0 1 a ]
 [e = _index -> -> 0 `i `uc ]
-"364
-[; ;main.c: 364:     uint8_t i;
+"370
+[; ;main.c: 370:     uint8_t i;
 [v _i `uc ~T0 @X0 1 a ]
-"365
-[; ;main.c: 365:     for(i = 0; i < strlen(frame_buffer)-3; i++){
+"371
+[; ;main.c: 371:     for(i = 0; i < strlen(frame_buffer)-3; i++){
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 934  ]
-[e :U 931 ]
+[e $U 945  ]
+[e :U 942 ]
 {
-"366
-[; ;main.c: 366:         TrimmedFrame[index] = frame_buffer[i];
+"372
+[; ;main.c: 372:         TrimmedFrame[index] = frame_buffer[i];
 [e = *U + &U _TrimmedFrame * -> _index `ux -> -> # *U &U _TrimmedFrame `ui `ux *U + &U _frame_buffer * -> _i `ux -> -> # *U &U _frame_buffer `ui `ux ]
-"367
-[; ;main.c: 367:         index++;
+"373
+[; ;main.c: 373:         index++;
 [e ++ _index -> -> 1 `i `uc ]
-"368
-[; ;main.c: 368:     }
+"374
+[; ;main.c: 374:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 934 ]
-[e $ < -> _i `ui - ( _strlen (1 -> &U _frame_buffer `*Cuc -> -> 3 `i `ui 931  ]
-[e :U 932 ]
+[e :U 945 ]
+[e $ < -> _i `ui - ( _strlen (1 -> &U _frame_buffer `*Cuc -> -> 3 `i `ui 942  ]
+[e :U 943 ]
 }
-"369
-[; ;main.c: 369:     TrimmedFrame[index] = '\0';
+"375
+[; ;main.c: 375:     TrimmedFrame[index] = '\0';
 [e = *U + &U _TrimmedFrame * -> _index `ux -> -> # *U &U _TrimmedFrame `ui `ux -> -> 0 `ui `uc ]
-"371
-[; ;main.c: 371: }
-[e :UE 930 ]
+"376
+[; ;main.c: 376: }
+[e :UE 941 ]
 }
-"397
-[; ;main.c: 397: void GetChecksumValue(void){
+"379
+[; ;main.c: 379: void GetChecksumValue(void){
 [v _GetChecksumValue `(v ~T0 @X0 1 ef ]
 {
 [e :U _GetChecksumValue ]
 [f ]
-"398
-[; ;main.c: 398:     uint8_t index = 0;
+"380
+[; ;main.c: 380:     uint8_t index = 0;
 [v _index `uc ~T0 @X0 1 a ]
 [e = _index -> -> 0 `i `uc ]
-"399
-[; ;main.c: 399:     uint8_t i=0;
+"381
+[; ;main.c: 381:     uint8_t i=0;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"401
-[; ;main.c: 401:     for(i = strlen(frame_buffer)-3; i < strlen(frame_buffer)-1; i++){
+"383
+[; ;main.c: 383:     for(i = strlen(frame_buffer)-3; i < strlen(frame_buffer)-1; i++){
 {
 [e = _i -> - ( _strlen (1 -> &U _frame_buffer `*Cuc -> -> 3 `i `ui `uc ]
-[e $U 939  ]
-[e :U 936 ]
+[e $U 950  ]
+[e :U 947 ]
 {
-"402
-[; ;main.c: 402:     send_string("Received frame: "); send_string(frame_buffer); send_string("\n");
-[e ( _send_string (1 :s 34C ]
-[e ( _send_string (1 -> &U _frame_buffer `*Cuc ]
-[e ( _send_string (1 :s 35C ]
-"403
-[; ;main.c: 403:         FrameCheckSum[index] = frame_buffer[i];
+"384
+[; ;main.c: 384:         FrameCheckSum[index] = frame_buffer[i];
 [e = *U + &U _FrameCheckSum * -> _index `ux -> -> # *U &U _FrameCheckSum `ui `ux *U + &U _frame_buffer * -> _i `ux -> -> # *U &U _frame_buffer `ui `ux ]
-"404
-[; ;main.c: 404:         index++;
+"385
+[; ;main.c: 385:         index++;
 [e ++ _index -> -> 1 `i `uc ]
-"405
-[; ;main.c: 405:     }
+"386
+[; ;main.c: 386:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 939 ]
-[e $ < -> _i `ui - ( _strlen (1 -> &U _frame_buffer `*Cuc -> -> 1 `i `ui 936  ]
-[e :U 937 ]
+[e :U 950 ]
+[e $ < -> _i `ui - ( _strlen (1 -> &U _frame_buffer `*Cuc -> -> 1 `i `ui 947  ]
+[e :U 948 ]
 }
-"407
-[; ;main.c: 407:     FrameCheckSum[index]='\0';
+"388
+[; ;main.c: 388:     FrameCheckSum[index]='\0';
 [e = *U + &U _FrameCheckSum * -> _index `ux -> -> # *U &U _FrameCheckSum `ui `ux -> -> 0 `ui `uc ]
-"409
-[; ;main.c: 409: }
-[e :UE 935 ]
+"389
+[; ;main.c: 389: }
+[e :UE 946 ]
 }
-"411
-[; ;main.c: 411: void ACKframeChecksum(char* frame){
+"391
+[; ;main.c: 391: void ACKframeChecksum(char* frame){
 [v _ACKframeChecksum `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _ACKframeChecksum ]
 [v _frame `*uc ~T0 @X0 1 r1 ]
 [f ]
-"416
-[; ;main.c: 416:     clear_buffer(fullAckFrame);
+"393
+[; ;main.c: 393:     clear_buffer(fullAckFrame);
 [e ( _clear_buffer (1 &U _fullAckFrame ]
-"421
-[; ;main.c: 421:     ChecksumCalc(frame);
+"395
+[; ;main.c: 395:     ChecksumCalc(frame);
 [e ( _ChecksumCalc (1 _frame ]
-"422
-[; ;main.c: 422:     send_string("Result of XOR checksum: "); send_string(CRCresult); send_string("\n");
-[e ( _send_string (1 :s 36C ]
-[e ( _send_string (1 -> &U _CRCresult `*Cuc ]
-[e ( _send_string (1 :s 37C ]
-"423
-[; ;main.c: 423:     send_string("ack frame: "); send_string(frame); send_string("\n");
-[e ( _send_string (1 :s 38C ]
-[e ( _send_string (1 -> _frame `*Cuc ]
-[e ( _send_string (1 :s 39C ]
-"428
-[; ;main.c: 428:     sprintf(fullAckFrame, "%s%c%c%c\0",frame,CRCresult[0],CRCresult[1],'*');
-[e ( _sprintf (1 , , , , (. , &U _fullAckFrame :s 40C _frame -> *U + &U _CRCresult * -> -> -> 0 `i `ui `ux -> -> # *U &U _CRCresult `ui `ux `i -> *U + &U _CRCresult * -> -> -> 1 `i `ui `ux -> -> # *U &U _CRCresult `ui `ux `i -> 42 `ui ]
-"429
-[; ;main.c: 429:     send_string("Acknowledgment frame to be sent: "); send_string(fullAckFrame); send_string("\n");
-[e ( _send_string (1 :s 41C ]
-[e ( _send_string (1 -> &U _fullAckFrame `*Cuc ]
-[e ( _send_string (1 :s 42C ]
-"430
-[; ;main.c: 430: }
-[e :UE 940 ]
+"397
+[; ;main.c: 397:     sprintf(fullAckFrame, "%s%c%c%c\0",frame,CRCresult[0],CRCresult[1],'*');
+[e ( _sprintf (1 , , , , (. , &U _fullAckFrame :s 14C _frame -> *U + &U _CRCresult * -> -> -> 0 `i `ui `ux -> -> # *U &U _CRCresult `ui `ux `i -> *U + &U _CRCresult * -> -> -> 1 `i `ui `ux -> -> # *U &U _CRCresult `ui `ux `i -> 42 `ui ]
+"399
+[; ;main.c: 399: }
+[e :UE 951 ]
 }
-[p f _sprintf 13435012 ]
-[a 19C 37 48 46 52 120 0 ]
-[a 20C 37 48 46 52 120 0 ]
-[a 21C 37 48 46 52 120 0 ]
-[a 22C 37 48 46 52 120 0 ]
-[a 33C 37 46 50 120 0 ]
-[a 7C 37 100 0 ]
-[a 10C 37 100 0 ]
-[a 9C 97 100 100 114 101 115 115 32 102 114 111 109 32 104 97 114 100 119 97 114 101 32 105 115 58 0 ]
-[a 41C 65 99 107 110 111 119 108 101 100 103 109 101 110 116 32 102 114 97 109 101 32 116 111 32 98 101 32 115 101 110 116 58 32 0 ]
-[a 36C 82 101 115 117 108 116 32 111 102 32 88 79 82 32 99 104 101 99 107 115 117 109 58 32 0 ]
-[a 17C 97 99 107 32 102 114 97 109 101 32 97 102 116 101 114 32 99 111 109 109 97 110 100 32 102 105 108 108 58 32 0 ]
-[a 15C 97 99 107 32 102 114 97 109 101 32 98 101 102 111 114 101 32 99 111 109 109 97 110 100 32 102 105 108 108 58 32 0 ]
-[a 6C 97 100 100 114 101 115 115 32 102 114 111 109 32 102 114 97 109 101 58 32 0 ]
-[a 38C 97 99 107 32 102 114 97 109 101 58 32 0 ]
-[a 13C 114 101 99 101 105 118 101 100 32 102 114 97 109 101 58 32 0 ]
-[a 34C 82 101 99 101 105 118 101 100 32 102 114 97 109 101 58 32 0 ]
-[a 29C 82 101 115 117 108 116 32 111 102 32 99 104 52 32 32 32 32 0 ]
-[a 27C 82 101 115 117 108 116 32 111 102 32 99 104 51 32 32 32 32 0 ]
-[a 25C 82 101 115 117 108 116 32 111 102 32 99 104 50 32 32 32 32 0 ]
-[a 23C 82 101 115 117 108 116 32 111 102 32 99 104 49 32 32 32 32 0 ]
-[a 12C 67 111 109 109 97 110 100 32 99 104 97 114 97 99 116 101 114 32 101 114 114 111 114 10 0 ]
-[a 5C 69 114 114 111 114 33 32 73 103 110 111 114 101 32 102 114 97 109 101 46 10 0 ]
-[a 4C 78 111 32 69 114 114 111 114 33 32 70 114 97 109 101 32 105 115 32 118 97 108 105 100 46 10 0 ]
-[a 3C 65 68 67 32 114 101 97 100 121 33 10 0 ]
-[a 1C 72 101 108 108 111 33 10 0 ]
-[a 31C 73 32 97 109 32 116 104 101 32 102 105 110 97 108 32 102 114 97 109 101 58 32 10 0 ]
-[a 2C 82 101 115 101 116 32 68 79 78 69 33 32 10 0 ]
-[a 8C 10 0 ]
-[a 11C 10 0 ]
-[a 14C 10 0 ]
-[a 16C 10 0 ]
-[a 18C 10 0 ]
-[a 24C 10 0 ]
-[a 26C 10 0 ]
-[a 28C 10 0 ]
-[a 30C 10 0 ]
-[a 32C 10 0 ]
-[a 35C 10 0 ]
-[a 37C 10 0 ]
-[a 39C 10 0 ]
-[a 42C 10 0 ]
-[a 40C 37 115 37 99 37 99 37 99 0 0 ]
+[p f _sprintf 15532164 ]
+[a 4C 37 48 46 52 120 0 ]
+[a 5C 37 48 46 52 120 0 ]
+[a 6C 37 48 46 52 120 0 ]
+[a 7C 37 48 46 52 120 0 ]
+[a 8C 37 115 0 ]
+[a 10C 37 115 0 ]
+[a 2C 36 85 37 46 50 100 37 99 0 ]
+[a 13C 37 46 50 88 0 ]
+[a 9C 89 83 0 ]
+[a 11C 78 79 0 ]
+[a 3C 79 75 0 ]
+[a 1C 10 0 ]
+[a 12C 10 0 ]
+[a 14C 37 115 37 99 37 99 37 99 0 0 ]

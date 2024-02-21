@@ -9649,12 +9649,15 @@ unsigned char __t3rd16on(void);
 # 1 "./i2c_driver.h" 1
 # 14 "./i2c_driver.h"
 void i2c_driver_init(void);
+void i2c_driver_write_pointer_byte(uint8_t devaddr, uint8_t pointer);
 void i2c_driver_write_byte(uint8_t devaddr, uint8_t reg, uint8_t data);
 void i2c_driver_write_twobytes(uint8_t devaddr, uint8_t reg, uint16_t data);
+void i2c_driver_write_twobytes_noack(uint8_t devaddr, uint8_t reg, uint16_t data);
 void i2c_driver_read_byte(uint8_t devaddr, uint8_t reg, uint8_t * data);
 void i2c_driver_read_twobytes(uint8_t devaddr, uint8_t reg, uint16_t * data);
+void i2c_driver_read_2bytes(uint8_t devaddr, uint16_t * data);
 # 25 "./ADC_driver.h" 2
-# 41 "./ADC_driver.h"
+# 42 "./ADC_driver.h"
 void ADC_reset(void);
 void ADC_init(void);
 void ADC_read(void);
@@ -9663,12 +9666,267 @@ void ADC_read(void);
 
 uint16_t ADC_result0 = 0x0FFF;
 uint16_t ADC_result[4];
-double SC_voltage = 0;
-double voltage = 0;
-char ResultBuffer[15];
-char DigitalBuffer[20];
-char SCBuffer[20];
 # 3 "ADC_driver.c" 2
+
+# 1 "./mcc_generated_files/eusart1.h" 1
+# 55 "./mcc_generated_files/eusart1.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdbool.h" 1 3
+# 55 "./mcc_generated_files/eusart1.h" 2
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 57 "./mcc_generated_files/eusart1.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 2 3
+
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+# 65 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 58 "./mcc_generated_files/eusart1.h" 2
+# 77 "./mcc_generated_files/eusart1.h"
+typedef union {
+    struct {
+        unsigned perr : 1;
+        unsigned ferr : 1;
+        unsigned oerr : 1;
+        unsigned reserved : 5;
+    };
+    uint8_t status;
+}eusart1_status_t;
+
+
+
+
+extern volatile uint8_t eusart1TxBufferRemaining;
+extern volatile uint8_t eusart1RxCount;
+
+
+
+
+extern void (*EUSART1_RxDefaultInterruptHandler)(void);
+# 118 "./mcc_generated_files/eusart1.h"
+void EUSART1_Initialize(void);
+
+void send_string(const char *message);
+# 168 "./mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_tx_ready(void);
+# 216 "./mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_rx_ready(void);
+# 263 "./mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_tx_done(void);
+# 311 "./mcc_generated_files/eusart1.h"
+eusart1_status_t EUSART1_get_last_status(void);
+# 331 "./mcc_generated_files/eusart1.h"
+uint8_t EUSART1_Read(void);
+# 351 "./mcc_generated_files/eusart1.h"
+void EUSART1_Write(uint8_t txData);
+# 373 "./mcc_generated_files/eusart1.h"
+void EUSART1_Receive_ISR(void);
+# 394 "./mcc_generated_files/eusart1.h"
+void EUSART1_RxDataHandler(void);
+# 412 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
+# 430 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
+# 448 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
+# 469 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
+# 4 "ADC_driver.c" 2
+
 
 
 
@@ -9676,37 +9934,42 @@ char SCBuffer[20];
 void ADC_init(void){
     i2c_driver_write_byte(0x40, 0x19, 0x0F);
     i2c_driver_write_byte(0x40, 0x14, 0x02);
+    i2c_driver_write_byte(0x40, 0x66, 0x02);
 }
 
 
 void ADC_reset(void){
     i2c_driver_write_byte(0x40,0x14,0x80);
-
 }
 
 
 void ADC_read(void){
+
     i2c_driver_write_byte(0x40, 0x14, 0x02);
-    i2c_driver_write_byte(0x40,0x1C, 0x00);
+    i2c_driver_write_byte(0x40,0x1C, 0x01);
     uint8_t ADC_data[2];
 
     uint8_t busy_status;
+
     do{
+
         i2c_driver_read_byte(0x40,0x10,&busy_status);
+
     }while(busy_status & (1<<7) !=0);
+
+
     i2c_driver_write_byte(0x40, 0x14, 0x00);
+
 
 
     i2c_driver_read_twobytes(0x40, 0x20, &ADC_result[0]);
 
-
     i2c_driver_read_twobytes(0x40, 0x21, &ADC_result[1]);
-
 
     i2c_driver_read_twobytes(0x40, 0x22, &ADC_result[2]);
 
-
     i2c_driver_read_twobytes(0x40, 0x23, &ADC_result[3]);
+
 
 
 }

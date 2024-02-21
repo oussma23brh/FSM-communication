@@ -45,6 +45,7 @@
 */
 #include "eusart1.h"
 #include "pin_manager.h"
+#include "tmr1.h"
 
 /**
   Section: Macro Declarations
@@ -241,6 +242,8 @@ void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void)){
 
 /*send a string through UART*/
 void send_string(const char *message){
+    TX_LED_SetLow();
+    TMR1_StartTimer();
     CTRL_SetHigh();
     uint16_t i;
     for(i=0;i<strlen(message);i++){

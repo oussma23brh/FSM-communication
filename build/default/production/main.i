@@ -9650,9 +9650,9 @@ unsigned char __t3rd16on(void);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 210 "./mcc_generated_files/pin_manager.h"
+# 235 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 222 "./mcc_generated_files/pin_manager.h"
+# 247 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -9819,6 +9819,83 @@ char *tempnam(const char *, const char *);
 void INTERRUPT_Initialize (void);
 # 55 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/tmr3.h" 1
+# 94 "./mcc_generated_files/tmr3.h"
+void TMR3_Initialize(void);
+# 125 "./mcc_generated_files/tmr3.h"
+void TMR3_StartTimer(void);
+# 155 "./mcc_generated_files/tmr3.h"
+void TMR3_StopTimer(void);
+# 189 "./mcc_generated_files/tmr3.h"
+uint16_t TMR3_ReadTimer(void);
+# 215 "./mcc_generated_files/tmr3.h"
+void TMR3_WriteTimer(uint16_t timerVal);
+# 247 "./mcc_generated_files/tmr3.h"
+void TMR3_Reload(void);
+# 288 "./mcc_generated_files/tmr3.h"
+void TMR3_StartSinglePulseAcquisition(void);
+# 329 "./mcc_generated_files/tmr3.h"
+uint8_t TMR3_CheckGateValueStatus(void);
+# 345 "./mcc_generated_files/tmr3.h"
+void TMR3_ISR(void);
+# 364 "./mcc_generated_files/tmr3.h"
+ void TMR3_SetInterruptHandler(void (* InterruptHandler)(void));
+# 382 "./mcc_generated_files/tmr3.h"
+extern void (*TMR3_InterruptHandler)(void);
+# 400 "./mcc_generated_files/tmr3.h"
+void TMR3_DefaultInterruptHandler(void);
+# 56 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr1.h" 1
+# 94 "./mcc_generated_files/tmr1.h"
+void TMR1_Initialize(void);
+# 125 "./mcc_generated_files/tmr1.h"
+void TMR1_StartTimer(void);
+# 155 "./mcc_generated_files/tmr1.h"
+void TMR1_StopTimer(void);
+# 189 "./mcc_generated_files/tmr1.h"
+uint16_t TMR1_ReadTimer(void);
+# 215 "./mcc_generated_files/tmr1.h"
+void TMR1_WriteTimer(uint16_t timerVal);
+# 247 "./mcc_generated_files/tmr1.h"
+void TMR1_Reload(void);
+# 288 "./mcc_generated_files/tmr1.h"
+void TMR1_StartSinglePulseAcquisition(void);
+# 329 "./mcc_generated_files/tmr1.h"
+uint8_t TMR1_CheckGateValueStatus(void);
+# 345 "./mcc_generated_files/tmr1.h"
+void TMR1_ISR(void);
+# 364 "./mcc_generated_files/tmr1.h"
+ void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 382 "./mcc_generated_files/tmr1.h"
+extern void (*TMR1_InterruptHandler)(void);
+# 400 "./mcc_generated_files/tmr1.h"
+void TMR1_DefaultInterruptHandler(void);
+# 57 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 100 "./mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "./mcc_generated_files/tmr0.h"
+void TMR0_StartTimer(void);
+# 161 "./mcc_generated_files/tmr0.h"
+void TMR0_StopTimer(void);
+# 197 "./mcc_generated_files/tmr0.h"
+uint16_t TMR0_ReadTimer(void);
+# 236 "./mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint16_t timerVal);
+# 272 "./mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 290 "./mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 309 "./mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 327 "./mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 345 "./mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 58 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/eusart1.h" 1
 # 58 "./mcc_generated_files/eusart1.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 1 3
@@ -9926,10 +10003,10 @@ void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 # 469 "./mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 56 "./mcc_generated_files/mcc.h" 2
-# 71 "./mcc_generated_files/mcc.h"
+# 59 "./mcc_generated_files/mcc.h" 2
+# 74 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 84 "./mcc_generated_files/mcc.h"
+# 87 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 44 "main.c" 2
 
@@ -10312,12 +10389,15 @@ double yn(int, double);
 # 1 "./i2c_driver.h" 1
 # 14 "./i2c_driver.h"
 void i2c_driver_init(void);
+void i2c_driver_write_pointer_byte(uint8_t devaddr, uint8_t pointer);
 void i2c_driver_write_byte(uint8_t devaddr, uint8_t reg, uint8_t data);
 void i2c_driver_write_twobytes(uint8_t devaddr, uint8_t reg, uint16_t data);
+void i2c_driver_write_twobytes_noack(uint8_t devaddr, uint8_t reg, uint16_t data);
 void i2c_driver_read_byte(uint8_t devaddr, uint8_t reg, uint8_t * data);
 void i2c_driver_read_twobytes(uint8_t devaddr, uint8_t reg, uint16_t * data);
+void i2c_driver_read_2bytes(uint8_t devaddr, uint16_t * data);
 # 25 "./ADC_driver.h" 2
-# 41 "./ADC_driver.h"
+# 42 "./ADC_driver.h"
 void ADC_reset(void);
 void ADC_init(void);
 void ADC_read(void);
@@ -10326,14 +10406,38 @@ void ADC_read(void);
 
 uint16_t ADC_result0 = 0x0FFF;
 uint16_t ADC_result[4];
-double SC_voltage = 0;
-double voltage = 0;
-char ResultBuffer[15];
-char DigitalBuffer[20];
-char SCBuffer[20];
 # 28 "./main.h" 2
-# 42 "./main.h"
+
+# 1 "./AD5593R.h" 1
+# 52 "./AD5593R.h"
+const int _VREF = 0;
+const int _2xVREF = 1;
+
+
+
+void AD5593_reset(void);
+void set_VREF(_Bool activate);
+void set_ADC_BUFF(_Bool activate);
+void set_ADC_range(int range);
+void ADC_ch_config(void);
+void lock_config_reg(_Bool lock);
+void AD5593_ADC_convert(int channel);
+void AD5593_get_conv_result(int channel);
+void AD5593_init_VREF(void);
+void AD5593_init_w_EVREF(void);
+void AD5593_ADC_read(void);
+
+
+
+uint16_t reg;
+uint8_t data[2];
+uint16_t ADC_result[4];
+# 29 "./main.h" 2
+# 43 "./main.h"
 void my_RX_ISR(void);
+void Timer0IntHandler(void);
+void Timer1IntHandler(void);
+void Timer3IntHandler(void);
 void clear_buffer(char* buffer);
 void fill_buffer(char received_char);
 void Initialize(void);
@@ -10374,6 +10478,7 @@ State_Type curr_state ;
 uint8_t read_flag=0;
 uint8_t get_flag=0;
 uint8_t broadcast_test_flag=0;
+uint8_t timer0_flag = 0;
 
 char frame_ready_flag=0;
 
@@ -10385,6 +10490,8 @@ int add_digit_1,add_digit_2;
 
 char command;
 uint8_t command_index;
+uint8_t frameID;
+uint8_t hardID;
 
 char frame_buffer[20];
 
@@ -10406,20 +10513,23 @@ void main(void)
     SYSTEM_Initialize();
     i2c_driver_init();
     EUSART1_SetRxInterruptHandler(my_RX_ISR);
+    TMR0_SetInterruptHandler(Timer0IntHandler);
+    TMR1_SetInterruptHandler(Timer1IntHandler);
+    TMR3_SetInterruptHandler(Timer3IntHandler);
 
     (INTCONbits.GIE = 1);
 
     (INTCONbits.PEIE = 1);
 
-
-
     Initialize();
-    send_string("Hello!\n");
+
+
+
     ADC_reset();
-    send_string("Reset DONE! \n");
-    _delay((unsigned long)((1000)*(16000000/4000.0)));
+
+    _delay((unsigned long)((1)*(16000000/4000.0)));
     ADC_init();
-    send_string("ADC ready!\n");
+
     while (1)
     {
         if(frame_ready_flag){
@@ -10429,8 +10539,8 @@ void main(void)
 }
 
 void my_RX_ISR(void){
-
-
+    do { LATDbits.LATD2 = 0; } while(0);
+    TMR3_StartTimer();
 
         char frame_char;
 
@@ -10457,15 +10567,28 @@ void my_RX_ISR(void){
                 fill_buffer(frame_char);
                 if(frame_char == '*'){
                     frame_ready_flag = 1;
-
                     fill_buffer('\0');
                     curr_state = ERROR_CHECK;
                     frame_state = SETUP;
                 }
                 break;
         }
+}
 
+void Timer0IntHandler(void){
+    timer0_flag = 1;
+}
 
+void Timer1IntHandler(void){
+    do { LATDbits.LATD3 = 1; } while(0);
+    TMR1_StopTimer();
+    TMR1_Reload();
+}
+
+void Timer3IntHandler(void){
+    do { LATDbits.LATD2 = 1; } while(0);
+    TMR3_StopTimer();
+    TMR3_Reload();
 }
 
 
@@ -10495,16 +10618,13 @@ void Idle(void){
 
 void ReceivedFrameChecksum(void){
 
-
+    send_string(frame_buffer); send_string("\n");
     clear_buffer(TrimmedFrame);
     clear_buffer(CRCresult);
     clear_buffer(FrameCheckSum);
     TrimFrame();
 
-
     GetChecksumValue();
-
-
 
     int hexFrameCheckSum = (int)strtol(FrameCheckSum, ((void*)0), 16);
 
@@ -10513,12 +10633,13 @@ void ReceivedFrameChecksum(void){
 
     int hexCRCresult = (int)strtol(CRCresult, ((void*)0), 16);
 
+
     if(hexCRCresult == hexFrameCheckSum){
-        send_string("No Error! Frame is valid.\n");
+
         curr_state = DEST_CHK;
     }
     else{
-        send_string("Error! Ignore frame.\n");
+
         frame_ready_flag = 0;
         curr_state = RST;
     }
@@ -10527,18 +10648,14 @@ void ReceivedFrameChecksum(void){
 
 
 void Destination_Check(void){
-
     switch(frame_buffer[1]){
         case 'B':
             destination = BROADCAST;
-
             break;
         case 'U':
             destination = UNICAST;
-
             break;
         default:
-
             frame_ready_flag = 0;
             curr_state = RST;
             break;
@@ -10547,7 +10664,6 @@ void Destination_Check(void){
 }
 
 void Parse(void){
-
     uint8_t i=0;
     if(destination == UNICAST){
             add_digit_1 = frame_buffer[i+2] - '0';
@@ -10562,43 +10678,25 @@ void Parse(void){
 
 
 void Decode(void){
+    frameID = parse_frame_ID();
 
-    uint8_t frameID = parse_frame_ID();
-
-    uint8_t hardID = get_ID();
+    hardID = get_ID();
 
     char message[200];
-
-
-
-
-
-
-    send_string("address from frame: ");
-    sprintf(frameAddress,"%d",frameID);
-    send_string(frameAddress); send_string("\n");
-    send_string("address from hardware is:");
-    sprintf(realAdress,"%d",hardID);
-    send_string(realAdress); send_string("\n");
-
-
-
+# 236 "main.c"
     if((destination == BROADCAST) || ( (destination == UNICAST) && (frameID == hardID) )){
         switch(command){
             case 'R':
                 read_flag = 1;
-
                 break;
             case 'G':
                 get_flag = 1;
-
                 break;
             case 'C':
                 broadcast_test_flag = 1;
-
                 break;
             default:
-                send_string("Command character error\n");
+
                 goto exitToRST;
                 break;
         }
@@ -10622,17 +10720,20 @@ void Execute(void){
     for(k=0;k<30;k++){
         acknowledge_frame[k] = ((void*)0);
     }
-    send_string("received frame: "); send_string(frame_buffer); send_string("\n");
-    send_string("ack frame before command fill: "); send_string(acknowledge_frame); send_string("\n");
 
-    uint8_t i = 0;
-    for(i=0;i<command_index+1;i++){
-        acknowledge_frame[i] = frame_buffer[i];
-    }
-    send_string("ack frame after command fill: "); send_string(acknowledge_frame); send_string("\n");
+
+
+    sprintf(acknowledge_frame,"$U%.2d%c",hardID,command);
+
 
 
     if(read_flag){
+        TMR0_StartTimer();
+        while(!timer0_flag);
+        TMR0_StopTimer();
+        timer0_flag = 0;
+        TMR0_Reload();
+
         ADC_read();
         if(destination == BROADCAST){
             frame_ready_flag = 0;
@@ -10641,9 +10742,7 @@ void Execute(void){
             goto exitToIDLe;
         }
 
-        acknowledge_frame[i++] = 'O';
-        acknowledge_frame[i++] = 'K';
-
+        sprintf(acknowledge_frame + strlen(acknowledge_frame),"OK");
         read_flag = 0;
 
     }else if(get_flag){
@@ -10660,30 +10759,34 @@ void Execute(void){
         sprintf(data_ch2,"%0.4x",ADC_result[1]); data_ch2[4] = '\0';
         sprintf(data_ch3,"%0.4x",ADC_result[2]); data_ch3[4] = '\0';
         sprintf(data_ch4,"%0.4x",ADC_result[3]); data_ch4[4] = '\0';
-        send_string("Result of ch1    "); send_string(data_ch1); send_string("\n");
-        send_string("Result of ch2    "); send_string(data_ch2); send_string("\n");
-        send_string("Result of ch3    "); send_string(data_ch3); send_string("\n");
-        send_string("Result of ch4    "); send_string(data_ch4); send_string("\n");
+
+
+
+
+
+
 
         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch1, strlen(data_ch1));
         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch2, strlen(data_ch2));
         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch3, strlen(data_ch3));
         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch4, strlen(data_ch4));
-
         get_flag = 0;
 
-    }else if(broadcast_test_flag){
-        if(BROADCAST == prev_destination){
-            acknowledge_frame[i++] = 'Y';
-        }else{
-            acknowledge_frame[i++] = 'N';
-        }
 
+    }else if(broadcast_test_flag){
+
+        if(BROADCAST == prev_destination){
+
+            sprintf(acknowledge_frame + strlen(acknowledge_frame),"%s","YS");
+        }else{
+
+            sprintf(acknowledge_frame + strlen(acknowledge_frame),"%s","NO");
+        }
         broadcast_test_flag = 0;
     }
 
     ACKframeChecksum(acknowledge_frame);
-    send_string("I am the final frame: \n");
+
     send_string(fullAckFrame); send_string("\n");
     frame_ready_flag = 0;
     prev_destination = destination;
@@ -10694,7 +10797,7 @@ exitToIDLe:
 
 
 int get_ID(void){
-    return PORTAbits.RA0 | PORTAbits.RA1 << 1 | PORTAbits.RA2 << 2 | PORTDbits.RD0 << 3 | PORTDbits.RD1 << 4;
+    return PORTAbits.RA0 | PORTAbits.RA1 << 1 | PORTAbits.RA2 << 2 | PORTAbits.RA3 << 3 | PORTAbits.RA4 << 4;
 }
 
 
@@ -10709,7 +10812,7 @@ void ChecksumCalc(char* dataString){
     for(int i = 1; i < strlen(dataString); i++){
         xorTemp ^= (uint8_t)dataString[i];
         }
-    sprintf(CRCresult,"%.2x",xorTemp);
+    sprintf(CRCresult,"%.2X",xorTemp);
 }
 
 
@@ -10721,40 +10824,27 @@ void TrimFrame(void){
         index++;
     }
     TrimmedFrame[index] = '\0';
-
 }
-# 397 "main.c"
+
+
 void GetChecksumValue(void){
     uint8_t index = 0;
     uint8_t i=0;
 
     for(i = strlen(frame_buffer)-3; i < strlen(frame_buffer)-1; i++){
-    send_string("Received frame: "); send_string(frame_buffer); send_string("\n");
         FrameCheckSum[index] = frame_buffer[i];
         index++;
     }
 
     FrameCheckSum[index]='\0';
-
 }
 
 void ACKframeChecksum(char* frame){
 
-
-
-
     clear_buffer(fullAckFrame);
 
-
-
-
     ChecksumCalc(frame);
-    send_string("Result of XOR checksum: "); send_string(CRCresult); send_string("\n");
-    send_string("ack frame: "); send_string(frame); send_string("\n");
-
-
-
 
     sprintf(fullAckFrame, "%s%c%c%c\0",frame,CRCresult[0],CRCresult[1],'*');
-    send_string("Acknowledgment frame to be sent: "); send_string(fullAckFrame); send_string("\n");
+
 }

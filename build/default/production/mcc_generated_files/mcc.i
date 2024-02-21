@@ -9650,9 +9650,9 @@ unsigned char __t3rd16on(void);
 # 50 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 210 "mcc_generated_files/pin_manager.h"
+# 235 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 222 "mcc_generated_files/pin_manager.h"
+# 247 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "mcc_generated_files/mcc.h" 2
 
@@ -9819,6 +9819,83 @@ char *tempnam(const char *, const char *);
 void INTERRUPT_Initialize (void);
 # 55 "mcc_generated_files/mcc.h" 2
 
+# 1 "mcc_generated_files/tmr3.h" 1
+# 94 "mcc_generated_files/tmr3.h"
+void TMR3_Initialize(void);
+# 125 "mcc_generated_files/tmr3.h"
+void TMR3_StartTimer(void);
+# 155 "mcc_generated_files/tmr3.h"
+void TMR3_StopTimer(void);
+# 189 "mcc_generated_files/tmr3.h"
+uint16_t TMR3_ReadTimer(void);
+# 215 "mcc_generated_files/tmr3.h"
+void TMR3_WriteTimer(uint16_t timerVal);
+# 247 "mcc_generated_files/tmr3.h"
+void TMR3_Reload(void);
+# 288 "mcc_generated_files/tmr3.h"
+void TMR3_StartSinglePulseAcquisition(void);
+# 329 "mcc_generated_files/tmr3.h"
+uint8_t TMR3_CheckGateValueStatus(void);
+# 345 "mcc_generated_files/tmr3.h"
+void TMR3_ISR(void);
+# 364 "mcc_generated_files/tmr3.h"
+ void TMR3_SetInterruptHandler(void (* InterruptHandler)(void));
+# 382 "mcc_generated_files/tmr3.h"
+extern void (*TMR3_InterruptHandler)(void);
+# 400 "mcc_generated_files/tmr3.h"
+void TMR3_DefaultInterruptHandler(void);
+# 56 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/tmr1.h" 1
+# 94 "mcc_generated_files/tmr1.h"
+void TMR1_Initialize(void);
+# 125 "mcc_generated_files/tmr1.h"
+void TMR1_StartTimer(void);
+# 155 "mcc_generated_files/tmr1.h"
+void TMR1_StopTimer(void);
+# 189 "mcc_generated_files/tmr1.h"
+uint16_t TMR1_ReadTimer(void);
+# 215 "mcc_generated_files/tmr1.h"
+void TMR1_WriteTimer(uint16_t timerVal);
+# 247 "mcc_generated_files/tmr1.h"
+void TMR1_Reload(void);
+# 288 "mcc_generated_files/tmr1.h"
+void TMR1_StartSinglePulseAcquisition(void);
+# 329 "mcc_generated_files/tmr1.h"
+uint8_t TMR1_CheckGateValueStatus(void);
+# 345 "mcc_generated_files/tmr1.h"
+void TMR1_ISR(void);
+# 364 "mcc_generated_files/tmr1.h"
+ void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 382 "mcc_generated_files/tmr1.h"
+extern void (*TMR1_InterruptHandler)(void);
+# 400 "mcc_generated_files/tmr1.h"
+void TMR1_DefaultInterruptHandler(void);
+# 57 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/tmr0.h" 1
+# 100 "mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "mcc_generated_files/tmr0.h"
+void TMR0_StartTimer(void);
+# 161 "mcc_generated_files/tmr0.h"
+void TMR0_StopTimer(void);
+# 197 "mcc_generated_files/tmr0.h"
+uint16_t TMR0_ReadTimer(void);
+# 236 "mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint16_t timerVal);
+# 272 "mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 290 "mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 309 "mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 327 "mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 345 "mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 58 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/eusart1.h" 1
 # 58 "mcc_generated_files/eusart1.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 1 3
@@ -9926,10 +10003,10 @@ void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 # 469 "mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 56 "mcc_generated_files/mcc.h" 2
-# 71 "mcc_generated_files/mcc.h"
+# 59 "mcc_generated_files/mcc.h" 2
+# 74 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 84 "mcc_generated_files/mcc.h"
+# 87 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 47 "mcc_generated_files/mcc.c" 2
 
@@ -9941,6 +10018,9 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
+    TMR3_Initialize();
+    TMR1_Initialize();
+    TMR0_Initialize();
     EUSART1_Initialize();
 }
 

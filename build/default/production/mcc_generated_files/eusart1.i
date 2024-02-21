@@ -9904,12 +9904,39 @@ void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
 # 46 "mcc_generated_files/eusart1.c" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 210 "mcc_generated_files/pin_manager.h"
+# 235 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 222 "mcc_generated_files/pin_manager.h"
+# 247 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 47 "mcc_generated_files/eusart1.c" 2
-# 60 "mcc_generated_files/eusart1.c"
+
+# 1 "mcc_generated_files/tmr1.h" 1
+# 94 "mcc_generated_files/tmr1.h"
+void TMR1_Initialize(void);
+# 125 "mcc_generated_files/tmr1.h"
+void TMR1_StartTimer(void);
+# 155 "mcc_generated_files/tmr1.h"
+void TMR1_StopTimer(void);
+# 189 "mcc_generated_files/tmr1.h"
+uint16_t TMR1_ReadTimer(void);
+# 215 "mcc_generated_files/tmr1.h"
+void TMR1_WriteTimer(uint16_t timerVal);
+# 247 "mcc_generated_files/tmr1.h"
+void TMR1_Reload(void);
+# 288 "mcc_generated_files/tmr1.h"
+void TMR1_StartSinglePulseAcquisition(void);
+# 329 "mcc_generated_files/tmr1.h"
+uint8_t TMR1_CheckGateValueStatus(void);
+# 345 "mcc_generated_files/tmr1.h"
+void TMR1_ISR(void);
+# 364 "mcc_generated_files/tmr1.h"
+ void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 382 "mcc_generated_files/tmr1.h"
+extern void (*TMR1_InterruptHandler)(void);
+# 400 "mcc_generated_files/tmr1.h"
+void TMR1_DefaultInterruptHandler(void);
+# 48 "mcc_generated_files/eusart1.c" 2
+# 61 "mcc_generated_files/eusart1.c"
 volatile uint8_t eusart1RxHead = 0;
 volatile uint8_t eusart1RxTail = 0;
 volatile uint8_t eusart1RxBuffer[8];
@@ -10094,11 +10121,13 @@ void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void)){
 
 
 void send_string(const char *message){
-    do { LATEbits.LATE0 = 1; } while(0);
+    do { LATDbits.LATD3 = 0; } while(0);
+    TMR1_StartTimer();
+    do { LATCbits.LATC5 = 1; } while(0);
     uint16_t i;
     for(i=0;i<strlen(message);i++){
         while(!EUSART1_is_tx_ready());
         EUSART1_Write(message[i]);
     }
-    do { LATEbits.LATE0 = 0; } while(0);
+    do { LATCbits.LATC5 = 0; } while(0);
 }

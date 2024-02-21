@@ -18,7 +18,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "62
 [p x WDTEN  =  OFF     ]
 "63
-[p x WDTPS  =  32768     ]
+[p x WDTPS  =  1     ]
 "66
 [p x CCP2MX  =  PORTC1     ]
 "67

@@ -21,7 +21,7 @@
 
 
 #pragma config WDTEN = OFF
-#pragma config WDTPS = 32768
+#pragma config WDTPS = 1
 
 
 #pragma config CCP2MX = PORTC1

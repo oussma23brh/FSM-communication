@@ -26,6 +26,7 @@ extern "C" {
 #include <math.h>
 #include <stdint.h>
 #include "ADC_driver.h"
+#include "AD5593R.h"
 
 /*defines*/
 #define START_CHAR   '$'
@@ -40,6 +41,9 @@ extern "C" {
 
 /*prototypes*/
 void my_RX_ISR(void);
+void Timer0IntHandler(void);
+void Timer1IntHandler(void);
+void Timer3IntHandler(void);
 void clear_buffer(char* buffer);
 void fill_buffer(char received_char);
 void Initialize(void);
@@ -80,6 +84,7 @@ State_Type curr_state ;
 uint8_t read_flag=0;
 uint8_t get_flag=0;
 uint8_t broadcast_test_flag=0;
+uint8_t timer0_flag = 0;
 //flag to start filling the buffer
 char frame_ready_flag=0;
 //flag to set_up the buffer
@@ -91,6 +96,8 @@ int add_digit_1,add_digit_2;
 //char to store command 
 char command;
 uint8_t command_index;
+uint8_t frameID;
+uint8_t hardID;
 //array to store content of the received frame
 char frame_buffer[MAX_BUFFER_SIZE];
 //index for the frame buffer

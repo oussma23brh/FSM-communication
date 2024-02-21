@@ -1,12 +1,12 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"15 ./i2c_driver.h
-[; ;./i2c_driver.h: 15: void i2c_driver_write_byte(uint8_t devaddr, uint8_t reg, uint8_t data);
+"16 ./i2c_driver.h
+[; ;./i2c_driver.h: 16: void i2c_driver_write_byte(uint8_t devaddr, uint8_t reg, uint8_t data);
 [v _i2c_driver_write_byte `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"17
-[; ;./i2c_driver.h: 17: void i2c_driver_read_byte(uint8_t devaddr, uint8_t reg, uint8_t * data);
+"19
+[; ;./i2c_driver.h: 19: void i2c_driver_read_byte(uint8_t devaddr, uint8_t reg, uint8_t * data);
 [v _i2c_driver_read_byte `(v ~T0 @X0 0 ef3`uc`uc`*uc ]
-"18
-[; ;./i2c_driver.h: 18: void i2c_driver_read_twobytes(uint8_t devaddr, uint8_t reg, uint16_t * data);
+"20
+[; ;./i2c_driver.h: 20: void i2c_driver_read_twobytes(uint8_t devaddr, uint8_t reg, uint16_t * data);
 [v _i2c_driver_read_twobytes `(v ~T0 @X0 0 ef3`uc`uc`*us ]
 "54 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
@@ -767,111 +767,93 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17406
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h: 17406: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"47 ./ADC_driver.h
-[; ;./ADC_driver.h: 47: uint16_t ADC_result0 = 0x0FFF;
+"48 ./ADC_driver.h
+[; ;./ADC_driver.h: 48: uint16_t ADC_result0 = 0x0FFF;
 [v _ADC_result0 `us ~T0 @X0 1 e ]
 [i _ADC_result0
 -> -> 4095 `i `us
 ]
-"48
-[; ;./ADC_driver.h: 48: uint16_t ADC_result[4];
-[v _ADC_result `us ~T0 @X0 -> 4 `i e ]
 "49
-[; ;./ADC_driver.h: 49: double SC_voltage = 0;
-[v _SC_voltage `d ~T0 @X0 1 e ]
-[i _SC_voltage
--> -> 0 `i `d
-]
-"50
-[; ;./ADC_driver.h: 50: double voltage = 0;
-[v _voltage `d ~T0 @X0 1 e ]
-[i _voltage
--> -> 0 `i `d
-]
-"51
-[; ;./ADC_driver.h: 51: char ResultBuffer[15];
-[v _ResultBuffer `uc ~T0 @X0 -> 15 `i e ]
-"52
-[; ;./ADC_driver.h: 52: char DigitalBuffer[20];
-[v _DigitalBuffer `uc ~T0 @X0 -> 20 `i e ]
-"53
-[; ;./ADC_driver.h: 53: char SCBuffer[20];
-[v _SCBuffer `uc ~T0 @X0 -> 20 `i e ]
-"7 ADC_driver.c
-[; ;ADC_driver.c: 7: void ADC_init(void){
+[; ;./ADC_driver.h: 49: uint16_t ADC_result[4];
+[v _ADC_result `us ~T0 @X0 -> 4 `i e ]
+"9 ADC_driver.c
+[; ;ADC_driver.c: 9: void ADC_init(void){
 [v _ADC_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _ADC_init ]
 [f ]
-"8
-[; ;ADC_driver.c: 8:     i2c_driver_write_byte(0x40, 0x19, 0x0F);
-[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 25 `i `uc -> -> 15 `i `uc ]
-"9
-[; ;ADC_driver.c: 9:     i2c_driver_write_byte(0x40, 0x14, 0x02);
-[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 20 `i `uc -> -> 2 `i `uc ]
 "10
-[; ;ADC_driver.c: 10: }
-[e :UE 854 ]
-}
+[; ;ADC_driver.c: 10:     i2c_driver_write_byte(0x40, 0x19, 0x0F);
+[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 25 `i `uc -> -> 15 `i `uc ]
+"11
+[; ;ADC_driver.c: 11:     i2c_driver_write_byte(0x40, 0x14, 0x02);
+[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 20 `i `uc -> -> 2 `i `uc ]
+"12
+[; ;ADC_driver.c: 12:     i2c_driver_write_byte(0x40, 0x66, 0x02);
+[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 102 `i `uc -> -> 2 `i `uc ]
 "13
-[; ;ADC_driver.c: 13: void ADC_reset(void){
+[; ;ADC_driver.c: 13: }
+[e :UE 859 ]
+}
+"16
+[; ;ADC_driver.c: 16: void ADC_reset(void){
 [v _ADC_reset `(v ~T0 @X0 1 ef ]
 {
 [e :U _ADC_reset ]
 [f ]
-"14
-[; ;ADC_driver.c: 14:     i2c_driver_write_byte(0x40,0x14,0x80);
+"17
+[; ;ADC_driver.c: 17:     i2c_driver_write_byte(0x40,0x14,0x80);
 [e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 20 `i `uc -> -> 128 `i `uc ]
-"16
-[; ;ADC_driver.c: 16: }
-[e :UE 855 ]
+"18
+[; ;ADC_driver.c: 18: }
+[e :UE 860 ]
 }
-"19
-[; ;ADC_driver.c: 19: void ADC_read(void){
+"21
+[; ;ADC_driver.c: 21: void ADC_read(void){
 [v _ADC_read `(v ~T0 @X0 1 ef ]
 {
 [e :U _ADC_read ]
 [f ]
-"20
-[; ;ADC_driver.c: 20:     i2c_driver_write_byte(0x40, 0x14, 0x02);
+"23
+[; ;ADC_driver.c: 23:     i2c_driver_write_byte(0x40, 0x14, 0x02);
 [e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 20 `i `uc -> -> 2 `i `uc ]
-"21
-[; ;ADC_driver.c: 21:     i2c_driver_write_byte(0x40,0x1C, 0x00);
-[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 28 `i `uc -> -> 0 `i `uc ]
-"22
-[; ;ADC_driver.c: 22:     uint8_t ADC_data[2];
-[v _ADC_data `uc ~T0 @X0 -> 2 `i a ]
 "24
-[; ;ADC_driver.c: 24:     uint8_t busy_status;
-[v _busy_status `uc ~T0 @X0 1 a ]
+[; ;ADC_driver.c: 24:     i2c_driver_write_byte(0x40,0x1C, 0x01);
+[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 28 `i `uc -> -> 1 `i `uc ]
 "25
-[; ;ADC_driver.c: 25:     do{
-[e :U 859 ]
-{
-"26
-[; ;ADC_driver.c: 26:         i2c_driver_read_byte(0x40,0x10,&busy_status);
-[e ( _i2c_driver_read_byte (3 , , -> -> 64 `i `uc -> -> 16 `i `uc &U _busy_status ]
+[; ;ADC_driver.c: 25:     uint8_t ADC_data[2];
+[v _ADC_data `uc ~T0 @X0 -> 2 `i a ]
 "27
-[; ;ADC_driver.c: 27:     }while(busy_status & (1<<7) !=0);
-}
-[e $ != & -> _busy_status `i -> != << -> 1 `i -> 7 `i -> 0 `i `i -> 0 `i 859  ]
-[e :U 858 ]
-"28
-[; ;ADC_driver.c: 28:     i2c_driver_write_byte(0x40, 0x14, 0x00);
-[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 20 `i `uc -> -> 0 `i `uc ]
+[; ;ADC_driver.c: 27:     uint8_t busy_status;
+[v _busy_status `uc ~T0 @X0 1 a ]
+"29
+[; ;ADC_driver.c: 29:     do{
+[e :U 864 ]
+{
 "31
-[; ;ADC_driver.c: 31:     i2c_driver_read_twobytes(0x40, 0x20, &ADC_result[0]);
-[e ( _i2c_driver_read_twobytes (3 , , -> -> 64 `i `uc -> -> 32 `i `uc &U *U + &U _ADC_result * -> -> -> 0 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux ]
-"34
-[; ;ADC_driver.c: 34:     i2c_driver_read_twobytes(0x40, 0x21, &ADC_result[1]);
-[e ( _i2c_driver_read_twobytes (3 , , -> -> 64 `i `uc -> -> 33 `i `uc &U *U + &U _ADC_result * -> -> -> 1 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux ]
-"37
-[; ;ADC_driver.c: 37:     i2c_driver_read_twobytes(0x40, 0x22, &ADC_result[2]);
-[e ( _i2c_driver_read_twobytes (3 , , -> -> 64 `i `uc -> -> 34 `i `uc &U *U + &U _ADC_result * -> -> -> 2 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux ]
+[; ;ADC_driver.c: 31:         i2c_driver_read_byte(0x40,0x10,&busy_status);
+[e ( _i2c_driver_read_byte (3 , , -> -> 64 `i `uc -> -> 16 `i `uc &U _busy_status ]
+"33
+[; ;ADC_driver.c: 33:     }while(busy_status & (1<<7) !=0);
+}
+[e $ != & -> _busy_status `i -> != << -> 1 `i -> 7 `i -> 0 `i `i -> 0 `i 864  ]
+[e :U 863 ]
+"36
+[; ;ADC_driver.c: 36:     i2c_driver_write_byte(0x40, 0x14, 0x00);
+[e ( _i2c_driver_write_byte (3 , , -> -> 64 `i `uc -> -> 20 `i `uc -> -> 0 `i `uc ]
 "40
-[; ;ADC_driver.c: 40:     i2c_driver_read_twobytes(0x40, 0x23, &ADC_result[3]);
+[; ;ADC_driver.c: 40:     i2c_driver_read_twobytes(0x40, 0x20, &ADC_result[0]);
+[e ( _i2c_driver_read_twobytes (3 , , -> -> 64 `i `uc -> -> 32 `i `uc &U *U + &U _ADC_result * -> -> -> 0 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux ]
+"42
+[; ;ADC_driver.c: 42:     i2c_driver_read_twobytes(0x40, 0x21, &ADC_result[1]);
+[e ( _i2c_driver_read_twobytes (3 , , -> -> 64 `i `uc -> -> 33 `i `uc &U *U + &U _ADC_result * -> -> -> 1 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux ]
+"44
+[; ;ADC_driver.c: 44:     i2c_driver_read_twobytes(0x40, 0x22, &ADC_result[2]);
+[e ( _i2c_driver_read_twobytes (3 , , -> -> 64 `i `uc -> -> 34 `i `uc &U *U + &U _ADC_result * -> -> -> 2 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux ]
+"46
+[; ;ADC_driver.c: 46:     i2c_driver_read_twobytes(0x40, 0x23, &ADC_result[3]);
 [e ( _i2c_driver_read_twobytes (3 , , -> -> 64 `i `uc -> -> 35 `i `uc &U *U + &U _ADC_result * -> -> -> 3 `i `ui `ux -> -> # *U &U _ADC_result `ui `ux ]
-"43
-[; ;ADC_driver.c: 43: }
-[e :UE 856 ]
+"50
+[; ;ADC_driver.c: 50: }
+[e :UE 861 ]
 }

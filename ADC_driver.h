@@ -25,6 +25,7 @@ extern "C" {
 #include "i2c_driver.h"
 
 
+
 /*defines*/
 #define ADC_I2C_ADDRESS 0x40
 #define REF_REGISTER 0x66
@@ -46,10 +47,5 @@ void ADC_read(void);
 /*global variables*/
 uint16_t ADC_result0 = 0x0FFF;
 uint16_t ADC_result[4]; //array to hold ADC conversion results
-double SC_voltage = 0;       //voltage at output of signal conditioning circuit
-double voltage = 0;       //Analog value
-char ResultBuffer[15];      //buffer to hold characters to be displayed on terminal
-char DigitalBuffer[20];
-char SCBuffer[20];
 
 

@@ -12,10 +12,13 @@
 //#if defined(CONFIG_I2C_ENABLED)
 
 void i2c_driver_init(void);
+void i2c_driver_write_pointer_byte(uint8_t devaddr, uint8_t pointer);
 void i2c_driver_write_byte(uint8_t devaddr, uint8_t reg, uint8_t data);
 void i2c_driver_write_twobytes(uint8_t devaddr, uint8_t reg, uint16_t data);
+void i2c_driver_write_twobytes_noack(uint8_t devaddr, uint8_t reg, uint16_t data);
 void i2c_driver_read_byte(uint8_t devaddr, uint8_t reg, uint8_t * data);
 void i2c_driver_read_twobytes(uint8_t devaddr, uint8_t reg, uint16_t * data);
+void i2c_driver_read_2bytes(uint8_t devaddr, uint16_t * data);
 
 //#endif /* (CONFIG_I2C_ENABLED) */
 

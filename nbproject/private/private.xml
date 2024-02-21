@@ -7,9 +7,9 @@
             <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/main.c</file>
             <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/ADC_driver.c</file>
             <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/main.h</file>
-            <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/i2c_driver.c</file>
-            <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/mcc_generated_files/interrupt_manager.c</file>
-            <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/i2c_driver.h</file>
+            <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/AD5593R.h</file>
+            <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/AD5593R.c</file>
+            <file>file:/C:/Users/oussama/MPLABXProjects/FSM_com.X/mcc_generated_files/tmr0.c</file>
         </group>
     </open-files>
 </project-private>

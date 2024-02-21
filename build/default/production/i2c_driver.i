@@ -9650,10 +9650,13 @@ unsigned char __t3rd16on(void);
 # 1 "./i2c_driver.h" 1
 # 14 "./i2c_driver.h"
 void i2c_driver_init(void);
+void i2c_driver_write_pointer_byte(uint8_t devaddr, uint8_t pointer);
 void i2c_driver_write_byte(uint8_t devaddr, uint8_t reg, uint8_t data);
 void i2c_driver_write_twobytes(uint8_t devaddr, uint8_t reg, uint16_t data);
+void i2c_driver_write_twobytes_noack(uint8_t devaddr, uint8_t reg, uint16_t data);
 void i2c_driver_read_byte(uint8_t devaddr, uint8_t reg, uint8_t * data);
 void i2c_driver_read_twobytes(uint8_t devaddr, uint8_t reg, uint16_t * data);
+void i2c_driver_read_2bytes(uint8_t devaddr, uint16_t * data);
 # 4 "i2c_driver.c" 2
 
 # 1 "./mcc_generated_files/mcc.h" 1
@@ -9662,9 +9665,9 @@ void i2c_driver_read_twobytes(uint8_t devaddr, uint8_t reg, uint16_t * data);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 210 "./mcc_generated_files/pin_manager.h"
+# 235 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 222 "./mcc_generated_files/pin_manager.h"
+# 247 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -9829,6 +9832,83 @@ char *tempnam(const char *, const char *);
 void INTERRUPT_Initialize (void);
 # 55 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/tmr3.h" 1
+# 94 "./mcc_generated_files/tmr3.h"
+void TMR3_Initialize(void);
+# 125 "./mcc_generated_files/tmr3.h"
+void TMR3_StartTimer(void);
+# 155 "./mcc_generated_files/tmr3.h"
+void TMR3_StopTimer(void);
+# 189 "./mcc_generated_files/tmr3.h"
+uint16_t TMR3_ReadTimer(void);
+# 215 "./mcc_generated_files/tmr3.h"
+void TMR3_WriteTimer(uint16_t timerVal);
+# 247 "./mcc_generated_files/tmr3.h"
+void TMR3_Reload(void);
+# 288 "./mcc_generated_files/tmr3.h"
+void TMR3_StartSinglePulseAcquisition(void);
+# 329 "./mcc_generated_files/tmr3.h"
+uint8_t TMR3_CheckGateValueStatus(void);
+# 345 "./mcc_generated_files/tmr3.h"
+void TMR3_ISR(void);
+# 364 "./mcc_generated_files/tmr3.h"
+ void TMR3_SetInterruptHandler(void (* InterruptHandler)(void));
+# 382 "./mcc_generated_files/tmr3.h"
+extern void (*TMR3_InterruptHandler)(void);
+# 400 "./mcc_generated_files/tmr3.h"
+void TMR3_DefaultInterruptHandler(void);
+# 56 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr1.h" 1
+# 94 "./mcc_generated_files/tmr1.h"
+void TMR1_Initialize(void);
+# 125 "./mcc_generated_files/tmr1.h"
+void TMR1_StartTimer(void);
+# 155 "./mcc_generated_files/tmr1.h"
+void TMR1_StopTimer(void);
+# 189 "./mcc_generated_files/tmr1.h"
+uint16_t TMR1_ReadTimer(void);
+# 215 "./mcc_generated_files/tmr1.h"
+void TMR1_WriteTimer(uint16_t timerVal);
+# 247 "./mcc_generated_files/tmr1.h"
+void TMR1_Reload(void);
+# 288 "./mcc_generated_files/tmr1.h"
+void TMR1_StartSinglePulseAcquisition(void);
+# 329 "./mcc_generated_files/tmr1.h"
+uint8_t TMR1_CheckGateValueStatus(void);
+# 345 "./mcc_generated_files/tmr1.h"
+void TMR1_ISR(void);
+# 364 "./mcc_generated_files/tmr1.h"
+ void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 382 "./mcc_generated_files/tmr1.h"
+extern void (*TMR1_InterruptHandler)(void);
+# 400 "./mcc_generated_files/tmr1.h"
+void TMR1_DefaultInterruptHandler(void);
+# 57 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 100 "./mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "./mcc_generated_files/tmr0.h"
+void TMR0_StartTimer(void);
+# 161 "./mcc_generated_files/tmr0.h"
+void TMR0_StopTimer(void);
+# 197 "./mcc_generated_files/tmr0.h"
+uint16_t TMR0_ReadTimer(void);
+# 236 "./mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint16_t timerVal);
+# 272 "./mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 290 "./mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 309 "./mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 327 "./mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 345 "./mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 58 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/eusart1.h" 1
 # 58 "./mcc_generated_files/eusart1.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 1 3
@@ -9936,10 +10016,10 @@ void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 # 469 "./mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 56 "./mcc_generated_files/mcc.h" 2
-# 71 "./mcc_generated_files/mcc.h"
+# 59 "./mcc_generated_files/mcc.h" 2
+# 74 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 84 "./mcc_generated_files/mcc.h"
+# 87 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 5 "i2c_driver.c" 2
 
@@ -9961,11 +10041,29 @@ static __attribute__((inline)) _Bool I2C1_MasterIsRxBufFull(void);
 
 void i2c_driver_init(void)
 {
-    SSP1STAT = 0x00;
-    SSP1CON1 = 0x08;
-    SSP1CON2 = 0x00;
-    SSP1ADD = 0x27;
-    SSP1CON1bits.SSPEN = 1;
+    SSP2STAT = 0x00;
+    SSP2CON1 = 0x08;
+    SSP2CON2 = 0x00;
+    SSP2ADD = 0x27;
+    SSP2CON1bits.SSPEN = 1;
+}
+
+void i2c_driver_write_pointer_byte(uint8_t devaddr, uint8_t pointer)
+{
+  while (1)
+  {
+    I2C1_MasterStart();
+    I2C1_MasterSendTxData(devaddr);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    I2C1_MasterSendTxData(pointer);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    break;
+  }
+  I2C1_MasterStop();
 }
 
 void i2c_driver_write_byte(uint8_t devaddr, uint8_t reg, uint8_t data)
@@ -10014,6 +10112,29 @@ void i2c_driver_write_twobytes(uint8_t devaddr, uint8_t reg, uint16_t data)
     break;
   }
   I2C1_MasterStop();
+}
+
+void i2c_driver_write_twobytes_noack(uint8_t devaddr, uint8_t reg, uint16_t data)
+{
+  while (1)
+  {
+    I2C1_MasterStart();
+    I2C1_MasterSendTxData(devaddr);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    I2C1_MasterSendTxData(reg);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    I2C1_MasterSendTxData((data >> 8) & 0x00FF);
+    if (I2C1_MasterIsNack())
+      continue;
+
+    I2C1_MasterSendTxData(data & 0x00FF);
+
+    break;
+  }
 }
 
 void i2c_driver_read_byte(uint8_t devaddr, uint8_t reg, uint8_t * data)
@@ -10066,37 +10187,53 @@ void i2c_driver_read_twobytes(uint8_t devaddr, uint8_t reg, uint16_t * data)
   I2C1_MasterStop();
 }
 
+void i2c_driver_read_2bytes(uint8_t devaddr, uint16_t * data)
+{
+  while (1)
+  {
+    I2C1_MasterStart();
+    I2C1_MasterSendTxData(devaddr | 0x1);
+    if (I2C1_MasterIsNack())
+      continue;
+    *data = (I2C1_MasterGetRxData(0) << 8);
+    *data += I2C1_MasterGetRxData(1);
+
+    break;
+  }
+  I2C1_MasterStop();
+}
+
 static __attribute__((inline)) void I2C1_WaitIdle(void)
 {
 
-  while ((SSP1STATbits.RW) || (SSP1CON2bits.SEN) ||
-         (SSP1CON2bits.RSEN) || (SSP1CON2bits.PEN) ||
-         (SSP1CON2bits.RCEN) || (SSP1CON2bits.ACKEN) != 0) {}
+  while ((SSP2STATbits.RW2) || (SSP2CON2bits.SEN) ||
+         (SSP2CON2bits.RSEN) || (SSP2CON2bits.PEN) ||
+         (SSP2CON2bits.RCEN) || (SSP2CON2bits.ACKEN) != 0) {}
 
 }
 
 static __attribute__((inline)) void I2C1_MasterStart(void)
 {
     I2C1_WaitIdle();
-    SSP1CON2bits.SEN = 1;
+    SSP2CON2bits.SEN = 1;
 }
 
 static __attribute__((inline)) void I2C1_MasterEnableRestart(void)
 {
     I2C1_WaitIdle();
-    SSP1CON2bits.RSEN = 1;
+    SSP2CON2bits.RSEN = 1;
 }
 
 static __attribute__((inline)) void I2C1_MasterStop(void)
 {
     I2C1_WaitIdle();
-    SSP1CON2bits.PEN = 1;
+    SSP2CON2bits.PEN = 1;
 }
 
 static __attribute__((inline)) void I2C1_MasterSendTxData(uint8_t data)
 {
     I2C1_WaitIdle();
-    SSP1BUF = data;
+    SSP2BUF = data;
 }
 static __attribute__((inline)) uint8_t I2C1_MasterGetRxData(uint8_t ack)
 {
@@ -10106,37 +10243,37 @@ static __attribute__((inline)) uint8_t I2C1_MasterGetRxData(uint8_t ack)
     I2C1_MasterStartRx();
     while (!I2C1_MasterIsRxBufFull()) {}
 
-    b = SSP1BUF;
+    b = SSP2BUF;
     I2C1_MasterStopRx();
     I2C1_MasterSendNack(ack);
     return b;
 }
-# 190 "i2c_driver.c"
+# 247 "i2c_driver.c"
 static __attribute__((inline)) void I2C1_MasterStartRx(void)
 {
-    SSP1CON2bits.RCEN = 1;
+    SSP2CON2bits.RCEN = 1;
 }
 
 static __attribute__((inline)) void I2C1_MasterStopRx(void)
 {
-    SSP1CON2bits.RCEN = 0;
+    SSP2CON2bits.RCEN = 0;
 }
 
 
 static __attribute__((inline)) _Bool I2C1_MasterIsNack(void)
 {
   I2C1_WaitIdle();
-  return SSP1CON2bits.ACKSTAT;
+  return SSP2CON2bits.ACKSTAT;
 }
 
 static __attribute__((inline)) void I2C1_MasterSendNack(uint8_t ack)
 {
-    SSP1CON2bits.ACKDT = ack;
+    SSP2CON2bits.ACKDT = ack;
     I2C1_WaitIdle();
-    SSP1CON2bits.ACKEN = 1;
+    SSP2CON2bits.ACKEN = 1;
 }
 
 static __attribute__((inline)) _Bool I2C1_MasterIsRxBufFull(void)
 {
-    return SSP1STATbits.BF;
+    return SSP2STATbits.BF;
 }
