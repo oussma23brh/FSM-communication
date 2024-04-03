@@ -157,7 +157,7 @@ void Idle(void){
 
 void ReceivedFrameChecksum(void){
     //send_string("The received frame: "); 
-    send_string(frame_buffer); send_string("\n");
+    //send_string(frame_buffer); send_string("\n");
     clear_buffer(TrimmedFrame);
     clear_buffer(CRCresult);
     clear_buffer(FrameCheckSum);
@@ -179,7 +179,7 @@ void ReceivedFrameChecksum(void){
     }
     else{
         //send_string("Error! Ignore frame.\n");
-        frame_ready_flag = 0;
+        frame_ready_flag = 0; 
         curr_state = RST;
     }
     
@@ -304,10 +304,10 @@ void Execute(void){
        
         /*ADC conversion result*/
         char data_ch1[10],data_ch2[10],data_ch3[10],data_ch4[10];
-        sprintf(data_ch1,"%0.4x",ADC_result[0]);  data_ch1[4] = '\0';
-        sprintf(data_ch2,"%0.4x",ADC_result[1]);  data_ch2[4] = '\0';
-        sprintf(data_ch3,"%0.4x",ADC_result[2]);  data_ch3[4] = '\0';
-        sprintf(data_ch4,"%0.4x",ADC_result[3]);  data_ch4[4] = '\0';
+        sprintf(data_ch1,"%0.4X",ADC_result[0]);  data_ch1[4] = '\0';
+        sprintf(data_ch2,"%0.4X",ADC_result[1]);  data_ch2[4] = '\0';
+        sprintf(data_ch3,"%0.4X",ADC_result[2]);  data_ch3[4] = '\0';
+        sprintf(data_ch4,"%0.4X",ADC_result[3]);  data_ch4[4] = '\0';
         
         //send_string("Result of ch1    "); send_string(data_ch1); send_string("\n");
         //send_string("Result of ch2    "); send_string(data_ch2); send_string("\n");
