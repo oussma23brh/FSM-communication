@@ -41,7 +41,7 @@ Purpose: Keeps the LED on for a specified duration during data reception.
 
 ```c
 // Configure the timer ISR
-TMR0_SetInterruptHandler(Timer0IntHandler);
+TMR1_SetInterruptHandler(Timer1IntHandler);
 
 //the timer ISR
 void Timer1IntHandler(void){
@@ -76,7 +76,5 @@ void Timer0IntHandler(void){
 ```
 
 ### **Summary**
-The three timers are configured to control LED states during transmission
-and reception, and to manage a delay for voltage reading.    
-By calling the respective start functions, the timers will handle the LED 
-states and delay automatically.
+The three timers are configured to control LED states during transmission and reception, and to manage a delay for voltage reading.    
+By calling the respective StartTimer() functions, the timers will handle the LED states and delay automatically.
