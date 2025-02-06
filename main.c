@@ -44,43 +44,60 @@
 #include "mcc_generated_files/mcc.h"
 #include "main.h"
 
+#define _XTAL_FREQ 16000000
 
-
+static void delay1 ( int x  );
 void main(void)
 {
-    
+
     SYSTEM_Initialize();
     i2c_driver_init();  //initialize I2C serial communication
     EUSART1_SetRxInterruptHandler(my_RX_ISR);
     TMR0_SetInterruptHandler(Timer0IntHandler);
-    TMR1_SetInterruptHandler(Timer1IntHandler);
-    TMR3_SetInterruptHandler(Timer3IntHandler);
-    
+//    TMR1_SetInterruptHandler(Timer1IntHandler);
+//    TMR3_SetInterruptHandler(Timer3IntHandler);
+    TMR2_SetInterruptHandler(Timer2IntHandler);
+
     INTERRUPT_GlobalInterruptEnable();      // Enable the Global Interrupts
     
     INTERRUPT_PeripheralInterruptEnable();  // Enable the Peripheral Interrupts
     
     Initialize();       // Initialize the parsing FSM
+    RX_LED_SetLow();
+    TX_LED_SetLow();
+    TMR2_StartTimer();      //Start the timer
     
-    //send_string("Hello!\n");
-    AD5593_init_w_EVREF();        //reset and ititialize AD5593 to operate with EVREF
-    //ADC_reset();                  //reset the LMP92001
+    send_string("Hello!\n");
+    AD5593_init_w_EVREF();        //reset and initialize AD5593 to operate with EVREF
+    //ADC_reset();                //reset the LMP92001
     //send_string("Reset DONE! \n");
-    //__delay_ms(1);       //wait for the adc to reset
-    //ADC_init();        //initialize the LMP92001
-    //send_string("ADC ready!\n");    
+    //__delay_ms(1);       //wait for the ADC to reset
+    //ADC_init();          //initialize the LMP92001
+    send_string("ADC ready!\n");    
+    long counter;
+    long threshold = 100000;
     while (1)
     {
         if(frame_ready_flag){
             function_table[curr_state]();
         }
+           // Increment counter
+        counter++;
+
+        // Check if counter has reached the threshold
+        if (counter >= threshold) {
+            RX_LED_Toggle();      // Toggle LED state
+            counter = 0;        // Reset counter
+        }
+
     }   
 }
 
 void my_RX_ISR(void){
-    RX_LED_SetLow();
-    TMR3_StartTimer();      //Start the timer
+    //RX_LED_SetLow();
+//    TMR3_StartTimer();      //Start the timer
         //frame character received
+        
         char frame_char;
         //read from UART port
         frame_char = EUSART1_Read();
@@ -118,16 +135,14 @@ void Timer0IntHandler(void){
     timer0_flag = 1;
 }
 
-void Timer1IntHandler(void){
-    TX_LED_SetHigh();
-    TMR1_StopTimer();
-    TMR1_Reload();
-}
+//void Timer1IntHandler(void){
+//    TX_LED_SetHigh();
+//    TMR1_StopTimer();
+//    TMR1_Reload();
+//}
 
-void Timer3IntHandler(void){
-    RX_LED_SetHigh();
-    TMR3_StopTimer();
-    TMR3_Reload();
+void Timer2IntHandler(void){
+//    RX_LED_Toggle();
 }
 
 //clear and setup the buffer for the frame
@@ -156,8 +171,9 @@ void Idle(void){
 }
 
 void ReceivedFrameChecksum(void){
-    //send_string("The received frame: "); 
-    //send_string(frame_buffer); send_string("\n");
+    send_string("The received frame: "); 
+    send_string(frame_buffer); send_string("\n");
+//    __delay_ms(50);
     clear_buffer(TrimmedFrame);
     clear_buffer(CRCresult);
     clear_buffer(FrameCheckSum);
@@ -174,7 +190,7 @@ void ReceivedFrameChecksum(void){
 
     //check whether there was an error on transmission or not
     if(hexCRCresult == hexFrameCheckSum){       
-        //send_string("No Error! Frame is valid.\n");
+        send_string("No Error! Frame is valid.\n");
         curr_state = DEST_CHK;
     }
     else{
@@ -205,35 +221,61 @@ void Destination_Check(void){
 void Parse(void){
     uint8_t i=0;
     if(destination == UNICAST){
-            add_digit_1 = frame_buffer[i+2] - '0';
-            i++;
-            add_digit_2 = frame_buffer[i+2] - '0';
-            i++;
+        add_digit_1 = frame_buffer[i+2] - '0';
+        i++;
+        add_digit_2 = frame_buffer[i+2] - '0';
+        i++;
+        command_index = i+2;
     }
-    command_index = i+2;
+    else{
+        command_index = i+2;
+        t1_OFF = frame_buffer[i+2] - '0';
+        i++;
+        t2_OFF = frame_buffer[i+2] - '0';
+        i++;
+        t1_ON = frame_buffer[i+2] - '0';
+        i++;
+        t2_ON = frame_buffer[i+2] - '0';
+        i++;      
+    }
     command = frame_buffer[command_index];
     curr_state = DECODE;
 }
 
     
 void Decode(void){   
-    frameID = parse_frame_ID();     //get ID from the frame
+
     
-    hardID = get_ID();         //get ID of device from DIPs
-  
+    if(destination == BROADCAST)
+    {
+        T_OFF = parse_frame_ID(t1_OFF, t2_OFF);
+        T_ON = parse_frame_ID(t1_ON, t2_ON);
+        T = T_OFF + T_ON;  
+        send_string("Done calculating time\n");
+    }
+    else{
+        //get ID from the frame
+        frameID = parse_frame_ID(add_digit_1, add_digit_2);   
+    
+        //get ID of device from DIPs
+        hardID = get_ID();   
+        T = 0;
+    }
+      
     char message[200];
   
-    //send_string("I am in Decode state\n");
-    //send_string("address from frame: ");
-    //sprintf(frameAddress,"%d",frameID);
-    //send_string(frameAddress); send_string("\n");
-    //send_string("address from hardware is:");
-    //sprintf(realAdress,"%d",hardID); 
-    //send_string(realAdress);  send_string("\n");
-    
+    send_string("I am in Decode state\n");
+ //   __delay_ms(100);
+//    send_string("address from frame: ");
+//    sprintf(frameAddress,"%d",frameID);
+//    send_string(frameAddress); send_string("\n");
+//    send_string("address from hardware is:");
+//    sprintf(realAdress,"%d",hardID); 
+//    send_string(realAdress);  send_string("\n");
+//    
 
     //respond to command on broadcast or if address matches  
-    if((destination == BROADCAST) || ( (destination == UNICAST) && (frameID == hardID) )){
+    if( ( (destination == BROADCAST) && (0 <= T && T < 510) ) || ( (destination == UNICAST) && (frameID == hardID) ) ){
         switch(command){
             case READ_CMD:
                 read_flag = 1;//set reading flag
@@ -258,6 +300,7 @@ exitToRST:
         clear_buffer(frame_buffer);
         curr_state = RST;       //if frameID and hardID don't match IGNORE the frame
         //send_string("Device address error.\n");
+        // ADD RESETTING THE t voff
     }   
 }
 
@@ -269,7 +312,7 @@ void Execute(void){
     for(k=0;k<30;k++){
         acknowledge_frame[k] = NULL;
     }
-    //send_string("received frame: "); send_string(frame_buffer); send_string("\n");
+    send_string("received frame: "); send_string(frame_buffer); send_string("\n");
     
     /*push characters (START_CHAR -> CMD_CHAR) to acknowledgment frame*/
     sprintf(acknowledge_frame,"$U%.2d%c",hardID,command);
@@ -277,6 +320,11 @@ void Execute(void){
     /*Execute frame CMD */
     /*~~READ CMD~~*/
     if(read_flag){
+        sprintf(Time, "The total time is %d. \n", T);
+        send_string(Time);
+        send_string("Before delay \n");
+        delay1(T);
+        send_string("after delay.\n");
         TMR0_StartTimer();          //Start the timer
         while(!timer0_flag);        //wait for timer to finish
         TMR0_StopTimer();           //Stop the timer
@@ -350,11 +398,12 @@ int get_ID(void){
 }
 
 //get the address received from the frame
-int parse_frame_ID(void){
-    return add_digit_1 * 10 + add_digit_2;
+int parse_frame_ID(int x, int y){
+    return (x * 10) + y;
+//  return add_digit_1 * 10 + add_digit_2;
 }
 
-/*Fuction that finds the checksum of a given string*/
+/*Function that finds the checksum of a given string*/
 void ChecksumCalc(char* dataString){
     uint8_t xorTemp;
     xorTemp = (uint8_t)dataString[0];
@@ -396,6 +445,16 @@ void ACKframeChecksum(char* frame){
 
     sprintf(fullAckFrame, "%s%c%c%c\0",frame,CRCresult[0],CRCresult[1],END_CHAR);
     //send_string("Acknowledgment frame to be sent: ");  send_string(fullAckFrame);  send_string("\n");
+}
+
+static void delay1 (int x)
+{ 
+    unsigned long count = 0;
+    while ( count < x)
+    {
+        __delay_ms(1000) ;
+        count ++;
+    }   
 }
 
 /**
