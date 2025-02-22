@@ -54,19 +54,18 @@ void main(void)
     i2c_driver_init();  //initialize I2C serial communication
     EUSART1_SetRxInterruptHandler(my_RX_ISR);
     TMR0_SetInterruptHandler(Timer0IntHandler);
-//    TMR1_SetInterruptHandler(Timer1IntHandler);
-//    TMR3_SetInterruptHandler(Timer3IntHandler);
-    TMR2_SetInterruptHandler(Timer2IntHandler);
+    TMR1_SetInterruptHandler(Timer1IntHandler);
+    TMR3_SetInterruptHandler(Timer3IntHandler);
 
     INTERRUPT_GlobalInterruptEnable();      // Enable the Global Interrupts
     
     INTERRUPT_PeripheralInterruptEnable();  // Enable the Peripheral Interrupts
     
     Initialize();       // Initialize the parsing FSM
-    RX_LED_SetLow();
-    TX_LED_SetLow();
-    TMR2_StartTimer();      //Start the timer
-    
+//    RX_LED_SetLow();
+//    TX_LED_SetLow();
+//    TMR2_StartTimer();      //Start the timer
+//    
     send_string("Hello!\n");
     AD5593_init_w_EVREF();        //reset and initialize AD5593 to operate with EVREF
     //ADC_reset();                //reset the LMP92001
@@ -74,60 +73,59 @@ void main(void)
     //__delay_ms(1);       //wait for the ADC to reset
     //ADC_init();          //initialize the LMP92001
     send_string("ADC ready!\n");    
-    long counter;
-    long threshold = 100000;
+//    long counter;
+//    long threshold = 100000;
     while (1)
     {
         if(frame_ready_flag){
             function_table[curr_state]();
         }
-           // Increment counter
-        counter++;
-
-        // Check if counter has reached the threshold
-        if (counter >= threshold) {
-            RX_LED_Toggle();      // Toggle LED state
-            counter = 0;        // Reset counter
-        }
-
+//           // Increment counter
+//        counter++;
+//
+//        // Check if counter has reached the threshold
+//        if (counter >= threshold) {
+//            RX_LED_Toggle();      // Toggle LED state
+//            counter = 0;        // Reset counter
+//        }
     }   
 }
 
 void my_RX_ISR(void){
-    //RX_LED_SetLow();
-//    TMR3_StartTimer();      //Start the timer
-        //frame character received
+    RX_LED_SetLow();
+    TMR3_StartTimer();      //Start the timer
+    //frame character received
         
-        char frame_char;
-        //read from UART port
-        frame_char = EUSART1_Read();
-        //UART FSM
-        switch(frame_state){
-            //setup for next frame
-            case SETUP:
-                frame_index = 0;
-                clear_buffer(frame_buffer);
-                frame_state = IDLE; 
-            //wait for starting char
-            //no break statement here in order not to miss a starting character
-            case IDLE:
-                if(frame_char ==  START_CHAR ){
-                    fill_buffer(frame_char);
-                    frame_state = PARSING; 
-                }
-                break;
-            //fill buffer until receiving end char    
-            case PARSING:
-                //to avoid being stuck in an infinite-loop if '*' doesn't arrive
-                if (frame_index >= MAX_BUFFER_SIZE) frame_state = SETUP;
+    char frame_char;
+    //read from UART port
+    frame_char = EUSART1_Read();
+    //UART FSM
+    switch(frame_state){
+        //setup for next frame
+        case SETUP:
+            frame_index = 0;
+            clear_buffer(frame_buffer);
+            frame_state = IDLE; 
+        //wait for starting char
+        //no break statement here in order not to miss a starting character
+        case IDLE:
+            if(frame_char ==  START_CHAR ){
                 fill_buffer(frame_char);
-                if(frame_char == END_CHAR){
-                    frame_ready_flag = 1; 
-                    fill_buffer('\0');
-                    curr_state = ERROR_CHECK;
-                    frame_state = SETUP; //back to SETUP state 
-                }
-                break;
+                frame_state = PARSING; 
+            }
+            break;
+        //fill buffer until receiving end char    
+        case PARSING:
+            //to avoid being stuck in an infinite-loop if '*' doesn't arrive
+            if (frame_index >= MAX_BUFFER_SIZE) frame_state = SETUP;
+            fill_buffer(frame_char);
+            if(frame_char == END_CHAR){
+                frame_ready_flag = 1; 
+                fill_buffer('\0');
+                curr_state = ERROR_CHECK;
+                frame_state = SETUP; //back to SETUP state 
+            }
+            break;
         }
 }
 
@@ -135,14 +133,16 @@ void Timer0IntHandler(void){
     timer0_flag = 1;
 }
 
-//void Timer1IntHandler(void){
-//    TX_LED_SetHigh();
-//    TMR1_StopTimer();
-//    TMR1_Reload();
-//}
+void Timer1IntHandler(void){
+    TX_LED_SetHigh();
+    TMR1_StopTimer();
+    TMR1_Reload();
+}
 
-void Timer2IntHandler(void){
-//    RX_LED_Toggle();
+void Timer3IntHandler(void){
+    RX_LED_SetHigh();
+    TMR3_StopTimer();
+    TMR3_Reload();
 }
 
 //clear and setup the buffer for the frame
@@ -228,7 +228,7 @@ void Parse(void){
         command_index = i+2;
     }
     else{
-        command_index = i+2;
+        
         t1_OFF = frame_buffer[i+2] - '0';
         i++;
         t2_OFF = frame_buffer[i+2] - '0';
@@ -236,7 +236,8 @@ void Parse(void){
         t1_ON = frame_buffer[i+2] - '0';
         i++;
         t2_ON = frame_buffer[i+2] - '0';
-        i++;      
+        i++;    
+        command_index = i+2;
     }
     command = frame_buffer[command_index];
     curr_state = DECODE;
@@ -248,14 +249,14 @@ void Decode(void){
     
     if(destination == BROADCAST)
     {
-        T_OFF = parse_frame_ID(t1_OFF, t2_OFF);
-        T_ON = parse_frame_ID(t1_ON, t2_ON);
+        T_OFF = parse_frameID(t1_OFF, t2_OFF);
+        T_ON = parse_frameID(t1_ON, t2_ON);
         T = T_OFF + T_ON;  
         send_string("Done calculating time\n");
-    }
+    }   
     else{
         //get ID from the frame
-        frameID = parse_frame_ID(add_digit_1, add_digit_2);   
+        frameID = parse_frameID(add_digit_1, add_digit_2);   
     
         //get ID of device from DIPs
         hardID = get_ID();   
@@ -398,7 +399,7 @@ int get_ID(void){
 }
 
 //get the address received from the frame
-int parse_frame_ID(int x, int y){
+int parse_frameID(int x, int y){
     return (x * 10) + y;
 //  return add_digit_1 * 10 + add_digit_2;
 }

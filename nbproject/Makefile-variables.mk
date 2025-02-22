@@ -6,5 +6,5 @@
 CND_BASEDIR=`pwd`
 # default configuration
 CND_ARTIFACT_DIR_default=dist/default/production
-CND_ARTIFACT_NAME_default=FSM_com.X.production.hex
-CND_ARTIFACT_PATH_default=dist/default/production/FSM_com.X.production.hex
+CND_ARTIFACT_NAME_default=FSM-communication.production.hex
+CND_ARTIFACT_PATH_default=dist/default/production/FSM-communication.production.hex

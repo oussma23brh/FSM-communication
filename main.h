@@ -93,13 +93,16 @@ char init_buffer_flag = 0;
 char frameAddress[2];
 char realAdress[2];//real address of prob
 int add_digit_1,add_digit_2;
+int t1_OFF, t2_OFF, t1_ON, t2_ON;
 //char to store command 
 char command;
 uint8_t command_index;
 uint8_t frameID;
+uint8_t T_OFF, T_ON, T;
 uint8_t hardID;
 //array to store content of the received frame
 char frame_buffer[MAX_BUFFER_SIZE];
+char Time[16];
 //index for the frame buffer
 int frame_index;
 //store ADC conversion result

@@ -164,7 +164,7 @@ void EUSART1_Write(uint8_t txData)
 
 }
 
-char getch(void)
+int getch(void)
 {
     return EUSART1_Read();
 }

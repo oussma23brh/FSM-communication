@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=FSM_com.X
+PROJECTNAME=FSM-communication
 
 # Active Configuration
 DEFAULTCONF=default
