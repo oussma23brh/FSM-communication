@@ -37,6 +37,9 @@ extern "C" {
 #define BCAST_TEST 'C'
 #define END_CHAR   '*'
 #define MAX_BUFFER_SIZE 20
+#define NUM_SAMPLES 100      // Max readings per channel
+#define NUM_CHANNELS 4       // Total ADC channels
+#define _XTAL_FREQ 16000000  // Frequency of MCU
 
 
 /*prototypes*/
@@ -111,7 +114,5 @@ char TrimmedFrame[MAX_BUFFER_SIZE]; // received frame trimmed of start and end c
 char TrimmedAckFrame[MAX_BUFFER_SIZE];//Trimmed Acknowledge frame
 char FrameCheckSum[3]; //Checksum value received from the frame
 char CRCresult[2];// CRC result calculated from received frame
-
-
-
-
+uint32_t channel_sum[NUM_CHANNELS];         // Sum of each channel's readings
+uint32_t channel_avg[NUM_CHANNELS];         // Average value per channel

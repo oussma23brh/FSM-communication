@@ -44,7 +44,6 @@
 #include "mcc_generated_files/mcc.h"
 #include "main.h"
 
-#define _XTAL_FREQ 16000000
 
 static void delay1 ( int x  );
 void main(void)
@@ -66,13 +65,13 @@ void main(void)
 //    TX_LED_SetLow();
 //    TMR2_StartTimer();      //Start the timer
 //    
-    send_string("Hello!\n");
+//    send_string("Hello!\n");
     AD5593_init_w_EVREF();        //reset and initialize AD5593 to operate with EVREF
     //ADC_reset();                //reset the LMP92001
     //send_string("Reset DONE! \n");
     //__delay_ms(1);       //wait for the ADC to reset
     //ADC_init();          //initialize the LMP92001
-    send_string("ADC ready!\n");    
+//    send_string("ADC ready!\n");    
 //    long counter;
 //    long threshold = 100000;
     while (1)
@@ -171,8 +170,8 @@ void Idle(void){
 }
 
 void ReceivedFrameChecksum(void){
-    send_string("The received frame: "); 
-    send_string(frame_buffer); send_string("\n");
+//    send_string("The received frame: "); 
+//    send_string(frame_buffer); send_string("\n");
 //    __delay_ms(50);
     clear_buffer(TrimmedFrame);
     clear_buffer(CRCresult);
@@ -190,7 +189,7 @@ void ReceivedFrameChecksum(void){
 
     //check whether there was an error on transmission or not
     if(hexCRCresult == hexFrameCheckSum){       
-        send_string("No Error! Frame is valid.\n");
+//        send_string("No Error! Frame is valid.\n");
         curr_state = DEST_CHK;
     }
     else{
@@ -252,7 +251,7 @@ void Decode(void){
         T_OFF = parse_frameID(t1_OFF, t2_OFF);
         T_ON = parse_frameID(t1_ON, t2_ON);
         T = T_OFF + T_ON;  
-        send_string("Done calculating time\n");
+//        send_string("Done calculating time\n");
     }   
     else{
         //get ID from the frame
@@ -263,9 +262,8 @@ void Decode(void){
         T = 0;
     }
       
-    char message[200];
-  
-    send_string("I am in Decode state\n");
+//    char message[200];
+//    send_string("I am in Decode state\n");
  //   __delay_ms(100);
 //    send_string("address from frame: ");
 //    sprintf(frameAddress,"%d",frameID);
@@ -313,27 +311,59 @@ void Execute(void){
     for(k=0;k<30;k++){
         acknowledge_frame[k] = NULL;
     }
-    send_string("received frame: "); send_string(frame_buffer); send_string("\n");
+//    send_string("received frame: "); send_string(frame_buffer); send_string("\n");
     
     /*push characters (START_CHAR -> CMD_CHAR) to acknowledgment frame*/
     sprintf(acknowledge_frame,"$U%.2d%c",hardID,command);
-    
+    uint8_t temp[100];
+    memset(temp,1,100);
     /*Execute frame CMD */
     /*~~READ CMD~~*/
     if(read_flag){
-        sprintf(Time, "The total time is %d. \n", T);
-        send_string(Time);
-        send_string("Before delay \n");
+//        sprintf(Time, "The total time is %d. \n", T);
+//        send_string(Time);
+//        send_string("Before delay \n");
         delay1(T);
-        send_string("after delay.\n");
+//        send_string("after delay.\n");
         TMR0_StartTimer();          //Start the timer
         while(!timer0_flag);        //wait for timer to finish
         TMR0_StopTimer();           //Stop the timer
         timer0_flag = 0;            //reset the timer's flag
         TMR0_Reload();              //Reload the timer
-        AD5593_ADC_read();        //Call AD5593_read
-        //ADC_read();                 //trigger the LMP92001 conversion
-        if(destination == BROADCAST){ 
+//        char channel[200];
+//        char avg[200];
+        for (int i = 0; i < NUM_SAMPLES; i++) 
+        {
+            AD5593_ADC_read();//Call AD5593_reads
+            for (int j = 0; j < NUM_CHANNELS; j++)
+            {
+                channel_sum[j] += ADC_result[j];  // Store ADC readings
+//                sprintf(channel, "The reading of channel %d is %d. \n", j,channel_sum[j]);
+//                send_string(channel);
+//                send_string(Time);
+//                send_string("The reading of ch ");
+//                send_string(j);
+//                send_string("is");
+//                send_string(ADC_result[j]);
+//                send_string("\n");
+            }           
+            __delay_ms(10);
+        }
+        
+        for (int i = 0; i < NUM_CHANNELS; i++) 
+        {
+//            sprintf(channel, "The sum of channel %d is %d. \n", i,channel_sum[i]);
+//            send_string(channel);
+
+            channel_avg[i] = channel_sum[i] / NUM_SAMPLES;  // Compute average
+//            sprintf(avg, "The AVR of channel %d is %d. \n", i,channel_avg[i]);
+//            send_string(avg);
+        }
+        
+//        AD5593_ADC_read();        
+//        ADC_read();                 //trigger the LMP92001 conversion
+        if(destination == BROADCAST)
+        { 
             frame_ready_flag = 0;
             read_flag = 0; //clear read flag at the end of operation
             prev_destination = destination;     //update the previous destination state
@@ -353,10 +383,10 @@ void Execute(void){
        
         /*ADC conversion result*/
         char data_ch1[10],data_ch2[10],data_ch3[10],data_ch4[10];
-        sprintf(data_ch1,"%0.4X",ADC_result[0]);  data_ch1[4] = '\0';
-        sprintf(data_ch2,"%0.4X",ADC_result[1]);  data_ch2[4] = '\0';
-        sprintf(data_ch3,"%0.4X",ADC_result[2]);  data_ch3[4] = '\0';
-        sprintf(data_ch4,"%0.4X",ADC_result[3]);  data_ch4[4] = '\0';
+        sprintf(data_ch1,"%0.4X",channel_avg[0]);  data_ch1[4] = '\0';
+        sprintf(data_ch2,"%0.4X",channel_avg[1]);  data_ch2[4] = '\0';
+        sprintf(data_ch3,"%0.4X",channel_avg[2]);  data_ch3[4] = '\0';
+        sprintf(data_ch4,"%0.4X",channel_avg[3]);  data_ch4[4] = '\0';
         
         //send_string("Result of ch1    "); send_string(data_ch1); send_string("\n");
         //send_string("Result of ch2    "); send_string(data_ch2); send_string("\n");
@@ -369,6 +399,8 @@ void Execute(void){
         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch3, strlen(data_ch3));
         memcpy(acknowledge_frame + strlen(acknowledge_frame), data_ch4, strlen(data_ch4));
         get_flag = 0; //clear get flag at the end of operation
+        memset(channel_sum, 0, sizeof(channel_sum));  // Set all bytes to 0
+        memset(channel_avg, 0, sizeof(channel_avg));  // Set all bytes to 0
 
     /*~~BCAST TEST CMD~~*/    
     }else if(broadcast_test_flag){

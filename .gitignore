@@ -28,3 +28,5 @@
 # Misc
 .svn
 *.bak
+/build/
+/dist/
